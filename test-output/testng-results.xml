@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-07-03T12:05:25 IST" name="Suite" finished-at="2025-07-03T12:05:45 IST" duration-ms="19602">
+    <groups>
+    </groups>
+    <test started-at="2025-07-03T12:05:25 IST" name="Test" finished-at="2025-07-03T12:05:45 IST" duration-ms="19602">
+      <class name="com.PractoAutomation.Practo.OpenHomepage">
+        <test-method signature="openPractoHomepage()[pri:0, instance:com.PractoAutomation.Practo.OpenHomepage@6989da5e]" started-at="2025-07-03T12:05:25 IST" name="openPractoHomepage" finished-at="2025-07-03T12:05:45 IST" duration-ms="19537" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openPractoHomepage -->
+      </class> <!-- com.PractoAutomation.Practo.OpenHomepage -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
