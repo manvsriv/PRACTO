@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJUnit" project="PractoTesting" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.runner.TestRunnerJUnit" time="9.705">
+    <testsuite name="Checking functionality for Practo application" time="9.705">
+      <testcase name="Login to Practo and navigate to Hemoglobin Test" classname="Checking functionality for Practo application" time="9.705">
+        <error>java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.support.ui.WebDriverWait.until(java.util.function.Function)" because "this.wait" is null&#13;
+	at com.pages.HomePage.clickLoginButton(HomePage.java:21)&#13;
+	at com.stepDefinition.LabTestStepDefinition.user_clicks_on_login_signup_button(LabTestStepDefinition.java:24)&#13;
+	at ✽.user clicks on Login / Signup button(file:///C:/Users/SDHINDLE/Desktop/PRACTO/Sprint/PractoTesting/src/test/resource/Features/LabTest.feature:9)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

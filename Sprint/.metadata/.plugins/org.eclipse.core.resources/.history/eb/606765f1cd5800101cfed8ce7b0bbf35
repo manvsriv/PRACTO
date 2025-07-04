@@ -1,0 +1,28 @@
+package com.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+public class HomePage extends BasePage{
+	WebDriver driver;
+	
+	//driver.findElement(By.xpath("//a[text()='Login / Signup']")).click();
+	@FindBy(xpath="//a[text()='Login / Signup']") 
+	WebElement loginButton;
+	
+	public HomePage(WebDriver driver) {
+		super(driver);
+		System.out.println("HomePage"+driver);
+		//this.driver=driver;
+	}
+	
+	public void clickLoginButton() throws InterruptedException {
+		//waitUntilWebElementIsVisible(loginButton);
+		//wait.until(ExpectedConditions.elementToBeClickable(loginButton));
+		//Thread.sleep(5000);
+		loginButton.click();
+	}
+}

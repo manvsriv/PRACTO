@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJUnit" project="PractoTesting" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.runner.TestRunnerJUnit" time="0.162">
+    <testsuite name="Checking functionality for Practo application" time="0.162">
+      <testcase name="Login to Practo and navigate to Hemoglobin Test" classname="Checking functionality for Practo application" time="0.162">
+        <error>java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebDriver.get(String)" because "driver" is null&#13;
+	at com.pages.BasePage.&lt;init&gt;(BasePage.java:24)&#13;
+	at com.setup.BaseSteps.chromedriver(BaseSteps.java:25)&#13;
+	at com.stepDefinition.LabTestStepDefinition.user_is_on_practo_website(LabTestStepDefinition.java:17)&#13;
+	at ✽.User is on Practo website(file:///C:/Users/SDHINDLE/Desktop/PRACTO/Sprint/PractoTesting/src/test/resource/Features/LabTest.feature:5)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

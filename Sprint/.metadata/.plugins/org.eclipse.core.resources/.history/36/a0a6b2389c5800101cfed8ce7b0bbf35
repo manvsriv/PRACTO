@@ -1,0 +1,123 @@
+package com.setup;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+
+import com.pages.BasePage;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class BaseSteps {
+	public static WebDriver driver;
+	public static ChromeOptions coptions;
+	public static EdgeOptions eoptions;
+	
+	public static WebDriver chromedriver() {
+		driver = BasePage.setup("chrome");
+		coptions=new ChromeOptions();
+		
+		coptions.addArguments("--start-maximized");
+		coptions.addArguments("Incognito");
+		coptions.addArguments("disable-notification");
+		coptions.addArguments("disable-popup-blocking");
+		coptions.addArguments("deny-permission-prompts");
+		
+		driver= new ChromeDriver(coptions);
+
+		((ChromeDriver) driver).setOptions(coptions);
+        return driver;
+
+	}
+	
+	public static WebDriver edgedriver() {
+		WebDriverManager.edgedriver().setup();
+		eoptions=new EdgeOptions();
+		
+		eoptions.addArguments("--start-maximized");
+		eoptions.addArguments("Incognito");
+		eoptions.addArguments("disable-notification");
+		eoptions.addArguments("deny-permission-prompts");
+		
+		driver= new EdgeDriver(eoptions);
+		driver.get("https://practice.automationtesting.in/");
+		return driver;
+	}
+	
+	public void tearDown() {
+		driver.close();
+	}
+}
+/*
+package com.setup;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+import com.pages.BasePage;
+
+public class BaseSteps {
+    public static WebDriver driver;
+    public static ChromeOptions coptions;
+
+    public static WebDriver chromedriver() {
+        driver = BasePage.setup("chrome");
+        coptions = new ChromeOptions();
+        
+        coptions.addArguments("--start-maximized");
+        coptions.addArguments("Incognito");
+        coptions.addArguments("disable-notification");
+        coptions.addArguments("disable-popup-blocking");
+        coptions.addArguments("deny-permission-prompts");
+        
+        ((ChromeDriver) driver).setOptions(coptions);
+        return driver;
+    }
+
+    public static void main(String[] args) {
+        driver = chromedriver();
+        BasePage basePage = new BasePage(driver);
+        
+        // Perform your tests here
+        
+        basePage.driver.quit();
+    }
+}*/
+
+/*
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class BasePage {
+    WebDriver driver;
+
+    public BasePage(WebDriver driver) {
+        this.driver = driver;
+        driver.get("https://practice.automationtesting.in"); // Hardcoded URL
+    }
+
+    public static WebDriver setup(String browser) {
+        WebDriver driver;
+        if (browser.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        } else if (browser.equalsIgnoreCase("edge")) {
+            WebDriverManager.edgedriver().setup();
+            driver = new EdgeDriver();
+        } else {
+            throw new IllegalArgumentException("Browser not supported");
+        }
+        return driver;
+    }
+}
+*/
