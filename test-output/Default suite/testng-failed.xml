@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.utility.LogIn">
+      <class name="com.Practo.PractoAutomation.Story6">
         <methods>
           <include name="f"/>
         </methods>
-      </class> <!-- com.utility.LogIn -->
+      </class> <!-- com.Practo.PractoAutomation.Story6 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
