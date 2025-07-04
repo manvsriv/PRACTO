@@ -47,9 +47,9 @@ public class EnterSymptomAndVerifySpeciality
 //            WebElement specialityOption=driver.findElement(By.xpath("//input[@name='problemArea' and @checked]"));
           
 
-         String selectedValue=specialityOption.getAttribute("value");
-         System.out.println("Default selected speciality value is:"+selectedValue);
-            
+//         String selectedValue=specialityOption.getAttribute("value");
+//         System.out.println("Default selected speciality value is:"+selectedValue);
+//            
            
 
         driver.quit();
