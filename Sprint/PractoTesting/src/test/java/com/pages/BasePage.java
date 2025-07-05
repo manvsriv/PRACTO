@@ -21,34 +21,33 @@ public class BasePage {
     public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-         System.out.println("BasePage"+driver);
-        driver.get("https://www.practo.com/care");
+        this.wait= new WebDriverWait(driver, Duration.ofSeconds(8));
     }
     
-    public WebDriver setup(String browser, ChromeOptions coptions, EdgeOptions eoptions) {
+    public static WebDriver setup(String browser, ChromeOptions coptions, EdgeOptions eoptions) {
         WebDriver driver;
         if (browser.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver(coptions);
+            driver.get("https://www.practo.com/care");
         } else if (browser.equalsIgnoreCase("edge")) {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver(eoptions);
+            driver.get("https://www.practo.com/care");
         } else {
             throw new IllegalArgumentException("Browser not supported");
         }
         return driver;
     }   
     public void waitUntilWebElementIsVisible(WebElement element) {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(8));
+    	//wait = new WebDriverWait(driver, Duration.ofSeconds(8));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
     
     public void waitUntilWebElementIsClickable(WebElement element) {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(8));
+    	//wait = new WebDriverWait(driver, Duration.ofSeconds(8));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
     
-    public void waitUntilPageIsLoaded() {
-        wait = new WebDriverWait(driver, Duration.ofSeconds(8));
-    }
 }
+

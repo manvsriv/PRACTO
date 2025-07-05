@@ -1,0 +1,51 @@
+package com.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+
+
+public class LabTestPage extends BasePage{
+	
+	WebDriver driver;
+	
+	@FindBy(xpath="//img[@src='/tests/public/icons/topcities/Pune.svg?1556796588']")
+	WebElement city;
+	
+	@FindBy(xpath="//input[@placeholder='Search for Tests, Packages and Profiles']")
+	WebElement test;
+	
+	public LabTestPage(WebDriver driver) {
+		super(driver);
+		this.driver=driver;
+	}
+	
+	public void selectCity() {
+		waitUntilWebElementIsVisible(city);
+		waitUntilWebElementIsClickable(city);
+		city.click();
+	}
+	
+	public void clickSearchTest() {
+		waitUntilWebElementIsVisible(test);
+		waitUntilWebElementIsClickable(test);
+		test.click();
+	}
+	
+	public void enterTestName() {
+		waitUntilWebElementIsVisible(test);
+		waitUntilWebElementIsClickable(test);
+		test.sendKeys("Hemo");
+	}
+	
+	public void selectTestName() {
+		Actions action= new Actions(driver);
+		action.sendKeys(Keys.ARROW_DOWN).build().perform();
+		action.sendKeys(Keys.ARROW_DOWN).build().perform();
+		action.sendKeys(Keys.ENTER).build().perform();
+	}
+}

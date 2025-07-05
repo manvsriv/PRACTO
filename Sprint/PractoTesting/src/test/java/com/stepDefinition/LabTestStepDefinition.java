@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 
 import com.pages.BasePage;
 import com.pages.HomePage;
+import com.pages.LabTestPage;
+import com.pages.LoginPage;
 import com.setup.BaseSteps;
 
 import io.cucumber.java.en.*;
@@ -12,11 +14,13 @@ public class LabTestStepDefinition {
 	
 	WebDriver driver;
 	HomePage home;
+	LoginPage login;
+	LabTestPage labtest;
 	
+
 	@Given("User is on Practo website")
 	public void user_is_on_practo_website() {
-		driver=BaseSteps.chromedriver();
-		new BasePage(driver);
+	    driver=BaseSteps.chromedriver();
 	}
 	@When("user clicks on Login \\/ Signup button")
 	public void user_clicks_on_login_signup_button() throws InterruptedException {
@@ -24,41 +28,44 @@ public class LabTestStepDefinition {
 	    home.clickLoginButton();
 	}
 	@When("user enters {string} and {string}")
-	public void user_enters_and(String string, String string2) {
-	
+	public void user_enters_and(String mobileNumber, String password) {
+		login = new LoginPage(driver);
+		login.enterUsernamePassword(mobileNumber,password);
 	}
 	@When("clicks on the login button")
 	public void clicks_on_the_login_button() {
-	   
-	}
-	@When("clicks on Surgeries")
-	public void clicks_on_surgeries() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new io.cucumber.java.PendingException();
+		login = new LoginPage(driver);
+		login.clickLogin();
 	}
 	@When("clicks on Lab Tests")
 	public void clicks_on_lab_tests() {
-	   
+		home=new HomePage(driver);
+		home.clickLabTests();
 	}
 	@When("clicks on Search city and selects city")
 	public void clicks_on_search_city_and_selects_city() {
-	  
+	    labtest=new LabTestPage(driver);
+	    labtest.selectCity();
 	}
 	@When("clicks on Search for Test")
 	public void clicks_on_search_for_test() {
-	   
+		labtest=new LabTestPage(driver);
+	    labtest.clickSearchTest();
 	}
 	@When("user enter {string}")
-	public void user_enter(String string) {
-
+	public void user_enter(String testName) {
+		labtest=new LabTestPage(driver);
+	    labtest.enterTestName(testName);
 	}
 	@When("selects the Haemoglobin test from the search results")
 	public void selects_the_haemoglobin_test_from_the_search_results() {
-	 
+		labtest=new LabTestPage(driver);
+	    labtest.selectTestName();
 	}
 	@Then("user should be on the Haemoglobin test page for Pune")
 	public void user_should_be_on_the_haemoglobin_test_page_for_pune() {
-	
+	    labtest=new LabTestPage(driver);
+	    labtest.assertionOfTestSElection();
 	}
 
 

@@ -9,20 +9,32 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class HomePage extends BasePage{
 	WebDriver driver;
 	
-	//driver.findElement(By.xpath("//a[text()='Login / Signup']")).click();
 	@FindBy(xpath="//a[text()='Login / Signup']") 
-	WebElement loginButton;
+	WebElement login;
+	
+	@FindBy(xpath="//div[text()='Surgeries']") 
+	WebElement surgeries;
+	
+	@FindBy(linkText="Lab Tests")
+	WebElement labtest;
 	
 	public HomePage(WebDriver driver) {
 		super(driver);
-		System.out.println("HomePage"+driver);
-		//this.driver=driver;
+		//System.out.println("HomePage"+driver);
+		this.driver=driver;
 	}
 	
-	public void clickLoginButton() throws InterruptedException {
-		//waitUntilWebElementIsVisible(loginButton);
-		//wait.until(ExpectedConditions.elementToBeClickable(loginButton));
-		Thread.sleep(5000);
-		loginButton.click();
+	public void clickLoginButton(){
+		
+		waitUntilWebElementIsVisible(login);
+		waitUntilWebElementIsClickable(login);
+		login.click();
+		
+	}
+	
+	public void clickLabTests() {
+		waitUntilWebElementIsVisible(labtest);
+		waitUntilWebElementIsClickable(labtest);
+		labtest.click();
 	}
 }
