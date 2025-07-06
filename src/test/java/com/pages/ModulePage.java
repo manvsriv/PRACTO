@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ModulePage extends BasePage{
 	
-	//WebDriver driver;
+  // WebDriver driver;
 
     
 	@FindBy(xpath="//span[text()='Security & help']")
@@ -25,10 +25,16 @@ public class ModulePage extends BasePage{
 	@FindBy(xpath="//span[text()='Github']")
 	WebElement git;
 	
+	@FindBy(xpath="//span[text()='Read articles']")
+	WebElement readarticles;
+	
+	@FindBy(xpath="//span[text()='Book appointment with an expert surgeon ']")
+	WebElement surgerybutton;
+	
 	public ModulePage(WebDriver driver)
 	{
 		super(driver);
-		System.out.println("in Module page factor : "+driver);
+		//System.out.println("in Module page factor : "+driver);
 		//PageFactory.initElements(driver, this);
 	}
 	
@@ -49,17 +55,39 @@ public class ModulePage extends BasePage{
 	
 	public void scrollTobottom() throws InterruptedException
 	{
-		//waitUntilWebElementIsVisible(heading);
-		Thread.sleep(3000);
+	    waitUntilWebElementIsVisible(heading);
+		//Thread.sleep(3000);
 		System.out.println("Driver is: " + driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
 	}
 	
+	public void scroll()
+	{
+		 waitUntilWebElementIsVisible(heading);
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		  js.executeScript("window.scrollBy(0,500)"); 
+		 
+	}
+	
+	public void clickReadArticles()
+	{
+		readarticles.click();
+	}
+	
+	
 	public void clickGithub()
 	{
 		git.click();
 	}
+	
+	public void clicksurgerybutton()
+	{
+		waitUntilWebElementIsVisible(heading);
+		surgerybutton.click();
+	}
+	
+	
 	
 	
 

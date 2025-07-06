@@ -1,5 +1,6 @@
 package com.pages;
 
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -33,6 +34,17 @@ public class BasePage {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(8));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
+	
+	public boolean isElementClickable(WebElement element) {
+	    try {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(8));
+	        wait.until(ExpectedConditions.elementToBeClickable(element));
+	        return true;
+	    } catch (TimeoutException e) {
+	        return false;
+	    }
+	}
+
 	
 
 

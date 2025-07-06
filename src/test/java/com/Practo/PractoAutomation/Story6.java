@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import junit.framework.Assert;
 
 public class Story6 {
 	//STORY 9
@@ -43,11 +44,16 @@ public class Story6 {
 			}
 			
 			  driver.findElement(By.xpath("//span[text()='Healthy Eating']")).click();
-			driver.findElement(By.cssSelector("#loginPhone")).sendKeys("8529898709");
-			driver.findElement(By.cssSelector("#loginName")).sendKeys("MAX");
-			driver.findElement(By.xpath("//button[@class='login-verify col-xs-12']")).click();
+			  WebElement xxx = driver.findElement(By.linkText("3 Health Myths to Leave Behind in The New Year"));
+			 
+			  Assert.assertTrue(xxx.isDisplayed());
+			  
+			  				driver.switchTo().window(original);
+//			driver.findElement(By.cssSelector("#loginPhone")).sendKeys("8529898709");
+//			driver.findElement(By.cssSelector("#loginName")).sendKeys("MAX");
+//			driver.findElement(By.xpath("//button[@class='login-verify col-xs-12']")).click();
 			
-			Thread.sleep(15000); //for OTP
+			//Thread.sleep(15000); //for OTP
 //			
 //	        WebElement sidebar = driver.findElement(By.className("sidebar-class-name")); // Update class name
 //

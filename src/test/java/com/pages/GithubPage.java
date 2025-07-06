@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 
 public class GithubPage extends BasePage{
 	
-	//WebDriver driver;
+	WebDriver driver;
 	
 	public GithubPage(WebDriver driver)
 	{
