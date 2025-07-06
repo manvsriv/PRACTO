@@ -1,0 +1,36 @@
+package com.pages;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+
+public class SkinCarePage extends BasePage{
+	
+	WebDriver driver;
+
+	public SkinCarePage(WebDriver driver) {
+		super(driver);
+		this.driver=driver;
+	}
+	
+	public void clickOnRelatedQuetions() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,1000)");
+		 
+		Robot robot;
+		try {
+			robot = new Robot();
+			robot.mouseMove(1000,400);
+			robot.delay(1000);
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		} catch (AWTException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+}

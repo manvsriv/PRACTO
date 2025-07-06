@@ -17,6 +17,32 @@ Scenario: Login to Practo and navigate to Hemoglobin Test
     Then user should be on the Haemoglobin test page for Pune
     
 Examples:
-|username      |password |testName|
-|+917066798939 |Alok@20  |Hemo    |
+|username  |password |testName|
+|10 	   |11  	 |12      |
+
+
+
+@SkinConsultation
+Scenario: Navigate to Skin Consultation and Fill Details
+    When user clicks on Surgeries
+    And clicks on Lab Tests
+    And clicks on Search city and selects city
+    And clicks on the Skin icon
+    And clicks on Related Quetions-First Option
+    And clicks on Acne keeps coming back?
+    And user enters name in name field
+    And enters phone number
+    And clicks on continue button
+    Then user should see the payment page
+    
+
+@AppLink
+Scenario: Displays Error message for invalid phone number
+    When user clicks on Surgeries
+    And clicks on Lab Tests
+    And clicks on Search city and selects city
+    And scrolls down for Download Practo App
+    And enters invalid "<phoneNumber>"
+    And clicks on Send App Link
+    Then user should see error message of invalid phone number
 

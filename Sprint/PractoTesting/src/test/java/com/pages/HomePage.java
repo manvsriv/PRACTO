@@ -37,4 +37,10 @@ public class HomePage extends BasePage{
 		waitUntilWebElementIsClickable(labtest);
 		labtest.click();
 	}
+	
+	public void clickSurgeries() {
+		waitUntilWebElementIsVisible(surgeries);
+		waitUntilWebElementIsClickable(surgeries);
+		surgeries.click();
+	}
 }

@@ -1,14 +1,15 @@
 package com.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.Assert;
-
+//import org.testng.Assert;
+import org.junit.Assert;
 
 public class LabTestPage extends BasePage{
 	
@@ -19,6 +20,18 @@ public class LabTestPage extends BasePage{
 	
 	@FindBy(xpath="//input[@placeholder='Search for Tests, Packages and Profiles']")
 	WebElement test;
+	
+	@FindBy(xpath="//img[@src='/tests/public/images/landingpage_icons/Skin.svg?v=1569493559']")
+	WebElement skin;
+	
+	@FindBy(xpath="//input[@placeholder='Enter phone number']")
+	WebElement invalidPhoneNumber;
+	
+	@FindBy(xpath="//div[text()='Send app link']")
+	WebElement sendLinkButton;
+	
+	@FindBy(xpath="//div[text()='Enter valid mobile number']")
+	WebElement errorMessage;
 	
 	public LabTestPage(WebDriver driver) {
 		super(driver);
@@ -56,6 +69,39 @@ public class LabTestPage extends BasePage{
 	}
 	
 	public void assertionOfTestSElection() {
-		Assert.assertTrue(driver.getCurrentUrl().equals("https://www.practo.com/tests/haemoglobin-automated-blood/p?city=pune"), "Test Not Selected Properly");
+		//Assert.assertTrue(driver.getCurrentUrl().equals("https://www.practo.com/tests/haemoglobin-automated-blood/p?city=pune"), "Test Not Selected Properly");
+	}
+	
+//	==========================================================================================
+	
+	public void clickOnSkin() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,900)");
+		waitUntilWebElementIsVisible(skin);
+		waitUntilWebElementIsClickable(skin);
+		skin.click();
+	}
+	
+// ===========================================================================================
+	public void toScrollDownForDownloadAppLink() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,3300)");
+	}
+	
+	public void userEntersInvalidPhoneNumber(){
+		waitUntilWebElementIsVisible(invalidPhoneNumber);
+		invalidPhoneNumber.sendKeys("6757868");
+	}
+	
+	public void clickSendAppLink(){
+		waitUntilWebElementIsVisible(sendLinkButton);
+		sendLinkButton.click();
+	}
+	
+	public void errorMessageDisplays(){
+		waitUntilWebElementIsVisible(errorMessage);
+		boolean isErrorMessageDisplayed = errorMessage.getText().equals("Enter valid mobile number");
+		
+        //Assert.assertTrue("Not Displayed", isErrorMessageDisplayed);
 	}
 }

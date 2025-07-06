@@ -1,0 +1,47 @@
+package com.parameters;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ExcelReader {
+	
+	public String[] provideLoginData(String username,String password) throws IOException {
+		String path="C:\\Users\\SDHINDLE\\Desktop\\PRACTO\\Sprint\\PractoTesting\\src\\test\\resource\\Exceldata\\LabTestData.xlsx";
+		String user[]=username.split("");
+		String pass[]=password.split("");
+		
+		int userRow=Integer.parseInt(user[0]);
+		int userCell=Integer.parseInt(user[1]);
+		
+		int passRow=Integer.parseInt(pass[0]);
+		int passCell=Integer.parseInt(pass[1]);
+		
+		String[] data= new String[2];
+		FileInputStream fis= new FileInputStream(path);
+		XSSFWorkbook workbook= new XSSFWorkbook(fis);
+		Sheet excel=workbook.getSheetAt(0);
+		data[0]=excel.getRow(userRow).getCell(userCell).getStringCellValue();
+		data[1]=excel.getRow(passRow).getCell(passCell).getStringCellValue();
+		
+		return data;
+	}
+	
+	public String provideTestName(String testName) throws IOException {
+		String path="C:\\Users\\SDHINDLE\\Desktop\\PRACTO\\Sprint\\PractoTesting\\src\\test\\resource\\Exceldata\\LabTestData.xlsx";
+		String test[]=testName.split("");
+		
+		int testRow=Integer.parseInt(test[0]);
+		int testCell=Integer.parseInt(test[1]);
+		
+		String data= new String();
+		FileInputStream fis= new FileInputStream(path);
+		XSSFWorkbook workbook= new XSSFWorkbook(fis);
+		Sheet excel=workbook.getSheetAt(0);
+		data=excel.getRow(testRow).getCell(testCell).getStringCellValue();
+		
+		return data;
+	}
+}

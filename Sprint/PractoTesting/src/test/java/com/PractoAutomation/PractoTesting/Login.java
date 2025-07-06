@@ -39,6 +39,7 @@ public class Login {
 		action.sendKeys(Keys.ENTER).build().perform();
 		
 		Assert.assertTrue(driver.getCurrentUrl().equals("https://www.practo.com/tests/haemoglobin-automated-blood/p?city=pune"), "Logo not displayed");
+		
 	}
 
 }

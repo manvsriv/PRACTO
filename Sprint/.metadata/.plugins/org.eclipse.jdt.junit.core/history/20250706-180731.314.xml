@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJUnit" project="PractoTesting" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.runner.TestRunnerJUnit" time="22.939">
+    <testsuite name="Checking functionality for Practo application" time="22.939">
+      <testcase name="Navigate to Skin Consultation and Fill Details" classname="Checking functionality for Practo application" time="22.939">
+        <error>io.cucumber.java.PendingException: TODO: implement me&#13;
+	at com.stepDefinition.LabTestStepDefinition.enters_phone_number(LabTestStepDefinition.java:108)&#13;
+	at ✽.enters phone number(file:///C:/Users/SDHINDLE/Desktop/PRACTO/Sprint/PractoTesting/src/test/resource/Features/LabTests.feature:34)&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

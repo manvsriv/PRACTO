@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJUnit" project="PractoTesting" tests="1" started="1" failures="1" errors="0" ignored="0">
+  <testsuite name="com.runner.TestRunnerJUnit" time="44.958">
+    <testsuite name="Checking functionality for Practo application" time="44.958">
+      <testcase name="Navigate to Skin Consultation and Fill Details" classname="Checking functionality for Practo application" time="44.958">
+        <failure>java.lang.AssertionError: Payment Page not visible expected [true] but found [false]&#13;
+	at org.testng.Assert.fail(Assert.java:110)&#13;
+	at org.testng.Assert.failNotEquals(Assert.java:1577)&#13;
+	at org.testng.Assert.assertTrue(Assert.java:56)&#13;
+	at com.pages.SkinCarePage.onPaymentPage(SkinCarePage.java:119)&#13;
+	at com.stepDefinition.LabTestStepDefinition.user_should_see_the_payment_page(LabTestStepDefinition.java:120)&#13;
+	at ✽.user should see the payment page(file:///C:/Users/SDHINDLE/Desktop/PRACTO/Sprint/PractoTesting/src/test/resource/Features/LabTests.feature:36)&#13;
+&#13;
+</failure>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

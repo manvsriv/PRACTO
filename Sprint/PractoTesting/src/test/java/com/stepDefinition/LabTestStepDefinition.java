@@ -1,11 +1,15 @@
 package com.stepDefinition;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 
 import com.pages.BasePage;
 import com.pages.HomePage;
 import com.pages.LabTestPage;
 import com.pages.LoginPage;
+import com.pages.SkinCarePage;
+import com.parameters.ExcelReader;
 import com.setup.BaseSteps;
 
 import io.cucumber.java.en.*;
@@ -16,21 +20,24 @@ public class LabTestStepDefinition {
 	HomePage home;
 	LoginPage login;
 	LabTestPage labtest;
-	
+	ExcelReader excel;
+	SkinCarePage skinCare;
 
 	@Given("User is on Practo website")
 	public void user_is_on_practo_website() {
 	    driver=BaseSteps.chromedriver();
 	}
 	@When("user clicks on Login \\/ Signup button")
-	public void user_clicks_on_login_signup_button() throws InterruptedException {
+	public void user_clicks_on_login_signup_button() {
 	    home=new HomePage(driver);
 	    home.clickLoginButton();
 	}
 	@When("user enters {string} and {string}")
-	public void user_enters_and(String mobileNumber, String password) {
+	public void user_enters_and(String mobileNumber, String password){
 		login = new LoginPage(driver);
-		login.enterUsernamePassword(mobileNumber,password);
+		excel=new ExcelReader();
+		String[] data=excel.provideLoginData(mobileNumber, password);
+		login.enterUsernamePassword(data[0],data[1]);
 	}
 	@When("clicks on the login button")
 	public void clicks_on_the_login_button() {
@@ -53,9 +60,11 @@ public class LabTestStepDefinition {
 	    labtest.clickSearchTest();
 	}
 	@When("user enter {string}")
-	public void user_enter(String testName) {
+	public void user_enter(String testName){
 		labtest=new LabTestPage(driver);
-	    labtest.enterTestName(testName);
+		excel=new ExcelReader();
+		String data=excel.provideTestName(testName);
+	    labtest.enterTestName(data);
 	}
 	@When("selects the Haemoglobin test from the search results")
 	public void selects_the_haemoglobin_test_from_the_search_results() {
@@ -66,6 +75,72 @@ public class LabTestStepDefinition {
 	public void user_should_be_on_the_haemoglobin_test_page_for_pune() {
 	    labtest=new LabTestPage(driver);
 	    labtest.assertionOfTestSElection();
+	}
+
+//=========================SkinConsultation======================================================
+	
+	@When("user clicks on Surgeries")
+	public void user_clicks_on_surgeries() {
+	    home= new HomePage(driver);
+	    home.clickSurgeries();
+	}
+	@When("clicks on the Skin icon")
+	public void clicks_on_the_skin_icon() {
+		labtest=new LabTestPage(driver);
+	    labtest.clickOnSkin();
+	}
+	@When("clicks on Related Quetions-First Option")
+	public void clicks_on_related_quetions_first_option() {
+	    skinCare=new SkinCarePage(driver);
+	    skinCare.clickOnRelatedQuetions();
+	}
+	@When("clicks on Acne keeps coming back?")
+	public void clicks_on_acne_keeps_coming_back() throws InterruptedException {
+		skinCare=new SkinCarePage(driver);
+	    skinCare.clickOnTroubles();
+	}
+	@When("user enters name in name field")
+	public void user_enters_name_in_name_field() {
+		skinCare=new SkinCarePage(driver);
+	    skinCare.enterPatientName();
+	}
+	@When("enters phone number")
+	public void enters_phone_number() {
+		skinCare=new SkinCarePage(driver);
+	    skinCare.enterPhoneNumber();
+	}
+	@When("clicks on continue button")
+	public void clicks_on_continue_button() {
+		skinCare=new SkinCarePage(driver);
+	    skinCare.clickContinue();
+	}
+	@Then("user should see the payment page")
+	public void user_should_see_the_payment_page() {
+		skinCare=new SkinCarePage(driver);
+	    skinCare.onPaymentPage();
+	}
+	
+//============================AppLink===============================================================
+	
+	@When("scrolls down for Download Practo App")
+	public void scrolls_down_for_download_practo_app() {
+		labtest=new LabTestPage(driver);
+	    labtest.toScrollDownForDownloadAppLink();
+	}
+	@When("enters invalid {string}")
+	public void enters_invalid(String string) {
+		labtest=new LabTestPage(driver);
+	    labtest.userEntersInvalidPhoneNumber();
+	}
+	@When("clicks on Send App Link")
+	public void clicks_on_send_app_link() {
+		labtest=new LabTestPage(driver);
+	    labtest.clickSendAppLink();
+	}
+	@Then("user should see error message of invalid phone number")
+	public void user_should_see_error_message_of_invalid_phone_number() {
+		labtest=new LabTestPage(driver);
+	    labtest.errorMessageDisplays();
 	}
 
 

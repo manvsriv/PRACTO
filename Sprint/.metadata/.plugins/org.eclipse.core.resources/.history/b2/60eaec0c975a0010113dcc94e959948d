@@ -1,0 +1,51 @@
+@LabTest
+Feature: Checking functionality for Practo application
+
+Background:
+	Given User is on Practo website
+	
+@NavigateToTest
+Scenario: Login to Practo and navigate to Hemoglobin Test
+    When user clicks on Login / Signup button
+    And user enters "<username>" and "<password>"
+    And clicks on the login button
+    And clicks on Lab Tests
+    And clicks on Search city and selects city
+    And clicks on Search for Test
+    And user enter "<testName>"
+    And selects the Haemoglobin test from the search results
+    Then user should be on the Haemoglobin test page for Pune
+    
+Examples:
+|username  |password |testName|
+|10 	   |11  	 |12      |
+
+
+
+@SkinConsultation
+Scenario: Navigate to Skin Consultation and Fill Details
+    When user clicks on Surgeries
+    And clicks on Lab Tests
+    And clicks on Search city and selects city
+    And clicks on the Skin icon
+    And clicks on Related Quetions-First Option
+    And clicks on Acne keeps coming back?
+    And user enters name in name field
+    And enters phone number
+    And clicks on continue button
+    Then user should see the payment page
+    
+
+@AppLink
+Scenario: 
+    When user clicks on Surgeries
+    And clicks on Lab Tests
+    And clicks on Search city and selects city
+    And clicks on the Skin icon
+    And clicks on Related Quetions-First Option
+    And clicks on Acne keeps coming back?
+    And user enters name in name field
+    And enters phone number
+    And clicks on continue button
+    Then user should see the payment page
+

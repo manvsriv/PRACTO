@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJUnit" project="PractoTesting" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="com.runner.TestRunnerJUnit" time="9.421">
+    <testsuite name="Checking functionality for Practo application" time="9.421">
+      <testcase name="Displays Error message for invalid phone number" classname="Checking functionality for Practo application" time="9.421">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'scrolls down for Download Practo App' and 3 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@When("scrolls down for Download Practo App")
+public void scrolls_down_for_download_practo_app() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("enters invalid {string}")
+public void enters_invalid(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("clicks on Send App Link")
+public void clicks_on_send_app_link() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("user should see error message of invalid phone number")
+public void user_should_see_error_message_of_invalid_phone_number() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

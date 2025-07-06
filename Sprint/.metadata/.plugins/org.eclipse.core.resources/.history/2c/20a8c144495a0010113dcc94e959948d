@@ -1,0 +1,37 @@
+package com.PractoAutomation.PractoTesting;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Skin {
+
+	public static void main(String[] args) throws InterruptedException {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver =new ChromeDriver();	 
+		driver.get("https://www.practo.com");		
+		driver.manage().window().maximize();
+		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[text()='Surgeries']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.linkText("Lab Tests")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//img[@src='/tests/public/icons/topcities/Pune.svg?1556796588']")).click();
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	   // js.executeScript("location.reload()");
+	    js.executeScript("window.scrollBy(0,1000)");
+	    
+	    Thread.sleep(2000);
+	    driver.findElement(By.xpath("//img[@src='/tests/public/images/landingpage_icons/Skin.svg?v=1569493559']")).click();
+	    
+	    
+		 // js.executeScript("location.reload()");
+		 js.executeScript("window.scrollBy(0,1000)");
+	}
+
+}

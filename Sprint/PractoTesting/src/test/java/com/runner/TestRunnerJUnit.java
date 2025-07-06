@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features="C:\\Users\\SDHINDLE\\Desktop\\PRACTO\\Sprint\\PractoTesting\\src\\test\\resource\\Features\\LabTests.feature",
-glue=("com.stepDefinition"))
+glue=("com.stepDefinition"),tags="@AppLink")
 public class TestRunnerJUnit {
 	
 }
