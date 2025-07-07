@@ -15,25 +15,24 @@ public class BaseSteps
 	public static EdgeOptions eoptions;
 	public static WebDriver chromedriver() {
 		WebDriverManager.chromedriver().setup();
-		coptions=new ChromeOptions();
-		coptions.addArguments("--start-maximized");
-		coptions.addArguments("Incognito");
-		coptions.addArguments("disable-notification");
-		coptions.addArguments("disable-popup-blocking");
-		coptions.addArguments("deny-permission-prompts");
-		driver= new ChromeDriver(coptions);
+		coptions = new ChromeOptions();
+		coptions.addArguments("--start-maxmized");
+	//	coptions.addArguments("Incognite");
+		coptions.addArguments("disable-notifications");
+		driver = new ChromeDriver(coptions);
 		driver.get("https://www.practo.com/");
+		driver.manage().window().maximize();
 		return driver;
 	}
 	public static WebDriver edgedriver() {
 		WebDriverManager.edgedriver().setup();
-		eoptions=new EdgeOptions();
-		eoptions.addArguments("--start-maximized");
-		eoptions.addArguments("Incognito");
-		eoptions.addArguments("disable-notification");
-		eoptions.addArguments("deny-permission-prompts");
-		driver= new EdgeDriver(eoptions);
+		eoptions = new EdgeOptions();
+		eoptions.addArguments("--start-maxmized");
+	//	eoptions.addArguments("Incognite");
+		eoptions.addArguments("disable-notifications");
+		driver = new EdgeDriver(eoptions);
 		driver.get("https://www.practo.com/");
+		driver.manage().window().maximize();
 		return driver;
 	}
 	public void tearDown() {

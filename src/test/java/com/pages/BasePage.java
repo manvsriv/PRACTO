@@ -2,8 +2,10 @@ package com.pages;
 
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,26 +14,23 @@ public class BasePage {
 	WebDriver driver;
 	WebDriverWait wait;
 	
-	public BasePage(WebDriver driver) {
-		this.driver = driver;
+	BasePage(WebDriver driver){
+		this.driver=driver;
 		PageFactory.initElements(driver, this);
-	}
+		this.wait= new WebDriverWait(driver, Duration.ofSeconds(8));
+	}		
 	
 	public void waitUntilWebElementIsVisible(WebElement element) {
-		wait=new WebDriverWait(driver,Duration.ofSeconds(8));
+		driver.manage().window().maximize();
+		//wait = new WebDriverWait(driver, Duration.ofSeconds(8));
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
 	
-	public void waitUntilWebElementIsClickable(WebElement element) {
-		wait=new WebDriverWait(driver,Duration.ofSeconds(8));
+	public void waitUntilElementIsClickable(WebElement element) {
+		driver.manage().window().maximize();
+	//	wait= new WebDriverWait(driver, Duration.ofSeconds(8));
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
-	
-	public void waitUntilPageIsLoaded() {
-		wait=new WebDriverWait(driver,Duration.ofSeconds(8));
-		
-	}
- 
 	
 }
  
