@@ -2,15 +2,18 @@ package com.pages;
 
 import java.util.Set;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import junit.framework.Assert;
+
 public class ModulePage extends BasePage{
 	
-  // WebDriver driver;
+  //WebDriver driver;
 
     
 	@FindBy(xpath="//span[text()='Security & help']")
@@ -31,17 +34,18 @@ public class ModulePage extends BasePage{
 	@FindBy(xpath="//span[text()='Book appointment with an expert surgeon ']")
 	WebElement surgerybutton;
 	
+	@FindBy(xpath="//span[text()='Consult with a doctor']")
+	WebElement consultdocbutton;
+	
 	public ModulePage(WebDriver driver)
 	{
 		super(driver);
-		//System.out.println("in Module page factor : "+driver);
-		//PageFactory.initElements(driver, this);
+		
 	}
 	
 	public void securityAndHelpDropdown()
 	{
 		waitUntilWebElementIsVisible(heading);
-		System.out.println("security and help dropdown");
 		SecurityandHelpbutton.click();
 	}
 	
@@ -53,11 +57,10 @@ public class ModulePage extends BasePage{
 		
 	}
 	
-	public void scrollTobottom() throws InterruptedException
+	public void scrollTobottom()
 	{
 	    waitUntilWebElementIsVisible(heading);
-		//Thread.sleep(3000);
-		System.out.println("Driver is: " + driver);
+		//System.out.println("Driver is: " + driver);
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
 	}
@@ -83,12 +86,16 @@ public class ModulePage extends BasePage{
 	
 	public void clicksurgerybutton()
 	{
-		waitUntilWebElementIsVisible(heading);
+		waitUntilWebElementIsClickable(surgerybutton);
 		surgerybutton.click();
 	}
 	
 	
-	
-	
+	public void clickConsultButton()
+	{
+		waitUntilWebElementIsVisible(heading);
+		consultdocbutton.click();
+	}
+
 
 }

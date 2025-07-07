@@ -1,11 +1,13 @@
 package com.parameters;
 
+import java.awt.AWTException;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.apache.poi.sl.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -32,34 +34,46 @@ public class ExcelReader {
 	
 	public String[] loginReader(String s) throws IOException
 	{
-		String path = "C:\\Users\\manvsriv\\OneDrive - Capgemini\\Desktop\\Manager\\demotest1\\src\\test\\resource\\ExcelData\\"+s;
-        String cred[] = new String[4];
+		String path = "C:\\Users\\manvsriv\\Practo\\PractoAutomation\\src\\test\\resource\\ExcelData\\"+s;
+        String cred[] = new String[2];
 
         File file = new File(path);
         FileInputStream fis = new FileInputStream(file);
         XSSFWorkbook work  = new XSSFWorkbook(fis);
         XSSFSheet excel = work.getSheetAt(0);
-        cred[0] = excel.getRow(1).getCell(0).getStringCellValue();
-        cred[1] = excel.getRow(1).getCell(1).getStringCellValue();
-        cred[2]= excel.getRow(2).getCell(0).getStringCellValue();
-        cred[3]=excel.getRow(2).getCell(1).getStringCellValue();
+        
+        DataFormatter formatter = new DataFormatter();
+        cred[0] = formatter.formatCellValue(excel.getRow(1).getCell(0));
+        cred[1] = formatter.formatCellValue(excel.getRow(1).getCell(1));
+
         work.close();
         return cred;
+        
 	
 }
-	public int[] surgeryData(String name, String phnumber) throws IOException
+	public String[] provideData(int[]arr) throws IOException, InterruptedException, AWTException
 	{
-		
-		String user[]= name.split(""); //10  user[0] = 1 and user[1] = 0
-		String[] pass = phnumber.split(""); //11 pass[0]=1 and pass[1] = 1
-		int arr[]= new int[4];
-	 arr[0] = Integer.parseInt(user[0]);
-	  arr[1] = Integer.parseInt(user[1]);
-	  arr[2] = Integer.parseInt(pass[0]);
-	 arr[3]= Integer.parseInt(pass[1]);
+		String path = "C:\\Users\\manvsriv\\Practo\\PractoAutomation\\src\\test\\resource\\ExcelData\\PractoCred1.xlsx";
+
 	
-	return arr;
+	FileInputStream fis = new FileInputStream(path);
+	XSSFWorkbook workbook = new XSSFWorkbook(fis);
+	XSSFSheet excel =  workbook.getSheetAt(0);
 	
+//	enterData(excel.getRow(userRow).getCell(userCell).getStringCellValue(),
+//			      excel.getRow(passRow).getCell(passCell).getStringCellValue());
+	
+	DataFormatter formatter = new DataFormatter();
+
+	String credentials[] = new String[2];
+	
+	  credentials[0] = formatter.formatCellValue(excel.getRow(arr[0]).getCell(arr[1]));
+	credentials[1] = formatter.formatCellValue(excel.getRow(arr[2]).getCell(arr[3]));
+
+	workbook.close();
+	return credentials;
+
 	
 	}
+
 }

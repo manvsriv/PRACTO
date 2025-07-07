@@ -49,9 +49,9 @@ public class Story6 {
 			  Assert.assertTrue(xxx.isDisplayed());
 			  
 			  				driver.switchTo().window(original);
-//			driver.findElement(By.cssSelector("#loginPhone")).sendKeys("8529898709");
-//			driver.findElement(By.cssSelector("#loginName")).sendKeys("MAX");
-//			driver.findElement(By.xpath("//button[@class='login-verify col-xs-12']")).click();
+			driver.findElement(By.cssSelector("#loginPhone")).sendKeys("8529898709");
+			driver.findElement(By.cssSelector("#loginName")).sendKeys("MAX");
+			driver.findElement(By.xpath("//button[@class='login-verify col-xs-12']")).click();
 			
 			//Thread.sleep(15000); //for OTP
 //			
