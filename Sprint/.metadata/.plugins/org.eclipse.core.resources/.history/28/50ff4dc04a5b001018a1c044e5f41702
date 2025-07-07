@@ -1,0 +1,12 @@
+//package com.pages;
+//
+//import org.openqa.selenium.WebDriver;
+//
+//public class FormPage extends BasePage{
+//
+//	public FormPage(WebDriver driver) {
+//		super(driver);
+//		this.driver=driver;
+//	}
+//
+//}

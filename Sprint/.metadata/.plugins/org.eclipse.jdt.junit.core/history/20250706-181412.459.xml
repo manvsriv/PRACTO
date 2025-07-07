@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJUnit" project="PractoTesting" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="com.runner.TestRunnerJUnit" time="20.717">
-    <testsuite name="Checking functionality for Practo application" time="20.717">
-      <testcase name="Navigate to Skin Consultation and Fill Details" classname="Checking functionality for Practo application" time="20.717"/>
-    </testsuite>
-  </testsuite>
-</testrun>

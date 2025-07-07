@@ -1,10 +1,12 @@
 package com.parameters;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelReader {
@@ -50,6 +52,7 @@ public class ExcelReader {
 	    return data;
 	}
 
+	
 	public String provideTestName(String testName) {
 	    String path = "C:\\Users\\SDHINDLE\\Desktop\\PRACTO\\Sprint\\PractoTesting\\src\\test\\resource\\Exceldata\\LabTestData.xlsx";
 	    String[] test = testName.split("");
@@ -86,4 +89,36 @@ public class ExcelReader {
 	    return data;
 	}
 
+	
+	public String[] userDetailsReader(String fileName) {
+		
+		String path="C:\\Users\\SDHINDLE\\Desktop\\PRACTO\\Sprint\\PractoTesting\\src\\test\\resource\\Exceldata\\"+fileName;
+		String userDetails[]=new String[3];
+		File file=new File(path);
+		FileInputStream fis = null;
+	    XSSFWorkbook workbook = null;
+
+		try {
+			fis = new FileInputStream(file);
+			workbook = new XSSFWorkbook(fis);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		Sheet excel= workbook.getSheetAt(0);
+		userDetails[0]= excel.getRow(1).getCell(3).getStringCellValue();
+		userDetails[1]= excel.getRow(1).getCell(4).getStringCellValue();
+		userDetails[2]= excel.getRow(1).getCell(5).getStringCellValue();
+		
+		try {
+			workbook.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return userDetails;
+		
+	}
 }

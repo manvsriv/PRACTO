@@ -5,3 +5,5 @@ S
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 [
 +src/test/resource/Features/LabTests.feature,e\7\e700c185aa4afa65070ece0453b3e1ddb7214b95
+_
+/src/test/resource/PropertieFile/Data.properties,7\d\7d6092939bebca93de9ffa3e1eb2af986eee636c

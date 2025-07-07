@@ -1,0 +1,51 @@
+package com.PractoAutomation.PractoTesting;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Form {
+
+	public static void main(String[] args) throws InterruptedException, AWTException {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver =new ChromeDriver();	 
+		driver.get("https://www.practo.com/care");		
+		driver.manage().window().maximize();
+		
+		driver.findElement(By.linkText("Lab Tests")).click();
+		Thread.sleep(2000);
+		
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//img[@src='/tests/public/icons/topcities/Pune.svg?1556796588']")).click();
+		
+		Thread.sleep(2000);
+		Robot robot=new Robot();
+		robot.mouseMove(170,545);
+		robot.delay(1000);
+		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		
+		Thread.sleep(2000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		   // js.executeScript("location.reload()");
+		js.executeScript("window.scrollBy(0,850)");
+		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[@data-aid='package-book-btn']")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@data-aid='patient-name']")).sendKeys("Alice");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@data-aid='patient-age']")).sendKeys("23");
+		driver.findElement(By.xpath("//div[@data-aid='patient-gender-selected-FEMALE']")).click();
+		js.executeScript("window.scrollBy(0,300)");
+	}
+
+}

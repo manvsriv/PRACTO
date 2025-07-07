@@ -1,0 +1,28 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class FormPage extends BasePage{
+	
+	@FindBy(xpath="//input[@data-aid='patient-name']")
+	WebElement patientName;
+	
+	@FindBy(xpath="//input[@data-aid='patient-age']")
+	WebElement patientAge;
+	
+	@FindBy(xpath="//div[@data-aid='patient-gender-selected-FEMALE']")
+	WebElement patientGender;
+	
+	@FindBy(xpath="//input[@data-aid='patient-email']")
+	WebElement email;
+
+	public FormPage(WebDriver driver) {
+		super(driver);
+		this.driver=driver;
+	}
+	
+//	public void 
+
+}

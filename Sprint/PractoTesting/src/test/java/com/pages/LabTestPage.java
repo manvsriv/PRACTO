@@ -8,6 +8,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+
 //import org.testng.Assert;
 import org.junit.Assert;
 
@@ -103,5 +108,24 @@ public class LabTestPage extends BasePage{
 		boolean isErrorMessageDisplayed = errorMessage.getText().equals("Enter valid mobile number");
 		
         //Assert.assertTrue("Not Displayed", isErrorMessageDisplayed);
+	}
+	
+//==================================================================================================
+	
+	public void clickOnTopBookDaignosticTest() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");
+		Robot robot;
+		try {
+			robot = new Robot();
+			robot.mouseMove(170,545);
+			robot.delay(1000);
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		} catch (AWTException e) {
+			
+			e.printStackTrace();
+		}
+		
 	}
 }

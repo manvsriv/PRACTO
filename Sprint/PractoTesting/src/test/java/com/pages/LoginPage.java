@@ -17,7 +17,7 @@ public class LoginPage extends BasePage{
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);
-		System.out.println("HomePage"+driver);
+	//	System.out.println("HomePage"+driver);
 		this.driver=driver;
 	}
 	

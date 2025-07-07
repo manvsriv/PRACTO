@@ -1,8 +1,5 @@
-java.lang.IllegalStateException: Cannot get a STRING value from a NUMERIC cell
-	at org.apache.poi.xssf.usermodel.XSSFCell.typeMismatch(XSSFCell.java:982)
-	at org.apache.poi.xssf.usermodel.XSSFCell.getRichStringCellValue(XSSFCell.java:308)
-	at org.apache.poi.xssf.usermodel.XSSFCell.getStringCellValue(XSSFCell.java:277)
-	at com.parameters.ExcelReader.provideLoginData(ExcelReader.java:31)
-	at com.stepDefinition.LabTestStepDefinition.user_enters_and(LabTestStepDefinition.java:37)
-	at ?.user enters "10" and "11"(file:///C:/Users/SDHINDLE/Desktop/PRACTO/Sprint/PractoTesting/src/test/resource/Features/LabTests.feature:10)
+java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
+	at com.parameters.ExcelReader.userDetailsReader(ExcelReader.java:113)
+	at com.stepDefinition.LabTestStepDefinition.user_fills_all_user_details_and_clicks_continue(LabTestStepDefinition.java:168)
+	at ?.user fills all userDetails and clicks continue(file:///C:/Users/SDHINDLE/Desktop/PRACTO/Sprint/PractoTesting/src/test/resource/Features/LabTests.feature:58)
 

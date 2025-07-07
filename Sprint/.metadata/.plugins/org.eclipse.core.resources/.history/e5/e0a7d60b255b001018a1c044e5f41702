@@ -1,0 +1,20 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class Test extends BasePage{
+	
+	@FindBy(xpath="//div[text()='Book Now']")
+	WebElement bookNow;
+	public Test(WebDriver driver) {
+		super(driver);
+		this.driver=driver;
+	}
+	
+	public void clickBookNow() {
+		waitUntilWebElementIsVisible(bookNow);
+		bookNow.click();;
+	}
+}

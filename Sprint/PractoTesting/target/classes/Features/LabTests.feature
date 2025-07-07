@@ -46,3 +46,21 @@ Scenario: Displays Error message for invalid phone number
     And clicks on Send App Link
     Then user should see error message of invalid phone number
 
+@FormFilling
+Scenario: Fill form and Select slot for booking appointment 
+	When user clicks on Login / Signup button
+    And user enters "<username>" and "<password>"
+    And clicks on the login button
+    And clicks on Lab Tests
+    And clicks on Search city and selects city
+    And click on one of the Top Booked Diagnostic Tests
+    And click on Book Now
+    And user fills all userDetails and clicks continue
+    |LabTestData.xlsx|
+    And user selects address and clicks continue
+    And user selects slot and Confirms Booking
+    Then user should see message
+    
+Examples:
+|username  |password |
+|10 	   |11  	 |

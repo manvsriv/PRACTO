@@ -1,14 +1,17 @@
 package com.stepDefinition;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 
 import com.pages.BasePage;
+import com.pages.FormPage;
 import com.pages.HomePage;
 import com.pages.LabTestPage;
 import com.pages.LoginPage;
 import com.pages.SkinCarePage;
+import com.pages.TestPage;
 import com.parameters.ExcelReader;
 import com.setup.BaseSteps;
 
@@ -22,6 +25,8 @@ public class LabTestStepDefinition {
 	LabTestPage labtest;
 	ExcelReader excel;
 	SkinCarePage skinCare;
+	TestPage test;
+	FormPage form;
 
 	@Given("User is on Practo website")
 	public void user_is_on_practo_website() {
@@ -77,7 +82,7 @@ public class LabTestStepDefinition {
 	    labtest.assertionOfTestSElection();
 	}
 
-//=========================SkinConsultation======================================================
+//=========================  SkinConsultation  ======================================================
 	
 	@When("user clicks on Surgeries")
 	public void user_clicks_on_surgeries() {
@@ -120,7 +125,7 @@ public class LabTestStepDefinition {
 	    skinCare.onPaymentPage();
 	}
 	
-//============================AppLink===============================================================
+//============================  AppLink  ===============================================================
 	
 	@When("scrolls down for Download Practo App")
 	public void scrolls_down_for_download_practo_app() {
@@ -142,6 +147,40 @@ public class LabTestStepDefinition {
 		labtest=new LabTestPage(driver);
 	    labtest.errorMessageDisplays();
 	}
+
+// ==============================  FormFilling  =============================================================
+	
+	@When("click on one of the Top Booked Diagnostic Tests")
+	public void click_on_one_of_the_top_booked_diagnostic_tests() {
+		labtest=new LabTestPage(driver);
+		labtest.clickOnTopBookDaignosticTest();
+	}
+	@When("click on Book Now")
+	public void click_on_book_now() {
+	    test=new TestPage(driver);
+	    test.clickBookNow();
+	}
+	@When("user fills all userDetails and clicks continue")
+	public void user_fills_all_user_details_and_clicks_continue(io.cucumber.datatable.DataTable dataTable) {
+	    form=new FormPage(driver);
+	    excel=new ExcelReader();
+	    List<String> list=dataTable.asList(String.class);
+	    String details[]=excel.userDetailsReader(list.get(0));
+	    form.userDetails(details[0], details[1], details[2]);
+	}
+	@When("user selects address and clicks continue")
+	public void user_selects_address_and_clicks_continue() {
+	    
+	}
+	@When("user selects slot and Confirms Booking")
+	public void user_selects_slot_and_confirms_booking() {
+	   
+	}
+	@Then("user should see message")
+	public void user_should_see_message() {
+	    
+	}
+
 
 
 
