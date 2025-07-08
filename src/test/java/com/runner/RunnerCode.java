@@ -6,7 +6,14 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)  //  this annotation is only for JUnit not for testNG
 @CucumberOptions(features="C:\\Users\\manvsriv\\Practo\\PractoAutomation\\src\\test\\resource\\Features\\Practo.feature", 
-glue="com.stepDefinition")
+glue="com.stepDefinition",
+tags="@Scenario1",
+dryRun =false,
+//monochrome = true,
+plugin= {
+		"json:C:\\Users\\manvsriv\\Practo\\PractoAutomation\\target/jsonreport.json",
+		"junit:C:\\Users\\manvsriv\\Practo\\PractoAutomation\\target/junitReport.xml",
+		"html:C:\\Users\\manvsriv\\Practo\\PractoAutomation\\target/cucumberReport/HtmlReport.html"})
 public class RunnerCode {
 
 }

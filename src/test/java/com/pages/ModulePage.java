@@ -37,6 +37,9 @@ public class ModulePage extends BasePage{
 	@FindBy(xpath="//span[text()='Consult with a doctor']")
 	WebElement consultdocbutton;
 	
+	@FindBy(xpath ="//a[text()='Pediatrician']")
+	WebElement Pediatrician;
+	
 	public ModulePage(WebDriver driver)
 	{
 		super(driver);
@@ -95,6 +98,12 @@ public class ModulePage extends BasePage{
 	{
 		waitUntilWebElementIsVisible(heading);
 		consultdocbutton.click();
+	}
+	
+	public void clickPediatrician()
+	{
+		waitUntilWebElementIsVisible(heading);
+		Pediatrician.click();
 	}
 
 

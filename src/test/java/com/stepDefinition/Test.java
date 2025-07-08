@@ -10,6 +10,8 @@ import org.apache.poi.sl.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import com.pages.ArticlesPage;
@@ -20,12 +22,17 @@ import com.pages.HealthyEatingPage;
 import com.pages.HelpPage;
 import com.pages.HomePage;
 import com.pages.ModulePage;
+import com.pages.PatientDetailsPage;
+import com.pages.PediatricianPage;
 import com.pages.SurgeriesPage;
 import com.pages.VideoConsultConfirmPage;
 import com.parameters.ExcelReader;
 import com.setup.Setup;
+import com.utility.ScreenshotTest;
 
 import io.cucumber.datatable.DataTable;
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -46,6 +53,9 @@ public class Test {
 	ExcelReader excelreader;
 	ConsultPage consultpage;
 	VideoConsultConfirmPage vccp;
+	PediatricianPage pediatricianpage;
+	PatientDetailsPage patientdetails;
+	ScreenshotTest screenshot;
 	
 	
 	//--------------------Background-------------------------------
@@ -88,6 +98,7 @@ public class Test {
 	public void practo_case_studies_page_appears() {
 		csp = new CaseStudiesPage(driver);
 	    csp.isVisible();
+	    screenshot.takeScreen(driver);
 	}
 	
 	//-------------------------Scenario 2--------------------------------------------------------------
@@ -307,5 +318,58 @@ public class Test {
 	@Then("OTP PopUp appears")
 	public void otp_pop_up_appears() {
 		Assert.assertTrue(vccp.validate());
+	}
+	
+	//-------------------------Scenario 7--------------------------------------------------------------
+	/* created by:
+	 * Reviewed By:
+	 * Motive:
+	 *
+	 * *
+	 */
+
+	@When("user clicks on module page icon on home page")
+	public void user_clicks_on_module_page_icon_on_home_page() {
+	    home.clickfinddocbutton();
+	}
+	@When("clicks on Pediatrician option on Module Page")
+	public void clicks_on_pediatrician_option_on_module_page() {
+		mod = new ModulePage(driver);
+	    mod.clickPediatrician();
+	}
+	@When("applies filters")
+	public void applies_filters() {
+	    pediatricianpage = new PediatricianPage(driver);
+	    pediatricianpage.selectExperience();
+	}
+	@When("clicks on Book Clinic Visit")
+	public void clicks_on_book_clinic_visit() {
+	    pediatricianpage.bookClinicVisit();
+	}
+	@When("enters OTP")
+	public void enters_otp() {
+	    pediatricianpage.enterOTP();
+	}
+
+	
+	@When("enters both Valid and Invalid Credentials from {int} and {int}")
+	public void enters_both_valid_and_invalid_credentials_from_and(Integer sheetno, Integer rowno) throws IOException {
+		patientdetails = new PatientDetailsPage(driver);
+		 excelreader = new ExcelReader();
+		 String[] data = excelreader.getCred(sheetno, rowno);
+		 patientdetails.enterdetails(data[0], data[1]);
+	}
+	
+	@Then("Booking Confirmation page should appear")
+	public void booking_confirmation_page_should_appear() {
+	    patientdetails.validate();
+	}
+	
+	@After
+	public void tearDown(Scenario scenario) // wil take screenshots for each and every scenario
+	{
+		final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+		scenario.attach(screenshot, "image/png", "Image");
+		
 	}
 }

@@ -16,15 +16,20 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ExcelReader {
 	public String[] getCred(int sheetNo, int rowNo) throws IOException
 	{
-		FileInputStream fis = new FileInputStream("C:\\Users\\manvsriv\\OneDrive - Capgemini\\Desktop\\Manager\\demotest1\\src\\test\\resource\\ExcelData\\LoginCred.xlsx");
+		FileInputStream fis = new FileInputStream("C:\\Users\\manvsriv\\Practo\\PractoAutomation\\src\\test\\resource\\ExcelData\\PractoCred1.xlsx");
 		XSSFWorkbook work = new XSSFWorkbook(fis);
 		XSSFSheet sheet = work.getSheetAt(sheetNo);
 		XSSFRow row = sheet.getRow(rowNo);
 		XSSFCell cell1 = row.getCell(0); //user
 		XSSFCell cell2= row.getCell(1);  //pass
 		String[] data = new String[2];
-		data[0] = cell1.getStringCellValue();   //user
-		data[1] = cell2.getStringCellValue();  //pass
+//		data[0] = cell1.getStringCellValue();   //user
+//		data[1] = cell2.getStringCellValue();  //pass
+
+		DataFormatter formatter = new DataFormatter();
+
+		data[0] = formatter.formatCellValue(cell1);
+		data[1] = formatter.formatCellValue(cell2);
 
 		return data;
 	}
