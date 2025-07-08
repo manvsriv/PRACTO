@@ -83,8 +83,9 @@ public class Form {
           }
 		
 		driver.findElement(By.xpath("//div[@data-aid='review-cod-confirm-booking']")).click();
-	//	WebElement Cod=driver.findElement(By.xpath("//span");
-	//	System.out.println(Cod.getText());
+		Thread.sleep(200);
+		WebElement Cod=driver.findElement(By.xpath("//div[@style='background: rgb(255, 247, 175); color: rgb(65, 65, 70); font-size: 15px; border: 1px solid rgb(230, 221, 142); border-radius: 2px; text-align: center; min-height: 30px; line-height: 30px; padding-top: 1px; margin: 5px; box-sizing: border-box;']/child::span"));
+		System.out.println(Cod.isDisplayed());
 	}
 
 }

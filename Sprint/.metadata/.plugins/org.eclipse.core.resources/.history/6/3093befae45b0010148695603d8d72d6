@@ -1,0 +1,68 @@
+package com.pages;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class FormPage extends BasePage{
+	
+	@FindBy(xpath="//input[@data-aid='patient-name']")
+	WebElement patientName;
+	
+	@FindBy(xpath="//input[@data-aid='patient-age']")
+	WebElement patientAge;
+	
+	@FindBy(xpath="//div[@data-aid='patient-gender-selected-FEMALE']")
+	WebElement patientGender;
+	
+	@FindBy(xpath="//input[@data-aid='patient-email']")
+	WebElement patientEmail;
+	
+	@FindBy(xpath="//input[@data-aid='order-continue-button']")
+	WebElement continueButton;
+	
+	@FindBy(xpath="//span[text()='2 Tests']")
+	WebElement numberOfTests;
+
+	public FormPage(WebDriver driver) {
+		super(driver);
+		this.driver=driver;
+	}
+	
+	public void userDetails(String name,String age,String email) {
+		waitUntilWebElementIsVisible(patientName);
+		patientName.sendKeys(name);
+		
+		waitUntilWebElementIsVisible(patientName);
+		patientAge.sendKeys(age);
+		
+		waitUntilWebElementIsVisible(patientGender);
+		patientGender.click();
+		
+		waitUntilWebElementIsVisible(patientName);
+		patientEmail.sendKeys(email);
+		
+		waitUntilWebElementIsVisible(continueButton);
+		continueButton.click();
+	}
+	
+	public void numberOfTestVisible() {
+		Robot robot;
+		try {
+			robot = new Robot();
+			for (int i = 0; i < 16; i++) {
+	            robot.keyPress(KeyEvent.VK_UP);
+	            robot.keyRelease(KeyEvent.VK_UP);
+	        }
+		} catch (AWTException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+
+}

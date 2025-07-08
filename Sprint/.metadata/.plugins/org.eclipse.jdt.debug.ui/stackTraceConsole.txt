@@ -1,5 +1,20 @@
-java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-	at com.parameters.ExcelReader.userDetailsReader(ExcelReader.java:113)
-	at com.stepDefinition.LabTestStepDefinition.user_fills_all_user_details_and_clicks_continue(LabTestStepDefinition.java:168)
-	at ?.user fills all userDetails and clicks continue(file:///C:/Users/SDHINDLE/Desktop/PRACTO/Sprint/PractoTesting/src/test/resource/Features/LabTests.feature:58)
+io.cucumber.junit.UndefinedStepException: The step 'start adding tests' and 2 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@When("start adding tests")
+public void start_adding_tests() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("click on proceed to checkout")
+public void click_on_proceed_to_checkout() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("user should see number of tests selected")
+public void user_should_see_number_of_tests_selected() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
 

@@ -5,7 +5,7 @@ Background:
 	Given User is on Practo website
 	
 @NavigateToTest
-Scenario: Login to Practo and navigate to Hemoglobin Test
+Scenario Outline:Login to Practo and navigate to Hemoglobin Test
     When user clicks on Login / Signup button
     And user enters "<username>" and "<password>"
     And clicks on the login button
@@ -64,3 +64,11 @@ Scenario: Fill form and Select slot for booking appointment
 Examples:
 |username  |password |
 |10 	   |11  	 |
+
+@AddMultipleTest
+Scenario: Enable Adding multiple test and display number of Test added in cart
+    When clicks on Lab Tests
+    And clicks on Search city and selects city
+    And start adding tests
+    And click on proceed to checkout
+    Then user should see number of tests selected

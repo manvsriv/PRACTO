@@ -1,0 +1,29 @@
+package com.pages;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+
+import org.openqa.selenium.WebDriver;
+
+public class AddressPage extends BasePage{
+
+	public AddressPage(WebDriver driver) {
+		super(driver);
+		this.driver=driver;
+	}
+	
+	public void selectAddress() {
+		Robot robot;
+		try {
+			robot = new Robot();
+			robot.mouseMove(500,450);
+			robot.delay(1000);
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

@@ -5,12 +5,14 @@ import java.util.List;
 
 import org.openqa.selenium.WebDriver;
 
+import com.pages.AddressPage;
 import com.pages.BasePage;
 import com.pages.FormPage;
 import com.pages.HomePage;
 import com.pages.LabTestPage;
 import com.pages.LoginPage;
 import com.pages.SkinCarePage;
+import com.pages.SlotSelectingPage;
 import com.pages.TestPage;
 import com.parameters.ExcelReader;
 import com.setup.BaseSteps;
@@ -27,6 +29,8 @@ public class LabTestStepDefinition {
 	SkinCarePage skinCare;
 	TestPage test;
 	FormPage form;
+	AddressPage address;
+	SlotSelectingPage slot;
 
 	@Given("User is on Practo website")
 	public void user_is_on_practo_website() {
@@ -170,18 +174,39 @@ public class LabTestStepDefinition {
 	}
 	@When("user selects address and clicks continue")
 	public void user_selects_address_and_clicks_continue() {
-	    
+	    address=new AddressPage(driver);
+	    address.selectAddress();
+	    address.clickContinue();
 	}
 	@When("user selects slot and Confirms Booking")
 	public void user_selects_slot_and_confirms_booking() {
-	   
+		slot= new SlotSelectingPage(driver);
+		slot.selectSlot();
+		slot.clickConfirmBooking();
 	}
 	@Then("user should see message")
 	public void user_should_see_message() {
-	    
+		slot= new SlotSelectingPage(driver);
+		slot.codMessageIsVisible();
 	}
 
 
-
+//==============================  AddMultipleTest  ========================================================
+	
+	@When("start adding tests")
+	public void start_adding_tests() {
+		labtest=new LabTestPage(driver);
+		labtest.addTests();
+	}
+	@When("click on proceed to checkout")
+	public void click_on_proceed_to_checkout() {
+		labtest=new LabTestPage(driver);
+		labtest.clickOnCheckOut();
+	}
+	@Then("user should see number of tests selected")
+	public void user_should_see_number_of_tests_selected() {
+		form=new FormPage(driver);
+		form.numberOfTestVisible();
+	}
 
 }

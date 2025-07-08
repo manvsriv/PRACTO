@@ -1,0 +1,48 @@
+package com.pages;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class SlotSelectingPage extends BasePage {
+	
+	@FindBy(xpath="//div[text()='08:00 AM - 08:30 AM']")
+	WebElement desireSlot;
+	
+	@FindBy(xpath="//div[@data-aid='review-cod-confirm-booking']")
+	WebElement confirmBooking;
+
+	public SlotSelectingPage(WebDriver driver) {
+		super(driver);
+		this.driver= driver;
+	}
+	
+	public void selectSlot() {
+		waitUntilWebElementIsVisible(desireSlot);
+		waitUntilWebElementIsClickable(desireSlot);
+		desireSlot.click();
+		  
+	}
+	
+	public void clickConfirmBooking() {
+		Robot robot;
+		try {
+			robot = new Robot();
+			for (int i = 0; i < 16; i++) {
+	            robot.keyPress(KeyEvent.VK_DOWN);
+	            robot.keyRelease(KeyEvent.VK_DOWN);
+	        }
+		} catch (AWTException e) {
+			e.printStackTrace();
+		}
+		
+		waitUntilWebElementIsVisible(confirmBooking);
+		waitUntilWebElementIsClickable(confirmBooking);
+		confirmBooking.click();
+	}
+}

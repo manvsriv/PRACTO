@@ -1,0 +1,63 @@
+package com.pages;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
+
+public class SlotSelectingPage extends BasePage {
+	
+	@FindBy(xpath="//div[text()='08:00 AM - 08:30 AM']")
+	WebElement desireSlot;
+	
+	@FindBy(xpath="//div[@data-aid='review-cod-confirm-booking']")
+	WebElement confirmBooking;
+	
+	@FindBy(xpath="//div[@style='background: rgb(255, 247, 175); color: rgb(65, 65, 70); font-size: 15px; border: 1px solid rgb(230, 221, 142); border-radius: 2px; text-align: center; min-height: 30px; line-height: 30px; padding-top: 1px; margin: 5px; box-sizing: border-box;']")
+	WebElement codMessage;
+	
+//	@FindBy(xpath="//span[parent::div[@style='background: rgb(255, 247, 175); color: rgb(65, 65, 70); font-size: 15px; border: 1px solid rgb(230, 221, 142); border-radius: 2px; text-align: center; min-height: 30px; line-height: 30px; padding-top: 1px; margin: 5px; box-sizing: border-box;']]")
+//	WebElement codMessage;
+	
+	public SlotSelectingPage(WebDriver driver) {
+		super(driver);
+		this.driver= driver;
+	}
+	
+	public void selectSlot() {
+		waitUntilWebElementIsVisible(desireSlot);
+		waitUntilWebElementIsClickable(desireSlot);
+		desireSlot.click();
+		  
+	}
+	
+	public void clickConfirmBooking() {
+		Robot robot;
+		try {
+			robot = new Robot();
+			for (int i = 0; i < 16; i++) {
+	            robot.keyPress(KeyEvent.VK_DOWN);
+	            robot.keyRelease(KeyEvent.VK_DOWN);
+	        }
+		} catch (AWTException e) {
+			e.printStackTrace();
+		}
+		
+		waitUntilWebElementIsVisible(confirmBooking);
+		waitUntilWebElementIsClickable(confirmBooking);
+		confirmBooking.click();
+	}
+	
+	public void codMessageIsVisible() {
+		waitUntilWebElementIsVisible(codMessage);
+		if(codMessage.isDisplayed()) {
+			System.out.println("COD Visible");
+		}
+		Assert.assertEquals(codMessage.isDisplayed(),true);
+	}
+}

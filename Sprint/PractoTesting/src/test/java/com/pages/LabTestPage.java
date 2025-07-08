@@ -38,6 +38,9 @@ public class LabTestPage extends BasePage{
 	@FindBy(xpath="//div[text()='Enter valid mobile number']")
 	WebElement errorMessage;
 	
+	@FindBy(xpath="//div[text()='Proceed to Checkout']")
+	WebElement checkout;
+	
 	public LabTestPage(WebDriver driver) {
 		super(driver);
 		this.driver=driver;
@@ -127,5 +130,35 @@ public class LabTestPage extends BasePage{
 			e.printStackTrace();
 		}
 		
+	}
+	
+// ==================================================================================================
+	
+	public void addTests() {
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");
+		Robot robot;
+		try {
+			robot = new Robot();
+			robot.mouseMove(150,595);
+			robot.delay(1000);
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+			
+			robot.mouseMove(350,595);
+			robot.delay(1000);
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		} catch (AWTException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void clickOnCheckOut() {
+		waitUntilWebElementIsVisible(checkout);
+		waitUntilWebElementIsClickable(checkout);
+		checkout.click();
 	}
 }

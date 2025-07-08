@@ -1,8 +1,13 @@
 package com.pages;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.testng.Assert;
 
 public class FormPage extends BasePage{
 	
@@ -20,6 +25,9 @@ public class FormPage extends BasePage{
 	
 	@FindBy(xpath="//input[@data-aid='order-continue-button']")
 	WebElement continueButton;
+	
+	@FindBy(xpath="//span[text()='2 Tests']")
+	WebElement numberOfTests;
 
 	public FormPage(WebDriver driver) {
 		super(driver);
@@ -41,6 +49,21 @@ public class FormPage extends BasePage{
 		
 		waitUntilWebElementIsVisible(continueButton);
 		continueButton.click();
+	}
+	
+	public void numberOfTestVisible() {
+		Robot robot;
+		try {
+			robot = new Robot();
+			for (int i = 0; i < 20; i++) {
+	            robot.keyPress(KeyEvent.VK_UP);
+	            robot.keyRelease(KeyEvent.VK_UP);
+	        }
+		} catch (AWTException e) {
+			e.printStackTrace();
+		}
+		
+		Assert.assertTrue(numberOfTests.isDisplayed(),"Number of Selected Tests not visible");
 	}
 
 }
