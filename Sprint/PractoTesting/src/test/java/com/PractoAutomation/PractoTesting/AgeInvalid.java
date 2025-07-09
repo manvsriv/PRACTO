@@ -7,6 +7,7 @@ import java.awt.event.InputEvent;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -36,13 +37,16 @@ public class AgeInvalid {
 		robot.delay(1000);
 		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
 		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-		
+		Thread.sleep(2000);
 		driver.findElement(By.xpath("//div[text()='Proceed to Checkout']")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@data-aid='patient-name']")).sendKeys("Alice");
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("//input[@data-aid='patient-age']")).sendKeys("7");
 		driver.findElement(By.xpath("//div[@data-aid='patient-gender-selected-FEMALE']")).click();
+		Thread.sleep(0);
+		WebElement errorMsg=driver.findElement(By.xpath("//div[text()='Patient age cannot be less than 10 years']"));
+		System.out.println(errorMsg.isDisplayed());
 	}
 
 }

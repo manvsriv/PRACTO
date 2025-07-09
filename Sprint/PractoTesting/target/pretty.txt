@@ -1,0 +1,233 @@
+
+@LabTest @NavigateToTest
+Scenario Outline: Login to Practo and navigate to Hemoglobin Test [90m# src/test/resource/Features/LabTests.feature:21[0m
+  [32mGiven [0m[32mUser is on Practo website[0m                                 [90m# com.stepDefinition.LabTestStepDefinition.user_is_on_practo_website()[0m
+  [32mWhen [0m[32muser clicks on Login / Signup button[0m                       [90m# com.stepDefinition.LabTestStepDefinition.user_clicks_on_login_signup_button()[0m
+  [32mAnd [0m[32muser enters [0m[32m[1m"10"[0m[32m and [0m[32m[1m"11"[0m                                   [90m# com.stepDefinition.LabTestStepDefinition.user_enters_and(java.lang.String,java.lang.String)[0m
+  [32mAnd [0m[32mclicks on the login button[0m                                  [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_the_login_button()[0m
+  [32mAnd [0m[32mclicks on Lab Tests[0m                                         [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_lab_tests()[0m
+  [32mAnd [0m[32mclicks on Search city and selects city[0m                      [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_search_city_and_selects_city()[0m
+  [32mAnd [0m[32mclicks on Search for Test[0m                                   [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_search_for_test()[0m
+  [32mAnd [0m[32muser enter [0m[32m[1m"12"[0m                                             [90m# com.stepDefinition.LabTestStepDefinition.user_enter(java.lang.String)[0m
+  [32mAnd [0m[32mselects the Haemoglobin test from the search results[0m        [90m# com.stepDefinition.LabTestStepDefinition.selects_the_haemoglobin_test_from_the_search_results()[0m
+  [32mThen [0m[32muser should be on the Haemoglobin test page for Pune[0m       [90m# com.stepDefinition.LabTestStepDefinition.user_should_be_on_the_haemoglobin_test_page_for_pune()[0m
+
+    Embedding Image [image/png 359168 bytes]
+
+
+@LabTest @SkinConsultation
+Scenario: Navigate to Skin Consultation and Fill Details [90m# src/test/resource/Features/LabTests.feature:26[0m
+  [32mGiven [0m[32mUser is on Practo website[0m                        [90m# com.stepDefinition.LabTestStepDefinition.user_is_on_practo_website()[0m
+  [32mWhen [0m[32muser clicks on Surgeries[0m                          [90m# com.stepDefinition.LabTestStepDefinition.user_clicks_on_surgeries()[0m
+  [31mAnd [0m[31mclicks on Lab Tests[0m                                [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_lab_tests()[0m
+      [31morg.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+        (Session info: chrome=138.0.7204.98)
+      For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+      Build info: version: '4.34.0', revision: '707dcb4246*'
+      System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.15'
+      Driver info: org.openqa.selenium.chrome.ChromeDriver
+      Command: [37591445501658a1811d91f366d5b38a, isElementDisplayed {id=f.21FB608F108C2630F973AE0091E0D3D3.d.A390E9717A0C736980726EDC6576862A.e.100}]
+      Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.98, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\SDHINDLE\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54674}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54674/devtoo..., se:cdpVersion: 138.0.7204.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+      Element: [[ChromeDriver: chrome on windows (37591445501658a1811d91f366d5b38a)] -> link text: Lab Tests]
+      Session ID: 37591445501658a1811d91f366d5b38a
+      	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+      	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+      	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+      	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+      	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+      	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+      	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+      	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+      	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+      	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+      	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+      	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+      	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+      	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:282)
+      	at jdk.internal.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+      	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+      	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+      	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+      	at jdk.proxy2/jdk.proxy2.$Proxy21.isDisplayed(Unknown Source)
+      	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+      	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+      	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+      	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+      	at com.pages.BasePage.waitUntilWebElementIsVisible(BasePage.java:46)
+      	at com.pages.HomePage.clickLabTests(HomePage.java:34)
+      	at com.stepDefinition.LabTestStepDefinition.clicks_on_lab_tests(LabTestStepDefinition.java:62)
+      	at ✽.clicks on Lab Tests(file:///C:/Users/SDHINDLE/Desktop/PRACTO/Sprint/PractoTesting/src/test/resource/Features/LabTests.feature:28)[0m
+  [36mAnd [0m[36mclicks on Search city and selects city[0m             [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_search_city_and_selects_city()[0m
+  [36mAnd [0m[36mclicks on the Skin icon[0m                            [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_the_skin_icon()[0m
+  [36mAnd [0m[36mclicks on Related Quetions-First Option[0m            [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_related_quetions_first_option()[0m
+  [36mAnd [0m[36mclicks on Acne keeps coming back?[0m                  [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_acne_keeps_coming_back()[0m
+  [36mAnd [0m[36muser enters name in name field[0m                     [90m# com.stepDefinition.LabTestStepDefinition.user_enters_name_in_name_field()[0m
+  [36mAnd [0m[36menters phone number[0m                                [90m# com.stepDefinition.LabTestStepDefinition.enters_phone_number()[0m
+  [36mAnd [0m[36mclicks on continue button[0m                          [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_continue_button()[0m
+  [36mThen [0m[36muser should see the payment page[0m                  [90m# com.stepDefinition.LabTestStepDefinition.user_should_see_the_payment_page()[0m
+
+    Embedding Image [image/png 555762 bytes]
+
+
+@LabTest @AppLink
+Scenario: Displays Error message for invalid phone number    [90m# src/test/resource/Features/LabTests.feature:51[0m
+  [32mGiven [0m[32mUser is on Practo website[0m                            [90m# com.stepDefinition.LabTestStepDefinition.user_is_on_practo_website()[0m
+  [32mWhen [0m[32muser clicks on Surgeries[0m                              [90m# com.stepDefinition.LabTestStepDefinition.user_clicks_on_surgeries()[0m
+  [31mAnd [0m[31mclicks on Lab Tests[0m                                    [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_lab_tests()[0m
+      [31morg.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+        (Session info: chrome=138.0.7204.98)
+      For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+      Build info: version: '4.34.0', revision: '707dcb4246*'
+      System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.15'
+      Driver info: org.openqa.selenium.chrome.ChromeDriver
+      Command: [7a0273931e5332f2f2bed35a98bf810f, isElementDisplayed {id=f.AF43D23369E652F1552EFBA85BB9245A.d.C73996E503B96E924B3EA13ECE8BCE22.e.107}]
+      Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.98, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\SDHINDLE\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54772}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54772/devtoo..., se:cdpVersion: 138.0.7204.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+      Element: [[ChromeDriver: chrome on windows (7a0273931e5332f2f2bed35a98bf810f)] -> link text: Lab Tests]
+      Session ID: 7a0273931e5332f2f2bed35a98bf810f
+      	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+      	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+      	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+      	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+      	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+      	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+      	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+      	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+      	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+      	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+      	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+      	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+      	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+      	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:282)
+      	at jdk.internal.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+      	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+      	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+      	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+      	at jdk.proxy2/jdk.proxy2.$Proxy21.isDisplayed(Unknown Source)
+      	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+      	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+      	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+      	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+      	at com.pages.BasePage.waitUntilWebElementIsVisible(BasePage.java:46)
+      	at com.pages.HomePage.clickLabTests(HomePage.java:34)
+      	at com.stepDefinition.LabTestStepDefinition.clicks_on_lab_tests(LabTestStepDefinition.java:62)
+      	at ✽.clicks on Lab Tests(file:///C:/Users/SDHINDLE/Desktop/PRACTO/Sprint/PractoTesting/src/test/resource/Features/LabTests.feature:42)[0m
+  [36mAnd [0m[36mclicks on Search city and selects city[0m                 [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_search_city_and_selects_city()[0m
+  [36mAnd [0m[36mscrolls down for Download Practo App[0m                   [90m# com.stepDefinition.LabTestStepDefinition.scrolls_down_for_download_practo_app()[0m
+  [36mAnd [0m[36menters invalid [0m[36m[1m"17"[0m                                    [90m# com.stepDefinition.LabTestStepDefinition.enters_invalid(java.lang.String)[0m
+  [36mAnd [0m[36mclicks on Send App Link[0m                                [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_send_app_link()[0m
+  [36mThen [0m[36muser should see error message of invalid phone number[0m [90m# com.stepDefinition.LabTestStepDefinition.user_should_see_error_message_of_invalid_phone_number()[0m
+
+    Embedding Image [image/png 553725 bytes]
+
+
+@LabTest @FormFilling
+Scenario: Fill form and Select slot for booking appointment [90m# src/test/resource/Features/LabTests.feature:70[0m
+  [32mGiven [0m[32mUser is on Practo website[0m                           [90m# com.stepDefinition.LabTestStepDefinition.user_is_on_practo_website()[0m
+  [32mWhen [0m[32muser clicks on Login / Signup button[0m                 [90m# com.stepDefinition.LabTestStepDefinition.user_clicks_on_login_signup_button()[0m
+  [32mAnd [0m[32muser enters [0m[32m[1m"10"[0m[32m and [0m[32m[1m"11"[0m                             [90m# com.stepDefinition.LabTestStepDefinition.user_enters_and(java.lang.String,java.lang.String)[0m
+  [32mAnd [0m[32mclicks on the login button[0m                            [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_the_login_button()[0m
+  [31mAnd [0m[31mclicks on Lab Tests[0m                                   [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_lab_tests()[0m
+      [31morg.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found in the current frame
+        (Session info: chrome=138.0.7204.98)
+      For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+      Build info: version: '4.34.0', revision: '707dcb4246*'
+      System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.15'
+      Driver info: org.openqa.selenium.chrome.ChromeDriver
+      Command: [fc4bd1d275e0590a750c44570b768a7c, isElementDisplayed {id=f.10263C43CF1428D2FE60AE80B02DD6DB.d.05C37BCE511F1BF67692A37E104C9E12.e.143}]
+      Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.98, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\SDHINDLE\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54892}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54892/devtoo..., se:cdpVersion: 138.0.7204.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+      Element: [[ChromeDriver: chrome on windows (fc4bd1d275e0590a750c44570b768a7c)] -> link text: Lab Tests]
+      Session ID: fc4bd1d275e0590a750c44570b768a7c
+      	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+      	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+      	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+      	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+      	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+      	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+      	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+      	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+      	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+      	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+      	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+      	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+      	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+      	at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:282)
+      	at jdk.internal.reflect.GeneratedMethodAccessor57.invoke(Unknown Source)
+      	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+      	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+      	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+      	at jdk.proxy2/jdk.proxy2.$Proxy21.isDisplayed(Unknown Source)
+      	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+      	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+      	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+      	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+      	at com.pages.BasePage.waitUntilWebElementIsVisible(BasePage.java:46)
+      	at com.pages.HomePage.clickLabTests(HomePage.java:34)
+      	at com.stepDefinition.LabTestStepDefinition.clicks_on_lab_tests(LabTestStepDefinition.java:62)
+      	at ✽.clicks on Lab Tests(file:///C:/Users/SDHINDLE/Desktop/PRACTO/Sprint/PractoTesting/src/test/resource/Features/LabTests.feature:58)[0m
+  [36mAnd [0m[36mclicks on Search city and selects city[0m                [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_search_city_and_selects_city()[0m
+  [36mAnd [0m[36mclick on one of the Top Booked Diagnostic Tests[0m       [90m# com.stepDefinition.LabTestStepDefinition.click_on_one_of_the_top_booked_diagnostic_tests()[0m
+  [36mAnd [0m[36mclick on Book Now[0m                                     [90m# com.stepDefinition.LabTestStepDefinition.click_on_book_now()[0m
+  [36mAnd [0m[36muser fills all userDetails and clicks continue[0m        [90m# com.stepDefinition.LabTestStepDefinition.user_fills_all_user_details_and_clicks_continue(io.cucumber.datatable.DataTable)[0m
+    | LabTestData.xlsx |
+  [36mAnd [0m[36muser selects address and clicks continue[0m              [90m# com.stepDefinition.LabTestStepDefinition.user_selects_address_and_clicks_continue()[0m
+  [36mAnd [0m[36muser selects slot and Confirms Booking[0m                [90m# com.stepDefinition.LabTestStepDefinition.user_selects_slot_and_confirms_booking()[0m
+  [36mThen [0m[36muser should see message[0m                              [90m# com.stepDefinition.LabTestStepDefinition.user_should_see_message()[0m
+
+    Embedding Image [image/png 550776 bytes]
+
+
+@LabTest @AddMultipleTest
+Scenario: Enable Adding multiple test and display number of Test added in cart [90m# src/test/resource/Features/LabTests.feature:73[0m
+  [32mGiven [0m[32mUser is on Practo website[0m                                              [90m# com.stepDefinition.LabTestStepDefinition.user_is_on_practo_website()[0m
+  [32mWhen [0m[32mclicks on Lab Tests[0m                                                     [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_lab_tests()[0m
+  [32mAnd [0m[32mclicks on Search city and selects city[0m                                   [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_search_city_and_selects_city()[0m
+  [32mAnd [0m[32mstart adding tests[0m                                                       [90m# com.stepDefinition.LabTestStepDefinition.start_adding_tests()[0m
+  [32mAnd [0m[32mclick on proceed to checkout[0m                                             [90m# com.stepDefinition.LabTestStepDefinition.click_on_proceed_to_checkout()[0m
+  [31mThen [0m[31muser should see number of tests selected[0m                                [90m# com.stepDefinition.LabTestStepDefinition.user_should_see_number_of_tests_selected()[0m
+      [31morg.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='2 Tests']"}
+        (Session info: chrome=138.0.7204.98)
+      For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+      Build info: version: '4.34.0', revision: '707dcb4246*'
+      System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.15'
+      Driver info: org.openqa.selenium.chrome.ChromeDriver
+      Command: [2b7c1915a7219a50dbb9431b92d58d8c, findElement {using=xpath, value=//span[text()='2 Tests']}]
+      Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.98, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\SDHINDLE\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55049}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55049/devtoo..., se:cdpVersion: 138.0.7204.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+      Session ID: 2b7c1915a7219a50dbb9431b92d58d8c
+      	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+      	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+      	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+      	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+      	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+      	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+      	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+      	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+      	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+      	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+      	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+      	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+      	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+      	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+      	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+      	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+      	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+      	at jdk.proxy2/jdk.proxy2.$Proxy21.isDisplayed(Unknown Source)
+      	at com.pages.FormPage.numberOfTestVisible(FormPage.java:70)
+      	at com.stepDefinition.LabTestStepDefinition.user_should_see_number_of_tests_selected(LabTestStepDefinition.java:214)
+      	at ✽.user should see number of tests selected(file:///C:/Users/SDHINDLE/Desktop/PRACTO/Sprint/PractoTesting/src/test/resource/Features/LabTests.feature:78)[0m
+
+    Embedding Image [image/png 269806 bytes]
+
+
+@LabTest @InvalidAge
+Scenario Outline: Display Error Message if age entered is less than 10 years [90m# src/test/resource/Features/LabTests.feature:92[0m
+  [32mGiven [0m[32mUser is on Practo website[0m                                            [90m# com.stepDefinition.LabTestStepDefinition.user_is_on_practo_website()[0m
+  [32mWhen [0m[32mclicks on Lab Tests[0m                                                   [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_lab_tests()[0m
+  [32mAnd [0m[32mclicks on Search city and selects city[0m                                 [90m# com.stepDefinition.LabTestStepDefinition.clicks_on_search_city_and_selects_city()[0m
+  [32mAnd [0m[32mstart adding tests[0m                                                     [90m# com.stepDefinition.LabTestStepDefinition.start_adding_tests()[0m
+  [32mAnd [0m[32mclick on proceed to checkout[0m                                           [90m# com.stepDefinition.LabTestStepDefinition.click_on_proceed_to_checkout()[0m
+  [32mAnd [0m[32muser enter [0m[32m[1m"13"[0m[32m,[0m[32m[1m"16"[0m[32m and gender[0m                                        [90m# com.stepDefinition.LabTestStepDefinition.user_enter_and_gender(java.lang.String,java.lang.String)[0m
+  [32mThen [0m[32muser should see error message for invalid age[0m                         [90m# com.stepDefinition.LabTestStepDefinition.user_should_see_error_message_for_invalid_age()[0m
+
+    Embedding Image [image/png 83283 bytes]
+

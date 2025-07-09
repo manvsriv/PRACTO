@@ -1,13 +1,11 @@
 package com.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -77,7 +75,8 @@ public class LabTestPage extends BasePage{
 	}
 	
 	public void assertionOfTestSElection() {
-		//Assert.assertTrue(driver.getCurrentUrl().equals("https://www.practo.com/tests/haemoglobin-automated-blood/p?city=pune"), "Test Not Selected Properly");
+
+		Assert.assertTrue("Test Not Selected Properly", driver.getCurrentUrl().equals("https://www.practo.com/tests/haemoglobin-automated-blood/p?city=pune"));
 	}
 	
 //	==========================================================================================
@@ -96,9 +95,9 @@ public class LabTestPage extends BasePage{
 		js.executeScript("window.scrollBy(0,3300)");
 	}
 	
-	public void userEntersInvalidPhoneNumber(){
+	public void userEntersInvalidPhoneNumber(String invalidNumber){
 		waitUntilWebElementIsVisible(invalidPhoneNumber);
-		invalidPhoneNumber.sendKeys("6757868");
+		invalidPhoneNumber.sendKeys(invalidNumber);
 	}
 	
 	public void clickSendAppLink(){
@@ -109,8 +108,7 @@ public class LabTestPage extends BasePage{
 	public void errorMessageDisplays(){
 		waitUntilWebElementIsVisible(errorMessage);
 		boolean isErrorMessageDisplayed = errorMessage.getText().equals("Enter valid mobile number");
-		
-        //Assert.assertTrue("Not Displayed", isErrorMessageDisplayed);
+        Assert.assertTrue("Not Displayed", isErrorMessageDisplayed);
 	}
 	
 //==================================================================================================
@@ -137,28 +135,39 @@ public class LabTestPage extends BasePage{
 	public void addTests() {
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,500)");
+		js.executeScript("window.scrollBy(0,400)");
+		
 		Robot robot;
 		try {
 			robot = new Robot();
-			robot.mouseMove(150,595);
+			robot.mouseMove(150,600);
 			robot.delay(1000);
 			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
 			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 			
-			robot.mouseMove(350,595);
+			robot.mouseMove(350,600);
 			robot.delay(1000);
 			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
 			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 		} catch (AWTException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
 	public void clickOnCheckOut() {
-		waitUntilWebElementIsVisible(checkout);
-		waitUntilWebElementIsClickable(checkout);
-		checkout.click();
+//		waitUntilWebElementIsVisible(checkout);
+//		waitUntilWebElementIsClickable(checkout);
+//		checkout.click();
+		Robot robot;
+		try {
+			robot = new Robot();
+			robot.mouseMove(1100,450);
+			robot.delay(1000);
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		} catch (AWTException e) {
+			
+			e.printStackTrace();
+		}
 	}
 }

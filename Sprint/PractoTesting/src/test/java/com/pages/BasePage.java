@@ -1,5 +1,8 @@
 package com.pages;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
@@ -40,14 +43,30 @@ public class BasePage {
         return driver;
     }   
     public void waitUntilWebElementIsVisible(WebElement element) {
-    	//wait = new WebDriverWait(driver, Duration.ofSeconds(8));
         wait.until(ExpectedConditions.visibilityOf(element));
     }
     
     public void waitUntilWebElementIsClickable(WebElement element) {
-    	//wait = new WebDriverWait(driver, Duration.ofSeconds(8));
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+    
+    public void clickUsingRobot(int x, int y) {
+		Robot robot;
+		try {
+			robot = new Robot();
+			robot.mouseMove(x, y);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		} catch (AWTException e) {
+			e.printStackTrace();
+		}
+		
+	}
     
 }
 

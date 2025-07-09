@@ -1,12 +1,13 @@
 package com.stepDefinition;
 
-import java.io.IOException;
+
 import java.util.List;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import com.pages.AddressPage;
-import com.pages.BasePage;
 import com.pages.FormPage;
 import com.pages.HomePage;
 import com.pages.LabTestPage;
@@ -17,6 +18,8 @@ import com.pages.TestPage;
 import com.parameters.ExcelReader;
 import com.setup.BaseSteps;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 
 public class LabTestStepDefinition {
@@ -137,9 +140,11 @@ public class LabTestStepDefinition {
 	    labtest.toScrollDownForDownloadAppLink();
 	}
 	@When("enters invalid {string}")
-	public void enters_invalid(String string) {
+	public void enters_invalid(String invalidPhoneNumber) {
 		labtest=new LabTestPage(driver);
-	    labtest.userEntersInvalidPhoneNumber();
+		excel=new ExcelReader();
+		String data=excel.provideTestName(invalidPhoneNumber);
+	    labtest.userEntersInvalidPhoneNumber(data);
 	}
 	@When("clicks on Send App Link")
 	public void clicks_on_send_app_link() {
@@ -209,4 +214,27 @@ public class LabTestStepDefinition {
 		form.numberOfTestVisible();
 	}
 
+	
+//===============================  InvalidAge  =============================================================
+	
+	@When("user enter {string},{string} and gender")
+	public void user_enter_and_gender(String patientName, String invalidAge) {
+		form=new FormPage(driver);
+		excel=new ExcelReader();
+		String[] data=excel.provideLoginData(patientName, invalidAge);
+		form.invalidUserDetails(data[0],data[1]);
+	}
+	@Then("user should see error message for invalid age")
+	public void user_should_see_error_message_for_invalid_age() {
+		form=new FormPage(driver);
+		form.invalidAgeErrorMessageIsDisplayed();
+	}
+	
+	
+	@After
+	public void tearDown(Scenario scenario) // will take screenshots for each and every scenario
+	{
+		final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+		 scenario.attach(screenshot, "image/png", "Image");
+	}
 }

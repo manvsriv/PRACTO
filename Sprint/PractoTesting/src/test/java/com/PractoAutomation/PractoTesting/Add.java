@@ -41,7 +41,12 @@ public class Add {
 		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
 		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 		
-		driver.findElement(By.xpath("//div[text()='Proceed to Checkout']")).click();
+		robot.mouseMove(1100,200);
+		robot.delay(1000);
+		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		
+		//driver.findElement(By.xpath("//div[text()='Proceed to Checkout']")).click();
 		
 		Thread.sleep(2000);
 		robot = new Robot();

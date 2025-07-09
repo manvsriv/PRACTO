@@ -3,12 +3,8 @@ package com.pages;
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
-import java.io.File;
-import java.io.FileInputStream;
-import java.util.Properties;
 import java.util.Set;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,6 +27,9 @@ public class SkinCarePage extends BasePage{
 	
 	@FindBy(name="mobileInteraction")
 	WebElement phoneNumber;
+	
+	@FindBy(xpath="//h3[text()='Confirm & Pay']")
+	WebElement confirmPay;
 
 	public SkinCarePage(WebDriver driver) {
 		super(driver);
@@ -63,6 +62,7 @@ public class SkinCarePage extends BasePage{
 		String originalWindow = driver.getWindowHandle();
 		 
 	    // Wait for new window to open
+		
 	    Set<String> allWindows = driver.getWindowHandles();
 	    for (String windowHandle : allWindows) {
 	        if (!windowHandle.equals(originalWindow)) {
@@ -113,9 +113,19 @@ public class SkinCarePage extends BasePage{
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
+		try {
+			robot = new Robot();
+			robot.mouseMove(650,550);
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		} catch (AWTException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void onPaymentPage() {
-		Assert.assertTrue(driver.getCurrentUrl().equals("https://www.practo.com/consult/direct/payment"), "Payment Page not visible");
+		waitUntilWebElementIsVisible(confirmPay);
+		Assert.assertTrue(confirmPay.isDisplayed(), "Payment Page not visible");
 	}
 }

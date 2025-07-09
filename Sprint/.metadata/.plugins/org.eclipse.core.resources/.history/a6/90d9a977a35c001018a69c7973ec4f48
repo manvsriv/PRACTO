@@ -1,0 +1,7 @@
+package com.runner;
+
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+
+public class TestRunnerTestNG extends AbstractTestNGCucumberTests {
+
+}

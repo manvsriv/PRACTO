@@ -45,6 +45,10 @@ Scenario: Displays Error message for invalid phone number
     And enters invalid "<phoneNumber>"
     And clicks on Send App Link
     Then user should see error message of invalid phone number
+    
+Examples:
+|phoneNumber |
+|17 	   	 |
 
 @FormFilling
 Scenario: Fill form and Select slot for booking appointment 
@@ -72,3 +76,17 @@ Scenario: Enable Adding multiple test and display number of Test added in cart
     And start adding tests
     And click on proceed to checkout
     Then user should see number of tests selected
+    
+    
+@InvalidAge
+Scenario Outline: Display Error Message if age entered is less than 10 years 
+    When clicks on Lab Tests
+    And clicks on Search city and selects city
+    And start adding tests
+    And click on proceed to checkout
+    And user enter "<patientName>","<invalidAge>" and gender
+    Then user should see error message for invalid age
+    
+Examples:
+|patientName  |invalidAge |
+|13 		  |16  	 	  |
