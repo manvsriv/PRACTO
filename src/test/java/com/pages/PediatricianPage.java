@@ -26,6 +26,9 @@ public class PediatricianPage extends BasePage{
 	@FindBy(css=".c-btn--dark")
 	WebElement otpbutton;
 	
+	@FindBy(xpath ="//*[@id=\"container\"]/div/div[4]/div/div[1]/div/div[3]/div[2]/div/div/div/div[2]/div[1]/div[2]/div[2]/div[1]")
+	WebElement tomorrow;
+	
 	public PediatricianPage(WebDriver driver)
 	{
 		super(driver);
@@ -50,8 +53,14 @@ public class PediatricianPage extends BasePage{
 		}	  
 		  JavascriptExecutor js = (JavascriptExecutor) driver;
 		  js.executeScript("window.scrollBy(0,500)"); 
+		  
+		 
 		  waitUntilWebElementIsClickable(bookvisit);
 		  bookvisit.click();
+		  
+		  waitUntilWebElementIsClickable(tomorrow);
+		  tomorrow.click();
+		  
 		  
 		  try {
 			Thread.sleep(3000);

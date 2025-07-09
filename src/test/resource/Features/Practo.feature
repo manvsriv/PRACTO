@@ -29,7 +29,7 @@ Then Articles on Healthy Eating appear on a page
 And user navigates back to the module page
 
 @Scenario4
-Scenario Outline: Validate the page for Booking a Surgery Appointment
+Scenario Outline: Validate the page for Booking a Surgery Appointment   #using ExcelSheet
 When user clicks on the module page
 And clicks on the Surgeries popup
 And scrolls down and clicks Cataract option
@@ -41,34 +41,34 @@ Then validate the Book Appointment button
       | 10            |     11       |
       | 20            |     21       |
       
-#@Scenario5
-#Scenario: Validate bookimg Video Consultation with valid credentials
-#When user clicks on FindDoc button 
-#And clicks on Consult with a Doctor button
-#And clicks on Consult Now button
-#And enters the VALID symptom and phonenumber using Data Table
-#|VideoConsultationCredentials.xlsx|
-#Then OTP popup appears
-#
-#@Scenario6
-#Scenario: Validate booking Video Consultation with Invalid credentials
-#When user clicks on FindDoc button on HomePage
-#And clicks on consult with a Doctor button on the module page
-#And clicks on Consult Now button on the page
-#And enters the INVALID symptom and phonenumber using Property file
-#Then OTP PopUp appears
-#
-#@Scenario7
-#Scenario Outline: Validate Booking Clinic visit using Valid and Invalid Credentials
-#When user clicks on module page icon on home page
-#And clicks on Pediatrician option on Module Page
-#And applies filters
-#And clicks on Book Clinic Visit
-#And enters OTP
-#And enters both Valid and Invalid Credentials from <sheetno> and <rowno>
-#Then Booking Confirmation page should appear
-#
-    #Examples: 
-      #| sheetno      | rowno       |
-      #| 0            |     1       |
-      #| 0            |     3       |
+@Scenario5
+Scenario: Validate bookimg Video Consultation with valid credentials     #using DataTable
+When user clicks on FindDoc button 
+And clicks on Consult with a Doctor button
+And clicks on Consult Now button
+And enters the VALID symptom and phonenumber using Data Table
+|VideoConsultationCredentials.xlsx|
+Then OTP popup appears
+
+@Scenario6
+Scenario: Validate booking Video Consultation with Invalid credentials    #usingPropertyFile
+When user clicks on FindDoc button on HomePage
+And clicks on consult with a Doctor button on the module page
+And clicks on Consult Now button on the page
+And enters the INVALID symptom and phonenumber using Property file
+Then OTP PopUp appears
+
+@Scenario7
+Scenario Outline: Validate Booking Clinic visit using Valid and Invalid Credentials    #using ExcelSheet
+When user clicks on module page icon on home page
+And clicks on Pediatrician option on Module Page
+And applies filters
+And clicks on Book Clinic Visit
+And enters OTP
+And enters both Valid and Invalid Credentials from <sheetno> and <rowno>
+Then Booking Confirmation page should appear
+
+    Examples: 
+      | sheetno      | rowno       |
+      | 0            |     1       |
+      | 0            |     3       |

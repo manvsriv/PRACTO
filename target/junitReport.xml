@@ -1,24 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="14.245" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-07-08T10:29:23.531385300Z">
-<testcase classname="To validate the different functionalities of Practo Find Doctor Page" name="Validate the visibility of Practo Case Studies Page" time="13.998">
-<failure type="org.openqa.selenium.NoSuchSessionException" message="invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
-  (Session info: chrome=138.0.7204.51)
+<testsuite name="Cucumber" time="200.817" tests="9" skipped="0" failures="3" errors="0" timestamp="2025-07-09T09:35:27.564373900Z">
+<testcase classname="To validate the different functionalities of Practo Find Doctor Page" name="Validate the visibility of Practo Case Studies Page" time="13.583">
+<system-out><![CDATA[
+Given User is on Practo HomePage............................................passed
+When user clicks Find Doctors near you button...............................passed
+And clicks on Security and Help dropdown menu...............................passed
+And clicks on help..........................................................passed
+Then Practo help page should appear.........................................passed
+And clicks on Practo Case Studies...........................................passed
+Then Practo Case Studies Page appears.......................................passed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the different functionalities of Practo Find Doctor Page" name="Validate the visibility of Practo Github page" time="10.023">
+<system-out><![CDATA[
+Given User is on Practo HomePage............................................passed
+When user clicks Find Doctors near you button on homepage...................passed
+And clicks Find Doctors near you buttonscrolls to the bottom of the page....passed
+And clicks on the Github button.............................................passed
+Then Practo Github Page opens...............................................passed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the different functionalities of Practo Find Doctor Page" name="Validate the Healthy Eating Page" time="10.087">
+<system-out><![CDATA[
+Given User is on Practo HomePage............................................passed
+When user clicks on the module button.......................................passed
+And clicks on Read Articles button..........................................passed
+And clicks on Healthy Eating option.........................................passed
+Then Articles on Healthy Eating appear on a page............................passed
+And user navigates back to the module page..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the different functionalities of Practo Find Doctor Page" name="Validate the page for Booking a Surgery Appointment   #using ExcelSheet - #1.1" time="13.632">
+<system-out><![CDATA[
+Given User is on Practo HomePage............................................passed
+When user clicks on the module page.........................................passed
+And clicks on the Surgeries popup...........................................passed
+And scrolls down and clicks Cataract option.................................passed
+And enters the "10" and "11"................................................passed
+Then validate the Book Appointment button...................................passed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the different functionalities of Practo Find Doctor Page" name="Validate the page for Booking a Surgery Appointment   #using ExcelSheet - #1.2" time="11.135">
+<failure type="junit.framework.AssertionFailedError">
+<![CDATA[junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at com.stepDefinition.Test.validate_the_book_appointment_button(Test.java:233)
+	at ✽.validate the Book Appointment button(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:37)
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on Practo HomePage............................................passed
+When user clicks on the module page.........................................passed
+And clicks on the Surgeries popup...........................................passed
+And scrolls down and clicks Cataract option.................................passed
+And enters the "20" and "21"................................................passed
+Then validate the Book Appointment button...................................failed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the different functionalities of Practo Find Doctor Page" name="Validate bookimg Video Consultation with valid credentials     #using DataTable" time="13.342">
+<system-out><![CDATA[
+Given User is on Practo HomePage............................................passed
+When user clicks on FindDoc button..........................................passed
+And clicks on Consult with a Doctor button..................................passed
+And clicks on Consult Now button............................................passed
+And enters the VALID symptom and phonenumber using Data Table...............passed
+Then OTP popup appears......................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the different functionalities of Practo Find Doctor Page" name="Validate booking Video Consultation with Invalid credentials    #usingPropertyFile" time="13.748">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//label[text()='Choose a relevant speciality']&quot;}
+  (Session info: MicrosoftEdge=138.0.3351.77)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.34.0', revision: '707dcb4246*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [37d73695a2d795644bed7a694584aec1, findElement {value=//a[text()='Prime Case Studies'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.51, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\manvsriv\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55902}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55902/devtoo..., se:cdpVersion: 138.0.7204.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 37d73695a2d795644bed7a694584aec1">
-<![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
-  (Session info: chrome=138.0.7204.51)
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [142edb87fc149c6bef2238f292d9bd45, findElement {using=xpath, value=//label[text()='Choose a relevant speciality']}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.77, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:64700}, msedge: {msedgedriverVersion: 138.0.3351.77 (efaf6935b436..., userDataDir: C:\Users\manvsriv\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64700/devtoo..., se:cdpVersion: 138.0.3351.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 142edb87fc149c6bef2238f292d9bd45">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//label[text()='Choose a relevant speciality']"}
+  (Session info: MicrosoftEdge=138.0.3351.77)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.34.0', revision: '707dcb4246*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [37d73695a2d795644bed7a694584aec1, findElement {value=//a[text()='Prime Case Studies'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.51, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\manvsriv\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55902}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55902/devtoo..., se:cdpVersion: 138.0.7204.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 37d73695a2d795644bed7a694584aec1
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [142edb87fc149c6bef2238f292d9bd45, findElement {using=xpath, value=//label[text()='Choose a relevant speciality']}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.77, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:64700}, msedge: {msedgedriverVersion: 138.0.3351.77 (efaf6935b436..., userDataDir: C:\Users\manvsriv\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64700/devtoo..., se:cdpVersion: 138.0.3351.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 142edb87fc149c6bef2238f292d9bd45
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -35,20 +104,84 @@ Session ID: 37d73695a2d795644bed7a694584aec1
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy20.isDisplayed(Unknown Source)
-	at com.pages.CaseStudiesPage.isVisible(CaseStudiesPage.java:25)
-	at com.stepDefinition.Test.practo_case_studies_page_appears(Test.java:100)
-	at ✽.Practo Case Studies Page appears.(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:14)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.isDisplayed(Unknown Source)
+	at com.pages.VideoConsultConfirmPage.validate(VideoConsultConfirmPage.java:65)
+	at com.stepDefinition.Test.otp_pop_up_appears(Test.java:321)
+	at ✽.OTP PopUp appears(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:59)
 ]]>
 </failure>
 <system-out><![CDATA[
 Given User is on Practo HomePage............................................passed
-When user clicks Find Doctors near you button...............................passed
-And clicks on Security and Help dropdown menu...............................passed
-And clicks on help..........................................................passed
-Then Practo help page should appear.........................................passed
-And clicks on Practo Case Studies...........................................passed
-Then Practo Case Studies Page appears.......................................failed
+When user clicks on FindDoc button on HomePage..............................passed
+And clicks on consult with a Doctor button on the module page...............passed
+And clicks on Consult Now button on the page................................passed
+And enters the INVALID symptom and phonenumber using Property file..........passed
+Then OTP PopUp appears......................................................failed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the different functionalities of Practo Find Doctor Page" name="Validate Booking Clinic visit using Valid and Invalid Credentials    #using ExcelSheet - #1.1" time="50.564">
+<system-out><![CDATA[
+Given User is on Practo HomePage............................................passed
+When user clicks on module page icon on home page...........................passed
+And clicks on Pediatrician option on Module Page............................passed
+And applies filters.........................................................passed
+And clicks on Book Clinic Visit.............................................passed
+And enters OTP..............................................................passed
+And enters both Valid and Invalid Credentials from 0 and 1..................passed
+Then Booking Confirmation page should appear................................passed
+]]></system-out>
+</testcase>
+<testcase classname="To validate the different functionalities of Practo Find Doctor Page" name="Validate Booking Clinic visit using Valid and Invalid Credentials    #using ExcelSheet - #1.2" time="64.292">
+<failure type="org.openqa.selenium.TimeoutException" message="Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[text()='We will send you an SMS and email with the appointment and practice details']' (tried for 8 second(s) with 500 milliseconds interval)">
+<![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[text()='We will send you an SMS and email with the appointment and practice details']' (tried for 8 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at com.pages.BasePage.waitUntilWebElementIsVisible(BasePage.java:24)
+	at com.pages.PatientDetailsPage.validate(PatientDetailsPage.java:39)
+	at com.stepDefinition.Test.booking_confirmation_page_should_appear(Test.java:366)
+	at ✽.Booking Confirmation page should appear(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:69)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='We will send you an SMS and email with the appointment and practice details']"}
+  (Session info: MicrosoftEdge=138.0.3351.77)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [ed19a34e5d4cd28bdd84d2fb9a849c90, findElement {using=xpath, value=//div[text()='We will send you an SMS and email with the appointment and practice details']}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.77, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:65288}, msedge: {msedgedriverVersion: 138.0.3351.77 (efaf6935b436..., userDataDir: C:\Users\manvsriv\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65288/devtoo..., se:cdpVersion: 138.0.3351.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ed19a34e5d4cd28bdd84d2fb9a849c90
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+	... 4 more
+]]>
+</failure>
+<system-out><![CDATA[
+Given User is on Practo HomePage............................................passed
+When user clicks on module page icon on home page...........................passed
+And clicks on Pediatrician option on Module Page............................passed
+And applies filters.........................................................passed
+And clicks on Book Clinic Visit.............................................passed
+And enters OTP..............................................................passed
+And enters both Valid and Invalid Credentials from 0 and 3..................passed
+Then Booking Confirmation page should appear................................failed
 ]]></system-out>
 </testcase>
 </testsuite>

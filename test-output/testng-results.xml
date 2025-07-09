@@ -1,27 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="2" failed="3" skipped="0">
+<testng-results ignored="0" total="9" passed="6" failed="3" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-07-08T16:12:46 IST" name="Suite" finished-at="2025-07-08T16:13:19 IST" duration-ms="33209">
+  <suite started-at="2025-07-09T15:05:26 IST" name="Default suite" finished-at="2025-07-09T15:08:49 IST" duration-ms="202945">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerParallelTesting@15ca7889]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerCodewithTestNG@15ca7889]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2025-07-08T16:12:46 IST" name="Test" finished-at="2025-07-08T16:13:19 IST" duration-ms="33209">
-      <class name="com.runner.RunnerParallelTesting">
-        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.runner.RunnerParallelTesting@15ca7889]" started-at="2025-07-08T16:12:46 IST" name="setUpClass" finished-at="2025-07-08T16:12:46 IST" duration-ms="381" status="PASS">
+    <test started-at="2025-07-09T15:05:26 IST" name="Default test" finished-at="2025-07-09T15:08:49 IST" duration-ms="202945">
+      <class name="com.runner.RunnerCodewithTestNG">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:com.runner.RunnerCodewithTestNG@15ca7889]" started-at="2025-07-09T15:05:26 IST" name="setUpClass" finished-at="2025-07-09T15:05:27 IST" duration-ms="1376" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[org.testng.TestRunner@673be18f]]>
+                <![CDATA[org.testng.TestRunner@7f792530]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerParallelTesting@15ca7889]" started-at="2025-07-08T16:12:46 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-08T16:12:57 IST" duration-ms="10409" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerCodewithTestNG@15ca7889]" started-at="2025-07-09T15:05:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-09T15:05:41 IST" duration-ms="13728" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate the visibility of Practo Case Studies Page"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["To validate the different functionalities of Practo Find Doctor Page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerCodewithTestNG@15ca7889]" started-at="2025-07-09T15:05:41 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-09T15:05:51 IST" duration-ms="10039" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -37,11 +53,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerParallelTesting@15ca7889]" started-at="2025-07-08T16:12:46 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-08T16:13:02 IST" duration-ms="16192" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerCodewithTestNG@15ca7889]" started-at="2025-07-09T15:05:51 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-09T15:06:01 IST" duration-ms="10094" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validate the visibility of Practo Case Studies Page"]]>
+                <![CDATA["Validate the Healthy Eating Page"]]>
               </value>
             </param>
             <param index="1">
@@ -50,27 +66,103 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[text()='Help']' (tried for 8 second(s) with 500 milliseconds interval)]]>
-            </message>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerCodewithTestNG@15ca7889]" started-at="2025-07-09T15:06:01 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-09T15:06:15 IST" duration-ms="13641" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate the page for Booking a Surgery Appointment   #using ExcelSheet"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["To validate the different functionalities of Practo Find Doctor Page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerCodewithTestNG@15ca7889]" started-at="2025-07-09T15:06:15 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-09T15:06:26 IST" duration-ms="11153" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate the page for Booking a Surgery Appointment   #using ExcelSheet"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["To validate the different functionalities of Practo Find Doctor Page"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="junit.framework.AssertionFailedError">
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //span[text()='Help']' (tried for 8 second(s) with 500 milliseconds interval)
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-at com.pages.BasePage.waitUntilWebElementIsClickable(BasePage.java:35)
-at com.pages.ModulePage.helpButton(ModulePage.java:57)
-at com.stepDefinition.Test.clicks_on_help(Test.java:86)
-at ✽.clicks on help(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:11)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Help']"}
-  (Session info: chrome=138.0.7204.51)
+              <![CDATA[junit.framework.AssertionFailedError
+at junit.framework.Assert.fail(Assert.java:55)
+at junit.framework.Assert.assertTrue(Assert.java:22)
+at junit.framework.Assert.assertTrue(Assert.java:31)
+at com.stepDefinition.Test.validate_the_book_appointment_button(Test.java:233)
+at ✽.validate the Book Appointment button(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:37)
+]]>
+            </full-stacktrace>
+          </exception> <!-- junit.framework.AssertionFailedError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerCodewithTestNG@15ca7889]" started-at="2025-07-09T15:06:26 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-09T15:06:39 IST" duration-ms="13342" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate bookimg Video Consultation with valid credentials     #using DataTable"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["To validate the different functionalities of Practo Find Doctor Page"]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerCodewithTestNG@15ca7889]" started-at="2025-07-09T15:06:39 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-09T15:06:53 IST" duration-ms="13757" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Validate booking Video Consultation with Invalid credentials    #usingPropertyFile"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["To validate the different functionalities of Practo Find Doctor Page"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//label[text()='Choose a relevant speciality']"}
+  (Session info: MicrosoftEdge=138.0.3351.77)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.34.0', revision: '707dcb4246*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6683628845d95882fb463b9beb01e818, findElement {value=//span[text()='Help'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.51, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\manvsriv\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59520}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59520/devtoo..., se:cdpVersion: 138.0.7204.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6683628845d95882fb463b9beb01e818
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [142edb87fc149c6bef2238f292d9bd45, findElement {using=xpath, value=//label[text()='Choose a relevant speciality']}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.77, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:64700}, msedge: {msedgedriverVersion: 138.0.3351.77 (efaf6935b436..., userDataDir: C:\Users\manvsriv\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64700/devtoo..., se:cdpVersion: 138.0.3351.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 142edb87fc149c6bef2238f292d9bd45]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//label[text()='Choose a relevant speciality']"}
+  (Session info: MicrosoftEdge=138.0.3351.77)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.34.0', revision: '707dcb4246*'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [142edb87fc149c6bef2238f292d9bd45, findElement {using=xpath, value=//label[text()='Choose a relevant speciality']}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.77, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:64700}, msedge: {msedgedriverVersion: 138.0.3351.77 (efaf6935b436..., userDataDir: C:\Users\manvsriv\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64700/devtoo..., se:cdpVersion: 138.0.3351.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 142edb87fc149c6bef2238f292d9bd45
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -87,25 +179,21 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy22.isDisplayed(Unknown Source)
-at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-... 4 more
+at jdk.proxy2/jdk.proxy2.$Proxy25.isDisplayed(Unknown Source)
+at com.pages.VideoConsultConfirmPage.validate(VideoConsultConfirmPage.java:65)
+at com.stepDefinition.Test.otp_pop_up_appears(Test.java:321)
+at ✽.OTP PopUp appears(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:59)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerParallelTesting@15ca7889]" started-at="2025-07-08T16:12:57 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-08T16:13:06 IST" duration-ms="9240" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerCodewithTestNG@15ca7889]" started-at="2025-07-09T15:06:53 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-09T15:07:44 IST" duration-ms="50570" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validate the Healthy Eating Page"]]>
+                <![CDATA["Validate Booking Clinic visit using Valid and Invalid Credentials    #using ExcelSheet"]]>
               </value>
             </param>
             <param index="1">
@@ -117,11 +205,11 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerParallelTesting@15ca7889]" started-at="2025-07-08T16:13:02 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-08T16:13:19 IST" duration-ms="16540" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerCodewithTestNG@15ca7889]" started-at="2025-07-09T15:07:44 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-09T15:08:48 IST" duration-ms="64294" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Validate the page for Booking a Surgery Appointment"]]>
+                <![CDATA["Validate Booking Clinic visit using Valid and Invalid Credentials    #using ExcelSheet"]]>
               </value>
             </param>
             <param index="1">
@@ -130,28 +218,27 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[element click intercepted: Element <button class="ailmentLeadForm-module_submit-cta__oKug8">...</button> is not clickable at point (640, 424). Other element would receive the click: <h1 class="list-module_sizeSmallItemContentTitle__kaSwM list-module_itemContentTitle__XreVD text-gray-2 font-normal pb-0px">...</h1>
-  (Session info: chrome=138.0.7204.51)
-Build info: version: '4.34.0', revision: '707dcb4246*'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [927275ec2ba0dafe350dc15fcba76973, clickElement {id=f.E8FBC649E75AB48151E73C85C6920591.d.B8AB3194441D60C9DDFA452918389810.e.168}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.51, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\manvsriv\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60001}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60001/devtoo..., se:cdpVersion: 138.0.7204.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (927275ec2ba0dafe350dc15fcba76973)] -> css selector: .ailmentLeadForm-module_submit-cta__oKug8]
-Session ID: 927275ec2ba0dafe350dc15fcba76973]]>
+              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[text()='We will send you an SMS and email with the appointment and practice details']' (tried for 8 second(s) with 500 milliseconds interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button class="ailmentLeadForm-module_submit-cta__oKug8">...</button> is not clickable at point (640, 424). Other element would receive the click: <h1 class="list-module_sizeSmallItemContentTitle__kaSwM list-module_itemContentTitle__XreVD text-gray-2 font-normal pb-0px">...</h1>
-  (Session info: chrome=138.0.7204.51)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[text()='We will send you an SMS and email with the appointment and practice details']' (tried for 8 second(s) with 500 milliseconds interval)
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at com.pages.BasePage.waitUntilWebElementIsVisible(BasePage.java:24)
+at com.pages.PatientDetailsPage.validate(PatientDetailsPage.java:39)
+at com.stepDefinition.Test.booking_confirmation_page_should_appear(Test.java:366)
+at ✽.Booking Confirmation page should appear(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:69)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='We will send you an SMS and email with the appointment and practice details']"}
+  (Session info: MicrosoftEdge=138.0.3351.77)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.34.0', revision: '707dcb4246*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [927275ec2ba0dafe350dc15fcba76973, clickElement {id=f.E8FBC649E75AB48151E73C85C6920591.d.B8AB3194441D60C9DDFA452918389810.e.168}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.51, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\manvsriv\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60001}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60001/devtoo..., se:cdpVersion: 138.0.7204.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (927275ec2ba0dafe350dc15fcba76973)] -> css selector: .ailmentLeadForm-module_submit-cta__oKug8]
-Session ID: 927275ec2ba0dafe350dc15fcba76973
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [ed19a34e5d4cd28bdd84d2fb9a849c90, findElement {using=xpath, value=//div[text()='We will send you an SMS and email with the appointment and practice details']}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.77, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:65288}, msedge: {msedgedriverVersion: 138.0.3351.77 (efaf6935b436..., userDataDir: C:\Users\manvsriv\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65288/devtoo..., se:cdpVersion: 138.0.3351.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ed19a34e5d4cd28bdd84d2fb9a849c90
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -162,54 +249,29 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at jdk.proxy2/jdk.proxy2.$Proxy22.click(Unknown Source)
-at com.pages.SurgeriesPage.validate(SurgeriesPage.java:80)
-at com.stepDefinition.Test.validate_the_book_appointment_button(Test.java:232)
-at ✽.validate the Book Appointment button(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:37)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy25.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
+... 4 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:com.runner.RunnerParallelTesting@15ca7889]" started-at="2025-07-08T16:13:06 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2025-07-08T16:13:18 IST" duration-ms="12325" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Validate the page for Booking a Surgery Appointment"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["To validate the different functionalities of Practo Find Doctor Page"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="junit.framework.AssertionFailedError">
-            <full-stacktrace>
-              <![CDATA[junit.framework.AssertionFailedError
-at junit.framework.Assert.fail(Assert.java:55)
-at junit.framework.Assert.assertTrue(Assert.java:22)
-at junit.framework.Assert.assertTrue(Assert.java:31)
-at com.pages.SurgeriesPage.validate(SurgeriesPage.java:83)
-at com.stepDefinition.Test.validate_the_book_appointment_button(Test.java:232)
-at ✽.validate the Book Appointment button(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:37)
-]]>
-            </full-stacktrace>
-          </exception> <!-- junit.framework.AssertionFailedError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.runner.RunnerParallelTesting@15ca7889]" started-at="2025-07-08T16:13:19 IST" name="tearDownClass" finished-at="2025-07-08T16:13:19 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:com.runner.RunnerCodewithTestNG@15ca7889]" started-at="2025-07-09T15:08:48 IST" name="tearDownClass" finished-at="2025-07-09T15:08:49 IST" duration-ms="848" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->
-      </class> <!-- com.runner.RunnerParallelTesting -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+      </class> <!-- com.runner.RunnerCodewithTestNG -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

@@ -34,12 +34,13 @@ public class PatientDetailsPage extends BasePage{
 		action.sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();
 	}
 	
-	public void validate()
+	public boolean validate()
 	{
 		waitUntilWebElementIsVisible(validationmsg);
 		   boolean validate = driver.findElement(By.xpath("//div[text()='We will send you an SMS and email with the appointment and practice details']")).isDisplayed();
 		   System.out.println(validate);
-		   Assert.assertTrue(validate);
+		   return validate;
+		   
 	}
 
 }

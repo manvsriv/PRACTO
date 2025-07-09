@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/4/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>6/3/0</td>
 </tr><tr>
-<td>Started on:</td><td>Tue Jul 08 16:10:46 IST 2025</td>
+<td>Started on:</td><td>Wed Jul 09 15:05:26 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>32 seconds (32049 ms)</td>
+<tr><td>Total time:</td><td>202 seconds (202945 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,237 +76,41 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.runner.RunnerParallelTesting.runScenario()'><b>runScenario</b><br>Test class: com.runner.RunnerParallelTesting<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the visibility of Practo Case Studies Page", "To validate the different functionalities of Practo Find Doctor Page"</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //span[text()=&apos;Help&apos;]&apos; (tried for 8 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.pages.BasePage.waitUntilWebElementIsClickable(BasePage.java:35)
-	at com.pages.ModulePage.helpButton(ModulePage.java:57)
-	at com.stepDefinition.Test.clicks_on_help(Test.java:86)
-	at ✽.clicks on help(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:11)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;Help&apos;]&quot;}
-  (Session info: chrome=138.0.7204.51)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e202ad18d289938fefffad189d2dc7cb, findElement {using=xpath, value=//span[text()=&apos;Help&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.51, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\manvsriv\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58791}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58791/devtoo..., se:cdpVersion: 138.0.7204.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e202ad18d289938fefffad189d2dc7cb
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy22.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	... 4 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace1397671337", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1397671337'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //span[text()=&apos;Help&apos;]&apos; (tried for 8 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.pages.BasePage.waitUntilWebElementIsClickable(BasePage.java:35)
-	at com.pages.ModulePage.helpButton(ModulePage.java:57)
-	at com.stepDefinition.Test.clicks_on_help(Test.java:86)
-	at ✽.clicks on help(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:11)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;Help&apos;]&quot;}
-  (Session info: chrome=138.0.7204.51)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e202ad18d289938fefffad189d2dc7cb, findElement {using=xpath, value=//span[text()=&apos;Help&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.51, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\manvsriv\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58791}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58791/devtoo..., se:cdpVersion: 138.0.7204.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e202ad18d289938fefffad189d2dc7cb
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy22.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	... 4 more
+<td title='com.runner.RunnerCodewithTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.RunnerCodewithTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the page for Booking a Surgery Appointment   #using ExcelSheet", "To validate the different functionalities of Practo Find Doctor Page"</td>
+<td><div><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at com.stepDefinition.Test.validate_the_book_appointment_button(Test.java:233)
+	at ✽.validate the Book Appointment button(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:37)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1441341025", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1441341025'><pre>junit.framework.AssertionFailedError
+	at junit.framework.Assert.fail(Assert.java:55)
+	at junit.framework.Assert.assertTrue(Assert.java:22)
+	at junit.framework.Assert.assertTrue(Assert.java:31)
+	at com.stepDefinition.Test.validate_the_book_appointment_button(Test.java:233)
+	at ✽.validate the Book Appointment button(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:37)
 </pre></div></td>
-<td>25</td>
-<td>com.runner.RunnerParallelTesting@15ca7889</td></tr>
+<td>11</td>
+<td>com.runner.RunnerCodewithTestNG@15ca7889</td></tr>
 <tr>
-<td title='com.runner.RunnerParallelTesting.runScenario()'><b>runScenario</b><br>Test class: com.runner.RunnerParallelTesting<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the Healthy Eating Page", "To validate the different functionalities of Practo Find Doctor Page"</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@aria-label=&apos;Find Doctors Near You&apos;]&quot;}
-  (Session info: chrome=138.0.7204.51)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e202ad18d289938fefffad189d2dc7cb, findElement {using=xpath, value=//a[@aria-label=&apos;Find Doctors Near You&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.51, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\manvsriv\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58791}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58791/devtoo..., se:cdpVersion: 138.0.7204.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e202ad18d289938fefffad189d2dc7cb
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy22.click(Unknown Source)
-	at com.pages.HomePage.clickfinddocbutton(HomePage.java:22)
-	at com.stepDefinition.Test.user_clicks_on_the_module_button(Test.java:151)
-	at ✽.user clicks on the module button(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:25)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1311243532", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1311243532'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@aria-label=&apos;Find Doctors Near You&apos;]&quot;}
-  (Session info: chrome=138.0.7204.51)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e202ad18d289938fefffad189d2dc7cb, findElement {using=xpath, value=//a[@aria-label=&apos;Find Doctors Near You&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.51, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\manvsriv\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58791}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58791/devtoo..., se:cdpVersion: 138.0.7204.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e202ad18d289938fefffad189d2dc7cb
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy22.click(Unknown Source)
-	at com.pages.HomePage.clickfinddocbutton(HomePage.java:22)
-	at com.stepDefinition.Test.user_clicks_on_the_module_button(Test.java:151)
-	at ✽.user clicks on the module button(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:25)
-</pre></div></td>
-<td>15</td>
-<td>com.runner.RunnerParallelTesting@15ca7889</td></tr>
-<tr>
-<td title='com.runner.RunnerParallelTesting.runScenario()'><b>runScenario</b><br>Test class: com.runner.RunnerParallelTesting<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the page for Booking a Surgery Appointment", "To validate the different functionalities of Practo Find Doctor Page"</td>
-<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
-  (Session info: chrome=138.0.7204.51)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e202ad18d289938fefffad189d2dc7cb, clickElement {id=f.F72C7FE96ED35EF4EBD8E2CC62B14468.d.BFB92DBAD0A89485A4E66E14BFDAAA99.e.13}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.51, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\manvsriv\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58791}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58791/devtoo..., se:cdpVersion: 138.0.7204.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (e202ad18d289938fefffad189d2dc7cb)] -&gt; xpath: //a[@aria-label=&apos;Find Doctors Near You&apos;]]
-Session ID: e202ad18d289938fefffad189d2dc7cb
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy22.click(Unknown Source)
-	at com.pages.HomePage.clickfinddocbutton(HomePage.java:22)
-	at com.stepDefinition.Test.user_clicks_on_the_module_page(Test.java:196)
-	at ✽.user clicks on the module page(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:33)
-</pre></div><a href='#' onClick='toggleBox("stack-trace510457699", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace510457699'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
-  (Session info: chrome=138.0.7204.51)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
-Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e202ad18d289938fefffad189d2dc7cb, clickElement {id=f.F72C7FE96ED35EF4EBD8E2CC62B14468.d.BFB92DBAD0A89485A4E66E14BFDAAA99.e.13}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.51, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\manvsriv\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58791}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58791/devtoo..., se:cdpVersion: 138.0.7204.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (e202ad18d289938fefffad189d2dc7cb)] -&gt; xpath: //a[@aria-label=&apos;Find Doctors Near You&apos;]]
-Session ID: e202ad18d289938fefffad189d2dc7cb
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy22.click(Unknown Source)
-	at com.pages.HomePage.clickfinddocbutton(HomePage.java:22)
-	at com.stepDefinition.Test.user_clicks_on_the_module_page(Test.java:196)
-	at ✽.user clicks on the module page(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:33)
-</pre></div></td>
-<td>15</td>
-<td>com.runner.RunnerParallelTesting@15ca7889</td></tr>
-<tr>
-<td title='com.runner.RunnerParallelTesting.runScenario()'><b>runScenario</b><br>Test class: com.runner.RunnerParallelTesting<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the page for Booking a Surgery Appointment", "To validate the different functionalities of Practo Find Doctor Page"</td>
-<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //h1[text()=&apos;We are experts in Surgical solutions for 50+ ailments.&apos;]&apos; (tried for 8 second(s) with 500 milliseconds interval)
+<td title='com.runner.RunnerCodewithTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.RunnerCodewithTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Booking Clinic visit using Valid and Invalid Credentials    #using ExcelSheet", "To validate the different functionalities of Practo Find Doctor Page"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //div[text()=&apos;We will send you an SMS and email with the appointment and practice details&apos;]&apos; (tried for 8 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.pages.BasePage.waitUntilWebElementIsVisible(BasePage.java:29)
-	at com.pages.SurgeriesPage.scroll(SurgeriesPage.java:55)
-	at com.stepDefinition.Test.scrolls_down_and_clicks_cataract_option(Test.java:215)
-	at ✽.scrolls down and clicks Cataract option(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:35)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//h1[text()=&apos;We are experts in Surgical solutions for 50+ ailments.&apos;]&quot;}
-  (Session info: chrome=138.0.7204.51)
+	at com.pages.BasePage.waitUntilWebElementIsVisible(BasePage.java:24)
+	at com.pages.PatientDetailsPage.validate(PatientDetailsPage.java:39)
+	at com.stepDefinition.Test.booking_confirmation_page_should_appear(Test.java:366)
+	at ✽.Booking Confirmation page should appear(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:69)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()=&apos;We will send you an SMS and email with the appointment and practice details&apos;]&quot;}
+  (Session info: MicrosoftEdge=138.0.3351.77)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e202ad18d289938fefffad189d2dc7cb, findElement {using=xpath, value=//h1[text()=&apos;We are experts in Surgical solutions for 50+ ailments.&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.51, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\manvsriv\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58791}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58791/devtoo..., se:cdpVersion: 138.0.7204.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e202ad18d289938fefffad189d2dc7cb
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [ed19a34e5d4cd28bdd84d2fb9a849c90, findElement {using=xpath, value=//div[text()=&apos;We will send you an SMS and email with the appointment and practice details&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.77, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:65288}, msedge: {msedgedriverVersion: 138.0.3351.77 (efaf6935b436..., userDataDir: C:\Users\manvsriv\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65288/devtoo..., se:cdpVersion: 138.0.3351.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ed19a34e5d4cd28bdd84d2fb9a849c90
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -323,29 +127,29 @@ Session ID: e202ad18d289938fefffad189d2dc7cb
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy22.isDisplayed(Unknown Source)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.isDisplayed(Unknown Source)
 	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
 	... 4 more
-</pre></div><a href='#' onClick='toggleBox("stack-trace228975306", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace228975306'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //h1[text()=&apos;We are experts in Surgical solutions for 50+ ailments.&apos;]&apos; (tried for 8 second(s) with 500 milliseconds interval)
+</pre></div><a href='#' onClick='toggleBox("stack-trace564059141", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace564059141'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //div[text()=&apos;We will send you an SMS and email with the appointment and practice details&apos;]&apos; (tried for 8 second(s) with 500 milliseconds interval)
 	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
-	at com.pages.BasePage.waitUntilWebElementIsVisible(BasePage.java:29)
-	at com.pages.SurgeriesPage.scroll(SurgeriesPage.java:55)
-	at com.stepDefinition.Test.scrolls_down_and_clicks_cataract_option(Test.java:215)
-	at ✽.scrolls down and clicks Cataract option(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:35)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//h1[text()=&apos;We are experts in Surgical solutions for 50+ ailments.&apos;]&quot;}
-  (Session info: chrome=138.0.7204.51)
+	at com.pages.BasePage.waitUntilWebElementIsVisible(BasePage.java:24)
+	at com.pages.PatientDetailsPage.validate(PatientDetailsPage.java:39)
+	at com.stepDefinition.Test.booking_confirmation_page_should_appear(Test.java:366)
+	at ✽.Booking Confirmation page should appear(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:69)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()=&apos;We will send you an SMS and email with the appointment and practice details&apos;]&quot;}
+  (Session info: MicrosoftEdge=138.0.3351.77)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e202ad18d289938fefffad189d2dc7cb, findElement {using=xpath, value=//h1[text()=&apos;We are experts in Surgical solutions for 50+ ailments.&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.51, chrome: {chromedriverVersion: 138.0.7204.92 (f079b9bc781e..., userDataDir: C:\Users\manvsriv\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58791}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58791/devtoo..., se:cdpVersion: 138.0.7204.51, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e202ad18d289938fefffad189d2dc7cb
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [ed19a34e5d4cd28bdd84d2fb9a849c90, findElement {using=xpath, value=//div[text()=&apos;We will send you an SMS and email with the appointment and practice details&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.77, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:65288}, msedge: {msedgedriverVersion: 138.0.3351.77 (efaf6935b436..., userDataDir: C:\Users\manvsriv\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65288/devtoo..., se:cdpVersion: 138.0.3351.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ed19a34e5d4cd28bdd84d2fb9a849c90
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -362,15 +166,79 @@ Session ID: e202ad18d289938fefffad189d2dc7cb
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy22.isDisplayed(Unknown Source)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.isDisplayed(Unknown Source)
 	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
 	... 4 more
 </pre></div></td>
-<td>31</td>
-<td>com.runner.RunnerParallelTesting@15ca7889</td></tr>
+<td>64</td>
+<td>com.runner.RunnerCodewithTestNG@15ca7889</td></tr>
+<tr>
+<td title='com.runner.RunnerCodewithTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.RunnerCodewithTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate booking Video Consultation with Invalid credentials    #usingPropertyFile", "To validate the different functionalities of Practo Find Doctor Page"</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//label[text()=&apos;Choose a relevant speciality&apos;]&quot;}
+  (Session info: MicrosoftEdge=138.0.3351.77)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [142edb87fc149c6bef2238f292d9bd45, findElement {using=xpath, value=//label[text()=&apos;Choose a relevant speciality&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.77, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:64700}, msedge: {msedgedriverVersion: 138.0.3351.77 (efaf6935b436..., userDataDir: C:\Users\manvsriv\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64700/devtoo..., se:cdpVersion: 138.0.3351.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 142edb87fc149c6bef2238f292d9bd45
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.isDisplayed(Unknown Source)
+	at com.pages.VideoConsultConfirmPage.validate(VideoConsultConfirmPage.java:65)
+	at com.stepDefinition.Test.otp_pop_up_appears(Test.java:321)
+	at ✽.OTP PopUp appears(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:59)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1038651236", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1038651236'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//label[text()=&apos;Choose a relevant speciality&apos;]&quot;}
+  (Session info: MicrosoftEdge=138.0.3351.77)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.34.0&apos;, revision: &apos;707dcb4246*&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [142edb87fc149c6bef2238f292d9bd45, findElement {using=xpath, value=//label[text()=&apos;Choose a relevant speciality&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.77, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:64700}, msedge: {msedgedriverVersion: 138.0.3351.77 (efaf6935b436..., userDataDir: C:\Users\manvsriv\AppData\L...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64700/devtoo..., se:cdpVersion: 138.0.3351.77, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 142edb87fc149c6bef2238f292d9bd45
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:544)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:361)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.isDisplayed(Unknown Source)
+	at com.pages.VideoConsultConfirmPage.validate(VideoConsultConfirmPage.java:65)
+	at com.stepDefinition.Test.otp_pop_up_appears(Test.java:321)
+	at ✽.OTP PopUp appears(file:///C:/Users/manvsriv/Practo/PractoAutomation/src/test/resource/Features/Practo.feature:59)
+</pre></div></td>
+<td>13</td>
+<td>com.runner.RunnerCodewithTestNG@15ca7889</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -381,10 +249,35 @@ Session ID: e202ad18d289938fefffad189d2dc7cb
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.runner.RunnerParallelTesting.runScenario()'><b>runScenario</b><br>Test class: com.runner.RunnerParallelTesting<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the visibility of Practo Github page", "To validate the different functionalities of Practo Find Doctor Page"</td>
+<td title='com.runner.RunnerCodewithTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.RunnerCodewithTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the visibility of Practo Github page", "To validate the different functionalities of Practo Find Doctor Page"</td>
 <td></td>
-<td>24</td>
-<td>com.runner.RunnerParallelTesting@15ca7889</td></tr>
+<td>10</td>
+<td>com.runner.RunnerCodewithTestNG@15ca7889</td></tr>
+<tr>
+<td title='com.runner.RunnerCodewithTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.RunnerCodewithTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the visibility of Practo Case Studies Page", "To validate the different functionalities of Practo Find Doctor Page"</td>
+<td></td>
+<td>13</td>
+<td>com.runner.RunnerCodewithTestNG@15ca7889</td></tr>
+<tr>
+<td title='com.runner.RunnerCodewithTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.RunnerCodewithTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the Healthy Eating Page", "To validate the different functionalities of Practo Find Doctor Page"</td>
+<td></td>
+<td>10</td>
+<td>com.runner.RunnerCodewithTestNG@15ca7889</td></tr>
+<tr>
+<td title='com.runner.RunnerCodewithTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.RunnerCodewithTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate bookimg Video Consultation with valid credentials     #using DataTable", "To validate the different functionalities of Practo Find Doctor Page"</td>
+<td></td>
+<td>13</td>
+<td>com.runner.RunnerCodewithTestNG@15ca7889</td></tr>
+<tr>
+<td title='com.runner.RunnerCodewithTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.RunnerCodewithTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate the page for Booking a Surgery Appointment   #using ExcelSheet", "To validate the different functionalities of Practo Find Doctor Page"</td>
+<td></td>
+<td>13</td>
+<td>com.runner.RunnerCodewithTestNG@15ca7889</td></tr>
+<tr>
+<td title='com.runner.RunnerCodewithTestNG.runScenario()'><b>runScenario</b><br>Test class: com.runner.RunnerCodewithTestNG<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate Booking Clinic visit using Valid and Invalid Credentials    #using ExcelSheet", "To validate the different functionalities of Practo Find Doctor Page"</td>
+<td></td>
+<td>50</td>
+<td>com.runner.RunnerCodewithTestNG@15ca7889</td></tr>
 </table><p>
 </body>
 </html>

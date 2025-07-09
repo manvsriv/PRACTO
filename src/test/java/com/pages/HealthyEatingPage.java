@@ -17,9 +17,11 @@ public class HealthyEatingPage extends BasePage {
 		super(driver);
 	}
 	
-	public void isVisible()
+	public boolean isVisible()
 	{
-		Assert.assertTrue(heading.isDisplayed());
+		boolean condition = heading.isDisplayed();
+		return condition;
+		
 	}
 	
 

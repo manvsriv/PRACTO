@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)  //  this annotation is only for JUnit not for testNG
 @CucumberOptions(features="C:\\Users\\manvsriv\\Practo\\PractoAutomation\\src\\test\\resource\\Features\\Practo.feature", 
 glue="com.stepDefinition",
-tags="@Scenario1",
+
 dryRun =false,
 //monochrome = true,
 plugin= {

@@ -22,7 +22,7 @@ public class ConsultPage extends BasePage{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		robot.mouseMove(150,570);
+		robot.mouseMove(150,520);
 		robot.delay(1000);
 		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
 		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);

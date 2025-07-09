@@ -76,11 +76,12 @@ public class SurgeriesPage extends BasePage {
 
 	}
 
-	public void validate() throws InterruptedException {
+	public boolean validate() throws InterruptedException {
 		bookbtn.click();
 		boolean condition = otpline.isDisplayed();
 		System.out.println(condition);
-		Assert.assertTrue(condition);
+		return condition;
+		
 
 		
 	}

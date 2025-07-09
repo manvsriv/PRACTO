@@ -46,7 +46,7 @@ public class ScreenshotTest {
 	
 	
 	
-	//below for ExtentTest
+	//below for ExtentReport
 	public static String takesScreen(WebDriver driver, String filename) throws IOException
 	{
 		TakesScreenshot screen1=(TakesScreenshot)driver;

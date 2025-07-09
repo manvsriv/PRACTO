@@ -19,11 +19,6 @@ public class BasePage {
 
 	}
 	
-//	public void launchbrowser(WebDriver driver)
-//	{
-//		driver.get("https://www.saucedemo.com/");
-//	}
-
 	public void waitUntilWebElementIsVisible(WebElement element) {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(8));
 		wait.until(ExpectedConditions.visibilityOf(element));

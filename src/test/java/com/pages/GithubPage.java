@@ -6,6 +6,8 @@ import junit.framework.Assert;
 
 public class GithubPage extends BasePage{
 	
+	String title;
+	
 	//WebDriver driver;
 	
 	public GithubPage(WebDriver driver)
@@ -21,9 +23,15 @@ public class GithubPage extends BasePage{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		String title= driver.getTitle();
+		 title= driver.getTitle();
 		System.out.println(title);
-		Assert.assertEquals("Practo · GitHub", title);
+		//Assert.assertEquals("Practo · GitHub", title);
+	}
+	
+	public boolean validate()
+	{
+		boolean condition= title.matches("Practo · GitHub");
+		return condition;
 	}
 
 }

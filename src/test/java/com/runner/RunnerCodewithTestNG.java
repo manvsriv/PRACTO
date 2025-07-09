@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(features="C:\\Users\\manvsriv\\Practo\\PractoAutomation\\src\\test\\resource\\Features\\Practo.feature", 
 glue="com.stepDefinition",
-tags="@Scenario1",
+
 plugin = {
 	    "json:target/jsonreport.json",
 	    "junit:target/junitReport.xml",

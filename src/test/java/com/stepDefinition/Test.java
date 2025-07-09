@@ -61,7 +61,7 @@ public class Test {
 	//--------------------Background-------------------------------
 	@Given("User is on Practo HomePage.")
 	public void user_is_on_practo_home_page() {
-		driver=Setup.chromeDriver();
+		driver=Setup.initializeDriver();
 		  home = new HomePage(driver);
 	}
 	
@@ -97,8 +97,8 @@ public class Test {
 	@Then("Practo Case Studies Page appears.")
 	public void practo_case_studies_page_appears() {
 		csp = new CaseStudiesPage(driver);
-	    csp.isVisible();
-	    screenshot.takeScreen(driver);
+	    Assert.assertTrue(csp.isVisible());
+
 	}
 	
 	//-------------------------Scenario 2--------------------------------------------------------------
@@ -137,6 +137,7 @@ public class Test {
 		
 		git = new GithubPage(driver);
 	    git.title();
+	    Assert.assertTrue(git.validate());
 	}
 	
 	//-------------------------Scenario 3--------------------------------------------------------------
@@ -174,7 +175,7 @@ public class Test {
 	@Then("Articles on Healthy Eating appear on a page")
 	public void articles_on_healthy_eating_appear_on_a_page() {
 		healthyeatingpage = new HealthyEatingPage(driver);
-	    healthyeatingpage.isVisible();
+		Assert.assertTrue(healthyeatingpage.isVisible());
 	}
 	@Then("user navigates back to the module page")
 	public void user_navigates_back_to_the_module_page() {
@@ -229,7 +230,7 @@ public class Test {
 	}
 	@Then("validate the Book Appointment button")
 	public void validate_the_book_appointment_button() throws InterruptedException {
-	    surgery.validate();
+	    Assert.assertTrue(surgery.validate());
 	}
 	
 	
@@ -362,7 +363,7 @@ public class Test {
 	
 	@Then("Booking Confirmation page should appear")
 	public void booking_confirmation_page_should_appear() {
-	    patientdetails.validate();
+		Assert.assertTrue(patientdetails.validate());
 	}
 	
 	@After

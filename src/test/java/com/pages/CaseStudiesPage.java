@@ -20,15 +20,18 @@ public class CaseStudiesPage extends BasePage{
 		super(driver);
 	}
 	
-	public void isVisible()
+	public boolean isVisible()
 	{
-		Assert.assertTrue(primeCaseStudies.isDisplayed());
+		
+		boolean condition = primeCaseStudies.isDisplayed();
 		
 		String name1 = primeCaseStudies.getText();
 		System.out.println(name1);
 		
 		String name2= raycasestudies.getText();
 		System.out.println(name2);
+		
+		return condition;
 	}
 	
 
