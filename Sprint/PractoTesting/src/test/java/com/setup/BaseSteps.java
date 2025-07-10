@@ -1,42 +1,50 @@
 package com.setup;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 
-import com.pages.BasePage;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseSteps {
-    public static WebDriver driver;
+	public static WebDriver driver;
     public static ChromeOptions coptions;
     public static EdgeOptions eoptions;
-
-    public static WebDriver chromedriver() {
-        coptions = new ChromeOptions();
-        coptions.addArguments("--start-maximized");
-        coptions.addArguments("Incognito");
-        coptions.addArguments("disable-notification");
-        coptions.addArguments("disable-popup-blocking");
-        coptions.addArguments("deny-permission-prompts");
-
-        driver=BasePage.setup("chrome", coptions, null);
-        
+     
+    public static WebDriver initializeDriver(String browser) {
+        WebDriver driver;
+        if (browser.equalsIgnoreCase("chrome")) {
+            WebDriverManager.chromedriver().setup();
+            ChromeOptions coptions = new ChromeOptions();
+            coptions.addArguments("disable-notification");
+            coptions.addArguments("disable-popup-blocking");
+            driver = new ChromeDriver(coptions);
+            driver.get("https://www.practo.com/tests");
+            driver.manage().window().maximize();
+            System.out.println("ChromeDriver initialized and navigated to the website");
+            
+        } else if (browser.equalsIgnoreCase("edge")) {
+            WebDriverManager.edgedriver().setup();
+            EdgeOptions eoptions = new EdgeOptions();
+            eoptions.addArguments("disable-notification");
+            eoptions.addArguments("deny-permission-prompts");
+            driver = new EdgeDriver(eoptions);
+            driver.get("https://www.practo.com/tests");
+            driver.manage().window().maximize();
+            System.out.println("EdgeDriver initialized and navigated to the website");
+            
+        } else {
+            throw new IllegalArgumentException("Unsupported browser: " + browser);
+        }
         return driver;
     }
 
-    public static WebDriver edgedriver(WebDriver driver) {
-        eoptions = new EdgeOptions();
-        eoptions.addArguments("--start-maximized");
-        eoptions.addArguments("Incognito");
-        eoptions.addArguments("disable-notification");
-        eoptions.addArguments("deny-permission-prompts");
-
-        driver=BasePage.setup("chrome",null, eoptions);
-        return driver;
-    }
-
-    public void tearDown() {
+ 
+    public void teardown() {
         driver.close();
+        System.out.println("Browser closed");
     }
 }
 

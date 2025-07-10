@@ -1,9 +1,5 @@
 package com.pages;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.InputEvent;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,16 +15,16 @@ public class AddressPage extends BasePage{
 	}
 	
 	public void selectAddress() {
-		Robot robot;
+		
+		int x=500;
+		int y=450;
+		
 		try {
-			robot = new Robot();
-			robot.mouseMove(500,450);
-			robot.delay(1000);
-			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-		} catch (AWTException e) {
+			clickUsingRobot(x,y);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
 	
 	public void clickContinue() {

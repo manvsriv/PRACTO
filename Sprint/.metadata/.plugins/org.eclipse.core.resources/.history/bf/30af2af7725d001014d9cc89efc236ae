@@ -1,0 +1,45 @@
+package com.setup;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+
+import com.pages.BasePage;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class BaseSteps {
+	public static WebDriver driver;
+    public static ChromeOptions coptions;
+    public static EdgeOptions eoptions;
+ 
+    public static WebDriver chromedriver() {
+        WebDriverManager.chromedriver().setup();
+        coptions = new ChromeOptions();
+		coptions.addArguments("disable-notification");
+		coptions.addArguments("disable-popup-blocking");
+		driver = new ChromeDriver(coptions);
+        driver.get("https://www.nobroker.in/home-services-in-chennai?nbFr=Home_page");
+        driver.manage().window().maximize();
+        System.out.println("ChromeDriver initialized and navigated to the website");
+        return driver;
+    }
+ 
+    public static WebDriver edgedriver() {
+		WebDriverManager.edgedriver().setup();
+		eoptions=new EdgeOptions();
+		eoptions.addArguments("disable-notification");
+		eoptions.addArguments("deny-permission-prompts");
+		driver= new EdgeDriver(eoptions);
+		driver.get("https://practice.automationtesting.in/");
+		return driver;
+	}
+ 
+    public void teardown() {
+        driver.close();
+        System.out.println("Browser closed");
+    }
+}
+

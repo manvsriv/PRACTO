@@ -135,34 +135,36 @@ public class LabTestPage extends BasePage{
 	public void addTests() {
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0,400)");
+		js.executeScript("window.scrollBy(0,500)");
+		
+		int x=150;
+		int y=600;
+		
+		try {
+			clickUsingRobot(x,y);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		int p=350;
+		int q=600;
+		
+		try {
+			clickUsingRobot(p,q);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	
+	}
+	
+	public void clickOnCheckOut() throws InterruptedException {
 		
 		Robot robot;
 		try {
 			robot = new Robot();
-			robot.mouseMove(150,600);
-			robot.delay(1000);
-			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-			
-			robot.mouseMove(350,600);
-			robot.delay(1000);
-			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-		} catch (AWTException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	public void clickOnCheckOut() {
-//		waitUntilWebElementIsVisible(checkout);
-//		waitUntilWebElementIsClickable(checkout);
-//		checkout.click();
-		Robot robot;
-		try {
-			robot = new Robot();
-			robot.mouseMove(1100,450);
-			robot.delay(1000);
+			robot.mouseMove(1100,200);
+			Thread.sleep(1000);
 			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
 			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
 		} catch (AWTException e) {
@@ -171,3 +173,4 @@ public class LabTestPage extends BasePage{
 		}
 	}
 }
+

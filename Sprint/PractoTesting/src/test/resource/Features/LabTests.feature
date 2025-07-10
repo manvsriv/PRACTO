@@ -4,13 +4,12 @@ Feature: Checking functionality for Practo application
 Background:
 	Given User is on Practo website
 	
-@NavigateToTest
-Scenario Outline:Login to Practo and navigate to Hemoglobin Test
-    When user clicks on Login / Signup button
+@NavigateToTest @Positive
+Scenario Outline: Login to Practo and navigate to Hemoglobin Test
+	When clicks on Search city and selects city
+    And user clicks on Login / Signup button
     And user enters "<username>" and "<password>"
     And clicks on the login button
-    And clicks on Lab Tests
-    And clicks on Search city and selects city
     And clicks on Search for Test
     And user enter "<testName>"
     And selects the Haemoglobin test from the search results
@@ -22,11 +21,9 @@ Examples:
 
 
 
-@SkinConsultation
+@SkinConsultation @Positive
 Scenario: Navigate to Skin Consultation and Fill Details
-    When user clicks on Surgeries
-    And clicks on Lab Tests
-    And clicks on Search city and selects city
+	When clicks on Search city and selects city
     And clicks on the Skin icon
     And clicks on Related Quetions-First Option
     And clicks on Acne keeps coming back?
@@ -36,11 +33,9 @@ Scenario: Navigate to Skin Consultation and Fill Details
     Then user should see the payment page
     
 
-@AppLink
+@AppLink @Negative
 Scenario: Displays Error message for invalid phone number
-    When user clicks on Surgeries
-    And clicks on Lab Tests
-    And clicks on Search city and selects city
+	And clicks on Search city and selects city 
     And scrolls down for Download Practo App
     And enters invalid "<phoneNumber>"
     And clicks on Send App Link
@@ -50,13 +45,12 @@ Examples:
 |phoneNumber |
 |17 	   	 |
 
-@FormFilling
+@FormFilling  @Positive
 Scenario: Fill form and Select slot for booking appointment 
-	When user clicks on Login / Signup button
+	When clicks on Search city and selects city
+    And user clicks on Login / Signup button
     And user enters "<username>" and "<password>"
     And clicks on the login button
-    And clicks on Lab Tests
-    And clicks on Search city and selects city
     And click on one of the Top Booked Diagnostic Tests
     And click on Book Now
     And user fills all userDetails and clicks continue
@@ -69,19 +63,17 @@ Examples:
 |username  |password |
 |10 	   |11  	 |
 
-@AddMultipleTest
+@AddMultipleTest  @Positive
 Scenario: Enable Adding multiple test and display number of Test added in cart
-    When clicks on Lab Tests
-    And clicks on Search city and selects city
+    When clicks on Search city and selects city
     And start adding tests
     And click on proceed to checkout
     Then user should see number of tests selected
     
     
-@InvalidAge
+@InvalidAge @Negative
 Scenario Outline: Display Error Message if age entered is less than 10 years 
-    When clicks on Lab Tests
-    And clicks on Search city and selects city
+    When clicks on Search city and selects city
     And start adding tests
     And click on proceed to checkout
     And user enter "<patientName>","<invalidAge>" and gender

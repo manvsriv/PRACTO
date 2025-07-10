@@ -1,0 +1,42 @@
+package com.setup;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
+
+import com.pages.BasePage;
+
+public class BaseSteps {
+    public static WebDriver driver;
+    public static ChromeOptions coptions;
+    public static EdgeOptions eoptions;
+
+    public static WebDriver chromedriver() {
+        coptions = new ChromeOptions();
+        coptions.addArguments("--start-maximized");
+        coptions.addArguments("Incognito");
+        coptions.addArguments("disable-notification");
+        coptions.addArguments("disable-popup-blocking");
+        coptions.addArguments("deny-permission-prompts");
+
+        driver=BasePage.setup("chrome", coptions, null);
+        
+        return driver;
+    }
+
+    public static WebDriver edgedriver(WebDriver driver) {
+        eoptions = new EdgeOptions();
+        eoptions.addArguments("--start-maximized");
+        eoptions.addArguments("Incognito");
+        eoptions.addArguments("disable-notification");
+        eoptions.addArguments("deny-permission-prompts");
+
+        driver=BasePage.setup("chrome",null, eoptions);
+        return driver;
+    }
+
+    public void tearDown() {
+        driver.close();
+    }
+}
+

@@ -14,9 +14,6 @@ public class HomePage extends BasePage{
 	@FindBy(xpath="//div[text()='Surgeries']") 
 	WebElement surgeries;
 	
-	@FindBy(linkText="Lab Tests")
-	WebElement labtest;
-	
 	public HomePage(WebDriver driver) {
 		super(driver);
 		this.driver=driver;
@@ -28,17 +25,5 @@ public class HomePage extends BasePage{
 		waitUntilWebElementIsClickable(login);
 		login.click();
 		
-	}
-	
-	public void clickLabTests() {
-		waitUntilWebElementIsVisible(labtest);
-		waitUntilWebElementIsClickable(labtest);
-		labtest.click();
-	}
-	
-	public void clickSurgeries() {
-		waitUntilWebElementIsVisible(surgeries);
-		waitUntilWebElementIsClickable(surgeries);
-		surgeries.click();
 	}
 }

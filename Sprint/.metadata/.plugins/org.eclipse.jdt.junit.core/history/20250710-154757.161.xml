@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJUnit" project="PractoTesting" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.runner.TestRunnerJUnit" time="13.099">
+    <testsuite name="Checking functionality for Practo application" time="13.099">
+      <testcase name="Display Error Message if age entered is less than 10 years" classname="Checking functionality for Practo application" time="13.099"/>
+    </testsuite>
+  </testsuite>
+</testrun>

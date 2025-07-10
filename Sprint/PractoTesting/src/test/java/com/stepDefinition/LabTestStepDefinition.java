@@ -35,10 +35,21 @@ public class LabTestStepDefinition {
 	AddressPage address;
 	SlotSelectingPage slot;
 
+// ==========================  BackGround ================================================================
+	
 	@Given("User is on Practo website")
 	public void user_is_on_practo_website() {
-	    driver=BaseSteps.chromedriver();
+	    driver=BaseSteps.initializeDriver("chrome");
 	}
+	
+// =============================  NavigateToTest  ==================================================================	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Login to Practo and navigate to Hemoglobin Test
+	 * 
+	 */
+	
 	@When("user clicks on Login \\/ Signup button")
 	public void user_clicks_on_login_signup_button() {
 	    home=new HomePage(driver);
@@ -55,11 +66,6 @@ public class LabTestStepDefinition {
 	public void clicks_on_the_login_button() {
 		login = new LoginPage(driver);
 		login.clickLogin();
-	}
-	@When("clicks on Lab Tests")
-	public void clicks_on_lab_tests() {
-		home=new HomePage(driver);
-		home.clickLabTests();
 	}
 	@When("clicks on Search city and selects city")
 	public void clicks_on_search_city_and_selects_city() {
@@ -89,13 +95,21 @@ public class LabTestStepDefinition {
 	    labtest.assertionOfTestSElection();
 	}
 
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Login to Practo and navigate to Hemoglobin Test
+	 * 
+	 */
+	
 //=========================  SkinConsultation  ======================================================
 	
-	@When("user clicks on Surgeries")
-	public void user_clicks_on_surgeries() {
-	    home= new HomePage(driver);
-	    home.clickSurgeries();
-	}
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Navigate to Skin Consultation and Fill Details
+	 * 
+	 */
 	@When("clicks on the Skin icon")
 	public void clicks_on_the_skin_icon() {
 		labtest=new LabTestPage(driver);
@@ -132,7 +146,20 @@ public class LabTestStepDefinition {
 	    skinCare.onPaymentPage();
 	}
 	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Navigate to Skin Consultation and Fill Details
+	 * 
+	 */
 //============================  AppLink  ===============================================================
+	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Displays Error message for invalid phone number
+	 * 
+	 */
 	
 	@When("scrolls down for Download Practo App")
 	public void scrolls_down_for_download_practo_app() {
@@ -156,8 +183,22 @@ public class LabTestStepDefinition {
 		labtest=new LabTestPage(driver);
 	    labtest.errorMessageDisplays();
 	}
+	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Displays Error message for invalid phone number
+	 * 
+	 */
 
 // ==============================  FormFilling  =============================================================
+	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Fill form and Select slot for booking appointment 
+	 * 
+	 */
 	
 	@When("click on one of the Top Booked Diagnostic Tests")
 	public void click_on_one_of_the_top_booked_diagnostic_tests() {
@@ -195,8 +236,20 @@ public class LabTestStepDefinition {
 		slot.codMessageIsVisible();
 	}
 
-
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Fill form and Select slot for booking appointment 
+	 * 
+	 */
 //==============================  AddMultipleTest  ========================================================
+	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Enable Adding multiple test and display number of Test added in cart
+	 * 
+	 */
 	
 	@When("start adding tests")
 	public void start_adding_tests() {
@@ -204,7 +257,7 @@ public class LabTestStepDefinition {
 		labtest.addTests();
 	}
 	@When("click on proceed to checkout")
-	public void click_on_proceed_to_checkout() {
+	public void click_on_proceed_to_checkout() throws InterruptedException {
 		labtest=new LabTestPage(driver);
 		labtest.clickOnCheckOut();
 	}
@@ -213,9 +266,22 @@ public class LabTestStepDefinition {
 		form=new FormPage(driver);
 		form.numberOfTestVisible();
 	}
-
+	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Enable Adding multiple test and display number of Test added in cart
+	 * 
+	 */
 	
 //===============================  InvalidAge  =============================================================
+	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Display Error Message if age entered is less than 10 years
+	 * 
+	 */
 	
 	@When("user enter {string},{string} and gender")
 	public void user_enter_and_gender(String patientName, String invalidAge) {
@@ -230,11 +296,20 @@ public class LabTestStepDefinition {
 		form.invalidAgeErrorMessageIsDisplayed();
 	}
 	
+
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Display Error Message if age entered is less than 10 years
+	 * 
+	 */
 	
+// =============================================================================================================	
 	@After
 	public void tearDown(Scenario scenario) // will take screenshots for each and every scenario
 	{
 		final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
 		 scenario.attach(screenshot, "image/png", "Image");
 	}
+	
 }

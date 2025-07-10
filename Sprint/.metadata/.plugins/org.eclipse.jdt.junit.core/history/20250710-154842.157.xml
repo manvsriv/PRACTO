@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunnerJUnit" project="PractoTesting" tests="6" started="6" failures="0" errors="0" ignored="0">
+  <testsuite name="com.runner.TestRunnerJUnit" time="131.074">
+    <testsuite name="Checking functionality for Practo application" time="131.074">
+      <testcase name="Login to Practo and navigate to Hemoglobin Test" classname="Checking functionality for Practo application" time="18.127"/>
+      <testcase name="Navigate to Skin Consultation and Fill Details" classname="Checking functionality for Practo application" time="48.354"/>
+      <testcase name="Displays Error message for invalid phone number" classname="Checking functionality for Practo application" time="8.192"/>
+      <testcase name="Fill form and Select slot for booking appointment" classname="Checking functionality for Practo application" time="26.357"/>
+      <testcase name="Enable Adding multiple test and display number of Test added in cart" classname="Checking functionality for Practo application" time="14.944"/>
+      <testcase name="Display Error Message if age entered is less than 10 years" classname="Checking functionality for Practo application" time="15.1"/>
+    </testsuite>
+  </testsuite>
+</testrun>

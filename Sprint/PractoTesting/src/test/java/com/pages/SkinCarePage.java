@@ -21,7 +21,6 @@ public class SkinCarePage extends BasePage{
 	@FindBy(xpath="//div[text()='Surgeries']") 
 	WebElement surgeries;
 	
-	//WebElement patientName=driver.findElement(By.name(fileReader.getProperty("name")));
 	@FindBy(name="name")
 	WebElement patientName;
 	
@@ -40,19 +39,16 @@ public class SkinCarePage extends BasePage{
 	public void clickOnRelatedQuetions() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,1000)");
-		 
-		Robot robot;
+		
+		int x=1000;
+		int y=400;
+		
 		try {
-			robot = new Robot();
-			robot.mouseMove(1000,400);
-			robot.delay(1000);
-			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-		} catch (AWTException e) {
-			
+			clickUsingRobot(x,y);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		 		
 	}
 	
 	public void clickOnTroubles() throws InterruptedException {
@@ -72,6 +68,7 @@ public class SkinCarePage extends BasePage{
 	    }
 	    JavascriptExecutor js = (JavascriptExecutor) driver; 
 	    js.executeScript("window.scrollBy(0,1200)");
+	    
 	    
 	    Robot robot;
 		try {
@@ -98,15 +95,16 @@ public class SkinCarePage extends BasePage{
 	}
 	
 	public void clickContinue() {
-		Robot robot;
+		
+		int x=220;
+		int y=620;
+		
 		try {
-			robot = new Robot();
-			robot.mouseMove(220,620);
-			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-		} catch (AWTException e) {
-			e.printStackTrace();
+			clickUsingRobot(x,y);
+		} catch (Exception e1) {
+			e1.printStackTrace();
 		}
+
 		
 		try {
 			Thread.sleep(25000);
@@ -114,14 +112,16 @@ public class SkinCarePage extends BasePage{
 			e.printStackTrace();
 		}
 		
+		
+		int p=650;
+		int q=550;
+		
 		try {
-			robot = new Robot();
-			robot.mouseMove(650,550);
-			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-		} catch (AWTException e) {
+			clickUsingRobot(p,q);
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 	}
 	
 	public void onPaymentPage() {

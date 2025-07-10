@@ -1,72 +1,42 @@
 package com.pages;
 
-import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.InputEvent;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class BasePage {
+    
     WebDriver driver;
-    WebDriverWait wait;
-    
-    public BasePage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-        this.wait= new WebDriverWait(driver, Duration.ofSeconds(8));
-    }
-    
-    public static WebDriver setup(String browser, ChromeOptions coptions, EdgeOptions eoptions) {
-        WebDriver driver;
-        if (browser.equalsIgnoreCase("chrome")) {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver(coptions);
-            driver.get("https://www.practo.com/care");
-        } else if (browser.equalsIgnoreCase("edge")) {
-            WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver(eoptions);
-            driver.get("https://www.practo.com/care");
-        } else {
-            throw new IllegalArgumentException("Browser not supported");
-        }
-        return driver;
-    }   
-    public void waitUntilWebElementIsVisible(WebElement element) {
-        wait.until(ExpectedConditions.visibilityOf(element));
-    }
-    
-    public void waitUntilWebElementIsClickable(WebElement element) {
-        wait.until(ExpectedConditions.elementToBeClickable(element));
-    }
-    
-    public void clickUsingRobot(int x, int y) {
-		Robot robot;
-		try {
-			robot = new Robot();
-			robot.mouseMove(x, y);
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-		} catch (AWTException e) {
-			e.printStackTrace();
-		}
-		
+	WebDriverWait wait;
+ 
+	public BasePage(WebDriver driver) {
+		this.driver = driver;
+		wait = new WebDriverWait(driver, Duration.ofSeconds(8));
+		PageFactory.initElements(driver, this);
 	}
-    
+ 
+	public void waitUntilWebElementIsClickable(WebElement element) {
+		wait.until(ExpectedConditions.elementToBeClickable(element));
+	}
+	public void waitUntilWebElementIsVisible(WebElement element) {
+		 wait=new WebDriverWait(driver,Duration.ofSeconds(8));
+		 wait.until(ExpectedConditions.visibilityOf(element));
+	 }
+
+
+	public void clickUsingRobot(int x, int y) throws Exception {
+		Robot robot = new Robot();
+		robot.mouseMove(x, y);
+		Thread.sleep(1000);
+		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+	}
+	
 }
 

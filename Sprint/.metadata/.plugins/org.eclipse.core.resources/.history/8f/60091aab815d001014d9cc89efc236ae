@@ -1,0 +1,193 @@
+package com.pages;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.InputEvent;
+
+//import org.testng.Assert;
+import org.junit.Assert;
+
+public class LabTestPage extends BasePage{
+	
+	WebDriver driver;
+	
+	@FindBy(xpath="//img[@src='/tests/public/icons/topcities/Pune.svg?1556796588']")
+	WebElement city;
+	
+	@FindBy(xpath="//input[@placeholder='Search for Tests, Packages and Profiles']")
+	WebElement test;
+	
+	@FindBy(xpath="//img[@src='/tests/public/images/landingpage_icons/Skin.svg?v=1569493559']")
+	WebElement skin;
+	
+	@FindBy(xpath="//input[@placeholder='Enter phone number']")
+	WebElement invalidPhoneNumber;
+	
+	@FindBy(xpath="//div[text()='Send app link']")
+	WebElement sendLinkButton;
+	
+	@FindBy(xpath="//div[text()='Enter valid mobile number']")
+	WebElement errorMessage;
+	
+	@FindBy(xpath="//div[text()='Proceed to Checkout']")
+	WebElement checkout;
+	
+	public LabTestPage(WebDriver driver) {
+		super(driver);
+		this.driver=driver;
+	}
+	
+	public void selectCity() {
+		waitUntilWebElementIsVisible(city);
+		waitUntilWebElementIsClickable(city);
+		city.click();
+	}
+	
+	public void clickSearchTest() {
+		waitUntilWebElementIsVisible(test);
+		waitUntilWebElementIsClickable(test);
+		test.click();
+	}
+	
+	public void enterTestName(String testName ) {
+		waitUntilWebElementIsVisible(test);
+		waitUntilWebElementIsClickable(test);
+		test.sendKeys(testName);
+	}
+	
+	public void selectTestName() {
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			
+		}
+		Actions action= new Actions(driver);
+		action.sendKeys(Keys.ARROW_DOWN).build().perform();
+		action.sendKeys(Keys.ARROW_DOWN).build().perform();
+		action.sendKeys(Keys.ENTER).build().perform();
+	}
+	
+	public void assertionOfTestSElection() {
+
+		Assert.assertTrue("Test Not Selected Properly", driver.getCurrentUrl().equals("https://www.practo.com/tests/haemoglobin-automated-blood/p?city=pune"));
+	}
+	
+//	==========================================================================================
+	
+	public void clickOnSkin() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,900)");
+		waitUntilWebElementIsVisible(skin);
+		waitUntilWebElementIsClickable(skin);
+		skin.click();
+	}
+	
+// ===========================================================================================
+	public void toScrollDownForDownloadAppLink() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,3300)");
+	}
+	
+	public void userEntersInvalidPhoneNumber(String invalidNumber){
+		waitUntilWebElementIsVisible(invalidPhoneNumber);
+		invalidPhoneNumber.sendKeys(invalidNumber);
+	}
+	
+	public void clickSendAppLink(){
+		waitUntilWebElementIsVisible(sendLinkButton);
+		sendLinkButton.click();
+	}
+	
+	public void errorMessageDisplays(){
+		waitUntilWebElementIsVisible(errorMessage);
+		boolean isErrorMessageDisplayed = errorMessage.getText().equals("Enter valid mobile number");
+        Assert.assertTrue("Not Displayed", isErrorMessageDisplayed);
+	}
+	
+//==================================================================================================
+	
+	public void clickOnTopBookDaignosticTest() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");
+		Robot robot;
+		try {
+			robot = new Robot();
+			robot.mouseMove(170,545);
+			robot.delay(1000);
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		} catch (AWTException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+	
+// ==================================================================================================
+	
+	public void addTests() {
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");
+		
+		int x=150;
+		int y=600;
+		
+		try {
+			clickUsingRobot(x,y);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		int p=350;
+		int q=600;
+		
+		try {
+			clickUsingRobot(p,q);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+//		Robot robot;
+//		try {
+//			robot = new Robot();
+//			robot.mouseMove(150,600);
+//			robot.delay(1000);
+//			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+//			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+//			
+//			robot.mouseMove(350,600);
+//			robot.delay(1000);
+//			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+//			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+//		} catch (AWTException e) {
+//			e.printStackTrace();
+//		}
+		
+	}
+	
+	public void clickOnCheckOut() throws InterruptedException {
+		
+		Robot robot;
+		try {
+			robot = new Robot();
+			robot.mouseMove(1100,200);
+			Thread.sleep(1000);
+			robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+			robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		} catch (AWTException e) {
+			
+			e.printStackTrace();
+		}
+	}
+}
+
