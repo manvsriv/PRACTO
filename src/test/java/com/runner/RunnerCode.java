@@ -4,11 +4,11 @@ import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
-@RunWith(Cucumber.class)  //  this annotation is only for JUnit not for testNG
+@RunWith(Cucumber.class)  
 @CucumberOptions(features="C:\\Users\\manvsriv\\Practo\\PractoAutomation\\src\\test\\resource\\Features\\Practo.feature", 
 glue="com.stepDefinition",
-
 dryRun =false,
+tags="@Negative",
 //monochrome = true,
 plugin= {
 		"json:C:\\Users\\manvsriv\\Practo\\PractoAutomation\\target/jsonreport.json",
@@ -17,3 +17,4 @@ plugin= {
 public class RunnerCode {
 
 }
+

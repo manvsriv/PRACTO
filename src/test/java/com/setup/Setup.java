@@ -61,74 +61,7 @@ public class Setup {
 
 
 	
-//	public static WebDriver chromeDriver()
-//	{
-//		WebDriverManager.chromedriver().setup();
-//		
-//		coptions = new ChromeOptions();
-//		coptions.addArguments("--start-maximized");  
-//		coptions.addArguments("Incognito");
-//		coptions.addArguments("disable-notifications");
-//		coptions.addArguments("disable-popup-blocking");
-//		
-//		
-//		driver = new ChromeDriver(coptions);
-//		
-//		  File file = new File("C:\\Users\\manvsriv\\Practo\\PractoAutomation\\src\\test\\resource\\Properties\\url.properties");
-//		  FileInputStream fis = null;
-//		try {
-//			fis = new FileInputStream(file);
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		 
-//		  Properties properties = new Properties();
-//		  try {
-//			properties.load(fis);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		  
-//		  
-//		driver.get(properties.getProperty("url"));
-//		return driver;
-//	}
-//	
-//	
-//	public static WebDriver edgeDriver()
-//	{
-//		WebDriverManager.chromedriver().setup();
-//		
-//		eoptions = new EdgeOptions();
-//		eoptions.addArguments("--start-maximized");  
-//		eoptions.addArguments("Incognito");
-//		eoptions.addArguments("disable-notifications");
-//		eoptions.addArguments("disable-popup-blocking");
-//		
-//		driver = new EdgeDriver(eoptions);
-//		  File file = new File("C:\\Users\\manvsriv\\Practo\\PractoAutomation\\src\\test\\resource\\Properties\\url.properties");
-//		  FileInputStream fis = null;
-//		try {
-//			fis = new FileInputStream(file);
-//		} catch (FileNotFoundException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		 
-//		  Properties properties = new Properties();
-//		  try {
-//			properties.load(fis);
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		  
-//		  
-//		driver.get(properties.getProperty("url"));
-//		return driver;
-//	}
+
 	
 	public void tearDown()
 	{
