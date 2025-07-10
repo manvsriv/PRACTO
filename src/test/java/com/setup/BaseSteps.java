@@ -13,11 +13,11 @@ public class BaseSteps
 	public static WebDriver driver;
 	public static ChromeOptions coptions;
 	public static EdgeOptions eoptions;
+	
 	public static WebDriver chromedriver() {
 		WebDriverManager.chromedriver().setup();
 		coptions = new ChromeOptions();
 		coptions.addArguments("--start-maxmized");
-	//	coptions.addArguments("Incognite");
 		coptions.addArguments("disable-notifications");
 		driver = new ChromeDriver(coptions);
 		driver.get("https://www.practo.com/");
@@ -28,7 +28,6 @@ public class BaseSteps
 		WebDriverManager.edgedriver().setup();
 		eoptions = new EdgeOptions();
 		eoptions.addArguments("--start-maxmized");
-	//	eoptions.addArguments("Incognite");
 		eoptions.addArguments("disable-notifications");
 		driver = new EdgeDriver(eoptions);
 		driver.get("https://www.practo.com/");

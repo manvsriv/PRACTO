@@ -29,16 +29,6 @@ public class ConsultNowPage extends BasePage
 		 }
 	 }
 	 
-//	 public boolean isConsultationFormVisible()
-//	 {
-//		 try
-//		 {
-//			 WebElement header=wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//h1[contains(text().'Consultation')]")));
-//			 return header.isDisplayed();
-//		 }catch(Exception e)
-//		 {
-//			 return false;
-//		 }
-//	 }
+ 
 	
 }
