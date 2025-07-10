@@ -22,6 +22,7 @@ public class ConsultNowPage extends BasePage
 			 WebElement consultNowButton=wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[text()='Consult Now']")));
 			 Actions actions=new Actions(driver);
 			 actions.moveToElement(consultNowButton).click().build().perform();
+		 
 			 
 		 }catch(Exception e)
 		 {

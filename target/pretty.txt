@@ -1,52 +1,63 @@
 
-@ConsultNowPositive
+@ConsultNow @Positive
 Scenario: Verify Consult Now button is clickable and open Consultation form [90m# src/test/resource/Features/PractoVideoConsult.feature:9[0m
-  [32mWhen [0m[32mUser clicks on Video Consult link from homepage[0m                      [90m# stepDefination.VideoConsultSteps.user_clicks_on_video_consult_link_from_homepage()[0m
-  [32mAnd [0m[32mUser Clicks on Consult Now button on Video Consult Page[0m               [90m# stepDefination.VideoConsultSteps.user_clicks_on_consult_now_button_on_video_consult_page()[0m
-  [32mThen [0m[32mConsultation form should be displayed successfully[0m                   [90m# stepDefination.VideoConsultSteps.consultation_form_should_be_displayed_successfully()[0m
+  [32mWhen [0m[32mUser clicks on Video Consult link from homepage[0m                      [90m# com.stepDefination.VideoConsultSteps.user_clicks_on_video_consult_link_from_homepage()[0m
+  [32mAnd [0m[32mUser Clicks on Consult Now button on Video Consult Page[0m               [90m# com.stepDefination.VideoConsultSteps.user_clicks_on_consult_now_button_on_video_consult_page()[0m
+  [32mThen [0m[32mConsultation form should be displayed successfully[0m                   [90m# com.stepDefination.VideoConsultSteps.consultation_form_should_be_displayed_successfully()[0m
 
-    Embedding Image [image/png 58162 bytes]
+    Embedding Image [image/png 62145 bytes]
 
 
-@NewMobileOTPFormValidation
+@NewMobile @Positive
 Scenario: Verify new mobile number                            [90m# src/test/resource/Features/PractoVideoConsult.feature:28[0m
-  [32mWhen [0m[32mUser clicks on Video Consult link from homepage[0m        [90m# stepDefination.VideoConsultSteps.user_clicks_on_video_consult_link_from_homepage()[0m
-  [32mAnd [0m[32mUser Clicks on Consult Now button on Video Consult Page[0m [90m# stepDefination.VideoConsultSteps.user_clicks_on_consult_now_button_on_video_consult_page()[0m
-  [32mAnd [0m[32mUser enters symptom [0m[32m[1m"10"[0m[32m in the symptom input field[0m     [90m# stepDefination.VideoConsultSteps.user_enters_symptom_in_the_symptom_input_field(java.lang.String)[0m
-  [32mAnd [0m[32mUser selects speciality Pediatrics from the list[0m        [90m# stepDefination.VideoConsultSteps.user_selects_speciality_pediatrics_from_the_list()[0m
-  [32mAnd [0m[32mUser scrolls to mobile number input[0m                     [90m# stepDefination.VideoConsultSteps.user_scrolls_to_mobile_number_input()[0m
-  [32mAnd [0m[32mUser enters new mobile number [0m[32m[1m"11"[0m                      [90m# stepDefination.VideoConsultSteps.user_enters_new_mobile_number(java.lang.String)[0m
-  [32mThen [0m[32mContinue button is active[0m                              [90m# stepDefination.VideoConsultSteps.continue_button_is_active()[0m
+  [32mWhen [0m[32mUser clicks on Video Consult link from homepage[0m        [90m# com.stepDefination.VideoConsultSteps.user_clicks_on_video_consult_link_from_homepage()[0m
+  [32mAnd [0m[32mUser Clicks on Consult Now button on Video Consult Page[0m [90m# com.stepDefination.VideoConsultSteps.user_clicks_on_consult_now_button_on_video_consult_page()[0m
+  [32mAnd [0m[32mUser enters symptom [0m[32m[1m"10"[0m[32m in the symptom input field[0m     [90m# com.stepDefination.VideoConsultSteps.user_enters_symptom_in_the_symptom_input_field(java.lang.String)[0m
+  [32mAnd [0m[32mUser selects speciality Pediatrics from the list[0m        [90m# com.stepDefination.VideoConsultSteps.user_selects_speciality_pediatrics_from_the_list()[0m
+  [32mAnd [0m[32mUser scrolls to mobile number input[0m                     [90m# com.stepDefination.VideoConsultSteps.user_scrolls_to_mobile_number_input()[0m
+  [32mAnd [0m[32mUser enters new mobile number [0m[32m[1m"11"[0m                      [90m# com.stepDefination.VideoConsultSteps.user_enters_new_mobile_number(java.lang.String)[0m
+  [32mThen [0m[32mContinue button is active[0m                              [90m# com.stepDefination.VideoConsultSteps.continue_button_is_active()[0m
 
     Embedding Image [image/png 55832 bytes]
 
 
-@InvalidSymptomValidation
+@InvalidSymptomValidation @Negative
 Scenario: Verify Continue button is inactive when symptom is less than 4 characters [90m# src/test/resource/Features/PractoVideoConsult.feature:34[0m
-  [32mWhen [0m[32mUser clicks on Video Consult link from homepage[0m                              [90m# stepDefination.VideoConsultSteps.user_clicks_on_video_consult_link_from_homepage()[0m
-  [32mAnd [0m[32mUser Clicks on Consult Now button on Video Consult Page[0m                       [90m# stepDefination.VideoConsultSteps.user_clicks_on_consult_now_button_on_video_consult_page()[0m
-  [32mAnd [0m[32mUser enters invalid symptom from properties[0m                                   [90m# stepDefination.VideoConsultSteps.user_enters_invalid_symptom_from_properties()[0m
-  [32mThen [0m[32mContinue button should be inactive[0m                                           [90m# stepDefination.VideoConsultSteps.continue_button_should_be_inactive()[0m
+  [32mWhen [0m[32mUser clicks on Video Consult link from homepage[0m                              [90m# com.stepDefination.VideoConsultSteps.user_clicks_on_video_consult_link_from_homepage()[0m
+  [32mAnd [0m[32mUser Clicks on Consult Now button on Video Consult Page[0m                       [90m# com.stepDefination.VideoConsultSteps.user_clicks_on_consult_now_button_on_video_consult_page()[0m
+  [32mAnd [0m[32mUser enters invalid symptom from properties[0m                                   [90m# com.stepDefination.VideoConsultSteps.user_enters_invalid_symptom_from_properties()[0m
+  [32mThen [0m[32mContinue button should be inactive[0m                                           [90m# com.stepDefination.VideoConsultSteps.continue_button_should_be_inactive()[0m
 
     Embedding Image [image/png 55847 bytes]
 
 
-@LinkedInVisibility
+@LinkedInVisibility @Positive
 Scenario: Validate the visibility of Practo LinkedIn page [90m# src/test/resource/Features/PractoVideoConsult.feature:43[0m
-  [32mWhen [0m[32mUser clicks on Video Consult link from homepage[0m    [90m# stepDefination.VideoConsultSteps.user_clicks_on_video_consult_link_from_homepage()[0m
-  [32mAnd [0m[32mUser scrolls to the bottom of the page[0m              [90m# stepDefination.VideoConsultSteps.user_scrolls_to_bottom_of_the_page()[0m
-  [32mAnd [0m[32mUser clicks on the LinkedIn button[0m                  [90m# stepDefination.VideoConsultSteps.user_clicks_on_the_linkedin_button()[0m
-  [32mThen [0m[32mPracto LinkedIn page should open in a new tab[0m      [90m# stepDefination.VideoConsultSteps.practo_linkedin_page_should_open_in_a_new_tab()[0m
+  [32mWhen [0m[32mUser clicks on Video Consult link from homepage[0m    [90m# com.stepDefination.VideoConsultSteps.user_clicks_on_video_consult_link_from_homepage()[0m
+  [32mAnd [0m[32mUser scrolls to the bottom of the page[0m              [90m# com.stepDefination.VideoConsultSteps.user_scrolls_to_bottom_of_the_page()[0m
+  [32mAnd [0m[32mUser clicks on the LinkedIn button[0m                  [90m# com.stepDefination.VideoConsultSteps.user_clicks_on_the_linkedin_button()[0m
+  [32mThen [0m[32mPracto LinkedIn page should open in a new tab[0m      [90m# com.stepDefination.VideoConsultSteps.practo_linkedin_page_should_open_in_a_new_tab()[0m
 
-    Embedding Image [image/png 232273 bytes]
+    Embedding Image [image/png 242551 bytes]
 
 
-@LogoRedirection
+@LogoRedirection @Positive
 Scenario: Verify redirection to homepage on Practo logo click [90m# src/test/resource/Features/PractoVideoConsult.feature:51[0m
-  [32mWhen [0m[32mUser clicks on Video Consult link from homepage[0m        [90m# stepDefination.VideoConsultSteps.user_clicks_on_video_consult_link_from_homepage()[0m
-  [32mAnd [0m[32mUser Clicks on Consult Now button on Video Consult Page[0m [90m# stepDefination.VideoConsultSteps.user_clicks_on_consult_now_button_on_video_consult_page()[0m
-  [32mAnd [0m[32mUser clicks on the Practo logo[0m                          [90m# stepDefination.VideoConsultSteps.user_clicks_on_the_practo_logo()[0m
-  [32mThen [0m[32mUser should be redirected to the Practo homepage[0m       [90m# stepDefination.VideoConsultSteps.user_should_be_redirected_to_the_practo_homepage()[0m
+  [32mWhen [0m[32mUser clicks on Video Consult link from homepage[0m        [90m# com.stepDefination.VideoConsultSteps.user_clicks_on_video_consult_link_from_homepage()[0m
+  [32mAnd [0m[32mUser Clicks on Consult Now button on Video Consult Page[0m [90m# com.stepDefination.VideoConsultSteps.user_clicks_on_consult_now_button_on_video_consult_page()[0m
+  [32mAnd [0m[32mUser clicks on the Practo logo[0m                          [90m# com.stepDefination.VideoConsultSteps.user_clicks_on_the_practo_logo()[0m
+  [32mThen [0m[32mUser should be redirected to the Practo homepage[0m       [90m# com.stepDefination.VideoConsultSteps.user_should_be_redirected_to_the_practo_homepage()[0m
 
     Embedding Image [image/png 221978 bytes]
+
+
+@VideoConsultDataTable @Positive
+Scenario: Validate booking Video Consultation with valid credentials using DataTable [90m# src/test/resource/Features/PractoVideoConsult.feature:59[0m
+  [32mWhen [0m[32mUser clicks on Video Consult link from homepage[0m                               [90m# com.stepDefination.VideoConsultSteps.user_clicks_on_video_consult_link_from_homepage()[0m
+  [32mAnd [0m[32mUser Clicks on Consult Now button on Video Consult Page[0m                        [90m# com.stepDefination.VideoConsultSteps.user_clicks_on_consult_now_button_on_video_consult_page()[0m
+  [32mAnd [0m[32menters the VALID symptom and phonenumber using Data Table[0m                      [90m# com.stepDefination.VideoConsultSteps.enters_the_valid_symptom_and_phonenumber_using_data_table(io.cucumber.datatable.DataTable)[0m
+    | Credentials.xlsx |
+  [32mThen [0m[32mContinue button is active[0m                                                     [90m# com.stepDefination.VideoConsultSteps.continue_button_is_active()[0m
+
+    Embedding Image [image/png 56402 bytes]
 

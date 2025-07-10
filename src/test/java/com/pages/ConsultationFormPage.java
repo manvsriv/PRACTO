@@ -6,6 +6,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+ 
 
 public class ConsultationFormPage extends BasePage {
 
@@ -67,10 +68,6 @@ public class ConsultationFormPage extends BasePage {
         waitUntilWebElementIsVisible(continueButton);
         return continueButton.isEnabled();
     }
-
-    
-    
-
     
  // Scroll to top using Robot
     public void scrollToTopUsingRobot() {
@@ -79,6 +76,7 @@ public class ConsultationFormPage extends BasePage {
             for (int i = 0; i < 5; i++) {
                 robot.keyPress(KeyEvent.VK_PAGE_UP);
                 robot.keyRelease(KeyEvent.VK_PAGE_UP);
+                
                 Thread.sleep(300);
             }
         } catch (Exception e) {
@@ -92,9 +90,7 @@ public class ConsultationFormPage extends BasePage {
         actions.moveToElement(logo).click().perform();
     }
 
-
-
-   
+  
   
 }
 

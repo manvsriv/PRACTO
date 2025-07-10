@@ -1,4 +1,4 @@
-package stepDefination;
+package com.stepDefination;
  
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -11,7 +11,6 @@ import com.pages.VideoConsultPage;
 import com.parameters.ExcelReader;
 import com.setup.BaseSteps;
 import com.utility.TestDataReader;
-
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
@@ -20,6 +19,7 @@ import io.cucumber.java.en.When;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.List;
  
 
 public class VideoConsultSteps {
@@ -31,8 +31,14 @@ public class VideoConsultSteps {
     ExcelReader reader;
     
     
-    /*---------------------------------------------------------------Scenario-I------------------------------------------------------*/
-
+  //-------------------------Scenario 1--------------------------------------------------------------
+  	/* created by:
+  	 * Reviewed By:
+  	 * Motive:
+  	 *
+  	 * *
+  	 */
+    
     @When("User clicks on Video Consult link from homepage")
     public void user_clicks_on_video_consult_link_from_homepage() {
         driver = BaseSteps.chromedriver();
@@ -53,7 +59,15 @@ public class VideoConsultSteps {
 
     
     
-    /*----------------------------------Scenario - II----------------------------------------*/
+    
+    //-------------------------Scenario 2--------------------------------------------------------------
+    	/* created by:
+    	 * Reviewed By:
+    	 * Motive:
+    	 *
+    	 * *
+    	 */
+    
     @When("User enters symptom {string} in the symptom input field")
     public void user_enters_symptom_in_the_symptom_input_field(String string) {
         consultationFormPage = new ConsultationFormPage(driver);
@@ -82,7 +96,6 @@ public class VideoConsultSteps {
 
     @Then("Continue button is active")
     public void continue_button_is_active() {
-        // Write code here that turns the phrase above into concrete actions
     	consultationFormPage = new ConsultationFormPage(driver);
     	Assert.assertTrue(consultationFormPage.EnableContinue());
          
@@ -91,8 +104,14 @@ public class VideoConsultSteps {
      
  
  
-/*-----------------------------Scenario - III -------------------------------------*/
-
+    
+    //-------------------------Scenario 3--------------------------------------------------------------
+    	/* created by:
+    	 * Reviewed By:
+    	 * Motive:
+    	 *
+    	 * *
+    	 */
  
 
 
@@ -111,7 +130,16 @@ public void continue_button_should_be_inactive()
 	Assert.assertEquals(consultationFormPage.EnableContinue(),true);
 }
 
-/*------------------------------Scenario-IV-------------------------------------------------*/
+
+//-------------------------Scenario 4--------------------------------------------------------------
+	/* created by:
+	 * Reviewed By:
+	 * Motive:
+	 *
+	 * *
+	 */
+
+
 
 @When("User scrolls to the bottom of the page")
 public void user_scrolls_to_bottom_of_the_page() {
@@ -157,7 +185,14 @@ public void user_clicks_on_the_video_consult_link() {
 
 
 
-/*-------------------------------------------Scenario - V-------------------------------------------------------*/
+
+//-------------------------Scenario 5--------------------------------------------------------------
+	/* created by:
+	 * Reviewed By:
+	 * Motive:
+	 *
+	 * *
+	 */
  
 
 @When("User clicks on the Practo logo")
@@ -173,15 +208,40 @@ public void user_should_be_redirected_to_the_practo_homepage() {
     Assert.assertEquals("https://www.practo.com/", currentUrl);
 }
 
+//-------------------------Scenario 6--------------------------------------------------------------
+	/* created by:
+	 * Reviewed By:
+	 * Motive:
+	 *
+	 * *
+	 */
+
+@When("enters the VALID symptom and phonenumber using Data Table")
+public void enters_the_valid_symptom_and_phonenumber_using_data_table(io.cucumber.datatable.DataTable dataTable) {
+    List<List<String>> data = dataTable.asLists();
+    String excelFilePath = "src/test/resource/Exceldata/" + data.get(0).get(0); // e.g., "Credentials.xlsx"
+
+    List<List<String>> credentials = ExcelReader.readExcelData(excelFilePath);
+    for (List<String> row : credentials) {
+        String symptom = row.get(0);
+        String phoneNumber = row.get(1);
+
+        consultationFormPage = new ConsultationFormPage(driver);
+        consultationFormPage.enterSymptom(symptom);
+        consultationFormPage.enterMobileNumber(phoneNumber);
+    }
+}
+
+//-------------------------Screenshot Method--------------------------------------------------------------
+	 
+ 
+
 @After
 public void tearDown(Scenario scenario) // will take screenshots for each and every scenario
 {
 	final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
 	 scenario.attach(screenshot, "image/png", "Image");
 }
-
- 
-
 
 
 }

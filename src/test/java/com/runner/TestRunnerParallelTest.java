@@ -13,7 +13,7 @@ public class TestRunnerParallelTest extends AbstractTestNGCucumberTests
 	@Override
 	@DataProvider(parallel=true)
 	public Object[][] scenarios() {
-		// TODO Auto-generated method stub
+		 
 		return super.scenarios();
 
 }
