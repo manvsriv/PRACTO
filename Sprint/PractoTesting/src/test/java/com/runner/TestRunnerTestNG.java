@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(features="C:\\Users\\SDHINDLE\\Desktop\\PRACTO\\Sprint\\PractoTesting\\src\\test\\resource\\Features\\LabTests.feature",
 glue=("com.stepDefinition"),
 plugin= {"pretty:target/pretty.txt",
-		"html:target/cucumberreport/htmlreport.html",
+		"html:target/cucumberreport/recentReportTestNG.html",
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
 		})
 

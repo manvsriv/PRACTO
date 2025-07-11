@@ -2,8 +2,6 @@
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="org.openqa.selenium.interactions.Actions"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.Keys"/>
-    <fullyQualifiedTypeName name="io.github.bonigarcia.wdm.WebDriverManager"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.edge.EdgeDriver"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeOptions"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.edge.EdgeOptions"/>
     <fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
@@ -15,8 +13,6 @@
     <fullyQualifiedTypeName name="com.pages.LoginPage"/>
     <fullyQualifiedTypeName name="io.cucumber.java.en.Given"/>
     <fullyQualifiedTypeName name="com.pages.LabTestPage"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
-    <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
     <fullyQualifiedTypeName name="org.apache.poi.xssf.usermodel.XSSFWorkbook"/>
     <fullyQualifiedTypeName name="org.apache.poi.ss.usermodel.Sheet"/>
@@ -30,7 +26,6 @@
     <fullyQualifiedTypeName name="junit.framework.Assert"/>
     <fullyQualifiedTypeName name="com.aventstack.extentreports.util.Assert"/>
     <fullyQualifiedTypeName name="org.junit.Assert"/>
-    <fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.By"/>
     <fullyQualifiedTypeName name="com.pages.TestPage"/>
     <fullyQualifiedTypeName name="com.pages.FormPage"/>
@@ -53,4 +48,9 @@
     <fullyQualifiedTypeName name="io.cucumber.testng.CucumberOptions"/>
     <fullyQualifiedTypeName name="java.awt.Desktop.Action"/>
     <fullyQualifiedTypeName name="org.openqa.selenium.interactions.Action"/>
+    <fullyQualifiedTypeName name="java.awt.event.KeyEvent"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.edge.EdgeDriver"/>
+    <fullyQualifiedTypeName name="io.github.bonigarcia.wdm.WebDriverManager"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.WebDriver"/>
+    <fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
 </qualifiedTypeNameHistroy>

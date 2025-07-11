@@ -95,12 +95,6 @@ public class LabTestStepDefinition {
 	    labtest.assertionOfTestSElection();
 	}
 
-	/*
-	 * created by : Snehal Dhindle
-	 * Reviewed by:
-	 * Motive: Login to Practo and navigate to Hemoglobin Test
-	 * 
-	 */
 	
 //=========================  SkinConsultation  ======================================================
 	
@@ -146,12 +140,7 @@ public class LabTestStepDefinition {
 	    skinCare.onPaymentPage();
 	}
 	
-	/*
-	 * created by : Snehal Dhindle
-	 * Reviewed by:
-	 * Motive: Navigate to Skin Consultation and Fill Details
-	 * 
-	 */
+	
 //============================  AppLink  ===============================================================
 	
 	/*
@@ -184,12 +173,6 @@ public class LabTestStepDefinition {
 	    labtest.errorMessageDisplays();
 	}
 	
-	/*
-	 * created by : Snehal Dhindle
-	 * Reviewed by:
-	 * Motive: Displays Error message for invalid phone number
-	 * 
-	 */
 
 // ==============================  FormFilling  =============================================================
 	
@@ -236,12 +219,6 @@ public class LabTestStepDefinition {
 		slot.codMessageIsVisible();
 	}
 
-	/*
-	 * created by : Snehal Dhindle
-	 * Reviewed by:
-	 * Motive: Fill form and Select slot for booking appointment 
-	 * 
-	 */
 //==============================  AddMultipleTest  ========================================================
 	
 	/*
@@ -266,14 +243,7 @@ public class LabTestStepDefinition {
 		form=new FormPage(driver);
 		form.numberOfTestVisible();
 	}
-	
-	/*
-	 * created by : Snehal Dhindle
-	 * Reviewed by:
-	 * Motive: Enable Adding multiple test and display number of Test added in cart
-	 * 
-	 */
-	
+
 //===============================  InvalidAge  =============================================================
 	
 	/*
@@ -297,13 +267,7 @@ public class LabTestStepDefinition {
 	}
 	
 
-	/*
-	 * created by : Snehal Dhindle
-	 * Reviewed by:
-	 * Motive: Display Error Message if age entered is less than 10 years
-	 * 
-	 */
-	
+
 // =============================================================================================================	
 	@After
 	public void tearDown(Scenario scenario) // will take screenshots for each and every scenario

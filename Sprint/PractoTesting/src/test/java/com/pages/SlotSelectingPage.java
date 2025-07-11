@@ -52,9 +52,6 @@ public class SlotSelectingPage extends BasePage {
 	
 	public void codMessageIsVisible() {
 		waitUntilWebElementIsVisible(codMessage);
-		if(codMessage.isDisplayed()) {
-			System.out.println("COD Visible");
-		}
 		Assert.assertEquals(codMessage.isDisplayed(),true);
 	}
 }

@@ -1,0 +1,315 @@
+package com.stepDefinition;
+
+
+import java.util.List;
+
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+import com.pages.AddressPage;
+import com.pages.FormPage;
+import com.pages.HomePage;
+import com.pages.LabTestPage;
+import com.pages.LoginPage;
+import com.pages.SkinCarePage;
+import com.pages.SlotSelectingPage;
+import com.pages.TestPage;
+import com.parameters.ExcelReader;
+import com.setup.BaseSteps;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Scenario;
+import io.cucumber.java.en.*;
+
+public class LabTestStepDefinition {
+	
+	WebDriver driver;
+	HomePage home;
+	LoginPage login;
+	LabTestPage labtest;
+	ExcelReader excel;
+	SkinCarePage skinCare;
+	TestPage test;
+	FormPage form;
+	AddressPage address;
+	SlotSelectingPage slot;
+
+// ==========================  BackGround ================================================================
+	
+	@Given("User is on Practo website")
+	public void user_is_on_practo_website() {
+	    driver=BaseSteps.initializeDriver("edge");
+	}
+	
+// =============================  NavigateToTest  ==================================================================	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Login to Practo and navigate to Hemoglobin Test
+	 * 
+	 */
+	
+	@When("user clicks on Login \\/ Signup button")
+	public void user_clicks_on_login_signup_button() {
+	    home=new HomePage(driver);
+	    home.clickLoginButton();
+	}
+	@When("user enters {string} and {string}")
+	public void user_enters_and(String mobileNumber, String password){
+		login = new LoginPage(driver);
+		excel=new ExcelReader();
+		String[] data=excel.provideLoginData(mobileNumber, password);
+		login.enterUsernamePassword(data[0],data[1]);
+	}
+	@When("clicks on the login button")
+	public void clicks_on_the_login_button() {
+		login = new LoginPage(driver);
+		login.clickLogin();
+	}
+	@When("clicks on Search city and selects city")
+	public void clicks_on_search_city_and_selects_city() {
+	    labtest=new LabTestPage(driver);
+	    labtest.selectCity();
+	}
+	@When("clicks on Search for Test")
+	public void clicks_on_search_for_test() {
+		labtest=new LabTestPage(driver);
+	    labtest.clickSearchTest();
+	}
+	@When("user enter {string}")
+	public void user_enter(String testName){
+		labtest=new LabTestPage(driver);
+		excel=new ExcelReader();
+		String data=excel.provideTestName(testName);
+	    labtest.enterTestName(data);
+	}
+	@When("selects the Haemoglobin test from the search results")
+	public void selects_the_haemoglobin_test_from_the_search_results() {
+		labtest=new LabTestPage(driver);
+	    labtest.selectTestName();
+	}
+	@Then("user should be on the Haemoglobin test page for Pune")
+	public void user_should_be_on_the_haemoglobin_test_page_for_pune() {
+	    labtest=new LabTestPage(driver);
+	    labtest.assertionOfTestSElection();
+	}
+
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Login to Practo and navigate to Hemoglobin Test
+	 * 
+	 */
+	
+//=========================  SkinConsultation  ======================================================
+	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Navigate to Skin Consultation and Fill Details
+	 * 
+	 */
+	@When("clicks on the Skin icon")
+	public void clicks_on_the_skin_icon() {
+		labtest=new LabTestPage(driver);
+	    labtest.clickOnSkin();
+	}
+	@When("clicks on Related Quetions-First Option")
+	public void clicks_on_related_quetions_first_option() {
+	    skinCare=new SkinCarePage(driver);
+	    skinCare.clickOnRelatedQuetions();
+	}
+	@When("clicks on Acne keeps coming back?")
+	public void clicks_on_acne_keeps_coming_back() throws InterruptedException {
+		skinCare=new SkinCarePage(driver);
+	    skinCare.clickOnTroubles();
+	}
+	@When("user enters name in name field")
+	public void user_enters_name_in_name_field() {
+		skinCare=new SkinCarePage(driver);
+	    skinCare.enterPatientName();
+	}
+	@When("enters phone number")
+	public void enters_phone_number() {
+		skinCare=new SkinCarePage(driver);
+	    skinCare.enterPhoneNumber();
+	}
+	@When("clicks on continue button")
+	public void clicks_on_continue_button() {
+		skinCare=new SkinCarePage(driver);
+	    skinCare.clickContinue();
+	}
+	@Then("user should see the payment page")
+	public void user_should_see_the_payment_page() {
+		skinCare=new SkinCarePage(driver);
+	    skinCare.onPaymentPage();
+	}
+	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Navigate to Skin Consultation and Fill Details
+	 * 
+	 */
+//============================  AppLink  ===============================================================
+	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Displays Error message for invalid phone number
+	 * 
+	 */
+	
+	@When("scrolls down for Download Practo App")
+	public void scrolls_down_for_download_practo_app() {
+		labtest=new LabTestPage(driver);
+	    labtest.toScrollDownForDownloadAppLink();
+	}
+	@When("enters invalid {string}")
+	public void enters_invalid(String invalidPhoneNumber) {
+		labtest=new LabTestPage(driver);
+		excel=new ExcelReader();
+		String data=excel.provideTestName(invalidPhoneNumber);
+	    labtest.userEntersInvalidPhoneNumber(data);
+	}
+	@When("clicks on Send App Link")
+	public void clicks_on_send_app_link() {
+		labtest=new LabTestPage(driver);
+	    labtest.clickSendAppLink();
+	}
+	@Then("user should see error message of invalid phone number")
+	public void user_should_see_error_message_of_invalid_phone_number() {
+		labtest=new LabTestPage(driver);
+	    labtest.errorMessageDisplays();
+	}
+	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Displays Error message for invalid phone number
+	 * 
+	 */
+
+// ==============================  FormFilling  =============================================================
+	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Fill form and Select slot for booking appointment 
+	 * 
+	 */
+	
+	@When("click on one of the Top Booked Diagnostic Tests")
+	public void click_on_one_of_the_top_booked_diagnostic_tests() {
+		labtest=new LabTestPage(driver);
+		labtest.clickOnTopBookDaignosticTest();
+	}
+	@When("click on Book Now")
+	public void click_on_book_now() {
+	    test=new TestPage(driver);
+	    test.clickBookNow();
+	}
+	@When("user fills all userDetails and clicks continue")
+	public void user_fills_all_user_details_and_clicks_continue(io.cucumber.datatable.DataTable dataTable) {
+	    form=new FormPage(driver);
+	    excel=new ExcelReader();
+	    List<String> list=dataTable.asList(String.class);
+	    String details[]=excel.userDetailsReader(list.get(0));
+	    form.userDetails(details[0], details[1], details[2]);
+	}
+	@When("user selects address and clicks continue")
+	public void user_selects_address_and_clicks_continue() {
+	    address=new AddressPage(driver);
+	    address.selectAddress();
+	    address.clickContinue();
+	}
+	@When("user selects slot and Confirms Booking")
+	public void user_selects_slot_and_confirms_booking() {
+		slot= new SlotSelectingPage(driver);
+		slot.selectSlot();
+		slot.clickConfirmBooking();
+	}
+	@Then("user should see message")
+	public void user_should_see_message() {
+		slot= new SlotSelectingPage(driver);
+		slot.codMessageIsVisible();
+	}
+
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Fill form and Select slot for booking appointment 
+	 * 
+	 */
+//==============================  AddMultipleTest  ========================================================
+	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Enable Adding multiple test and display number of Test added in cart
+	 * 
+	 */
+	
+	@When("start adding tests")
+	public void start_adding_tests() {
+		labtest=new LabTestPage(driver);
+		labtest.addTests();
+	}
+	@When("click on proceed to checkout")
+	public void click_on_proceed_to_checkout() throws InterruptedException {
+		labtest=new LabTestPage(driver);
+		labtest.clickOnCheckOut();
+	}
+	@Then("user should see number of tests selected")
+	public void user_should_see_number_of_tests_selected() {
+		form=new FormPage(driver);
+		form.numberOfTestVisible();
+	}
+	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Enable Adding multiple test and display number of Test added in cart
+	 * 
+	 */
+	
+//===============================  InvalidAge  =============================================================
+	
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Display Error Message if age entered is less than 10 years
+	 * 
+	 */
+	
+	@When("user enter {string},{string} and gender")
+	public void user_enter_and_gender(String patientName, String invalidAge) {
+		form=new FormPage(driver);
+		excel=new ExcelReader();
+		String[] data=excel.provideLoginData(patientName, invalidAge);
+		form.invalidUserDetails(data[0],data[1]);
+	}
+	@Then("user should see error message for invalid age")
+	public void user_should_see_error_message_for_invalid_age() {
+		form=new FormPage(driver);
+		form.invalidAgeErrorMessageIsDisplayed();
+	}
+	
+
+	/*
+	 * created by : Snehal Dhindle
+	 * Reviewed by:
+	 * Motive: Display Error Message if age entered is less than 10 years
+	 * 
+	 */
+	
+// =============================================================================================================	
+	@After
+	public void tearDown(Scenario scenario) // will take screenshots for each and every scenario
+	{
+		final byte[] screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.BYTES);
+		 scenario.attach(screenshot, "image/png", "Image");
+	}
+	
+}

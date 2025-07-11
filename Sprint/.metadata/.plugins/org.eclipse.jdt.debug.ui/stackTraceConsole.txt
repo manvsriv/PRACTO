@@ -4,10 +4,10 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.34.0', revision: '707dcb4246*'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.15'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b1b20084f479a0a869947416c1186286, isElementDisplayed {id=f.F8CD394F93F8B19C5796DB9659D483DC.d.226B3F3C24D70FE59D2E749E6309AEDB.e.106}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.98, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\SDHINDLE\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60702}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60702/devtoo..., se:cdpVersion: 138.0.7204.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (b1b20084f479a0a869947416c1186286)] -> xpath: //a[@href='https://www.practo.com/tests']]
-Session ID: b1b20084f479a0a869947416c1186286
+Command: [bc7c41b8cf8bb1e0a43f5e3a22e41efc, isElementDisplayed {id=f.ABC0DE6049E2E12FDA73E72CAC09F215.d.D5EA6631C00D37C064CD943F4C19EF71.e.101}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 138.0.7204.98, chrome: {chromedriverVersion: 138.0.7204.94 (545025748884..., userDataDir: C:\Users\SDHINDLE\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53164}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53164/devtoo..., se:cdpVersion: 138.0.7204.98, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (bc7c41b8cf8bb1e0a43f5e3a22e41efc)] -> xpath: //div[text()='Lab Tests']]
+Session ID: bc7c41b8cf8bb1e0a43f5e3a22e41efc
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -31,9 +31,11 @@ Session ID: b1b20084f479a0a869947416c1186286
 	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:203)
-	at com.pages.BasePage.waitUntilWebElementIsVisible(BasePage.java:46)
-	at com.pages.HomePage.clickLabTests(HomePage.java:35)
+	at com.pages.BasePage.waitUntilWebElementIsClickable(BasePage.java:50)
+	at com.pages.HomePage.clickLabTests(HomePage.java:37)
 	at com.stepDefinition.LabTestStepDefinition.clicks_on_lab_tests(LabTestStepDefinition.java:73)
 	at ?.clicks on Lab Tests(file:///C:/Users/SDHINDLE/Desktop/PRACTO/Sprint/PractoTesting/src/test/resource/Features/LabTests.feature:28)
 

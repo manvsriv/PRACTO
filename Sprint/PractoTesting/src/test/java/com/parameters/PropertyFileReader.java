@@ -11,8 +11,6 @@ public class PropertyFileReader {
 
     public PropertyFileReader(String filePath) {
     	
-    	System.out.println("Called 1");
-    	
         properties = new Properties();
         try (FileInputStream fis = new FileInputStream(filePath)) {
             properties.load(fis);
@@ -24,7 +22,7 @@ public class PropertyFileReader {
     }
 
     public String getProperty(String key) {
-    	System.out.println("Called");
+    	
         return properties.getProperty(key);
     }
 }
