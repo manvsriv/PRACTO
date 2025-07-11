@@ -31,10 +31,26 @@ public class VideoConsultSteps {
     ExcelReader reader;
     
     
+    
+    @Given("User is on the Practo homepage")
+    public void user_is_on_the_practo_homepage() {
+        driver = BaseSteps.chromedriver();
+        driver.get("https://www.practo.com");
+        homePage = new Homepage(driver);
+    }
+
+    @When("User clicks on the Video Consult link")
+    public void user_clicks_on_the_video_consult_link() {
+        homePage = new Homepage(driver);
+        homePage.clickVideoConsultLink();
+    }
+
+    
+    
   //-------------------------Scenario 1--------------------------------------------------------------
-  	/* created by:
+  	/* created by: Lavanya Kadadas
   	 * Reviewed By:
-  	 * Motive:
+  	 * Motive: Verify Consult Now button is clickable and open Consultation form
   	 *
   	 * *
   	 */
@@ -61,9 +77,9 @@ public class VideoConsultSteps {
     
     
     //-------------------------Scenario 2--------------------------------------------------------------
-    	/* created by:
+    	/* created by: Lavanya Kadadas
     	 * Reviewed By:
-    	 * Motive:
+    	 * Motive: Verify new mobile number 
     	 *
     	 * *
     	 */
@@ -106,9 +122,9 @@ public class VideoConsultSteps {
  
     
     //-------------------------Scenario 3--------------------------------------------------------------
-    	/* created by:
+    	/* created by: Lavanya Kadadas
     	 * Reviewed By:
-    	 * Motive:
+    	 * Motive: Verify Continue button is inactive when symptom is less than 4 characters
     	 *
     	 * *
     	 */
@@ -132,9 +148,9 @@ public void continue_button_should_be_inactive()
 
 
 //-------------------------Scenario 4--------------------------------------------------------------
-	/* created by:
+	/* created by: Lavanya Kadadas
 	 * Reviewed By:
-	 * Motive:
+	 * Motive:  Validate the visibility of Practo LinkedIn page
 	 *
 	 * *
 	 */
@@ -169,27 +185,10 @@ public void practo_linkedin_page_should_open_in_a_new_tab() {
     Assert.assertTrue(currentUrl.contains("linkedin.com/company/practo"));
 }
 
-@Given("User is on the Practo homepage")
-public void user_is_on_the_practo_homepage() {
-    driver = BaseSteps.chromedriver();
-    driver.get("https://www.practo.com");
-    homePage = new Homepage(driver);
-}
-
-@When("User clicks on the Video Consult link")
-public void user_clicks_on_the_video_consult_link() {
-    homePage = new Homepage(driver);
-    homePage.clickVideoConsultLink();
-}
-
-
-
-
-
 //-------------------------Scenario 5--------------------------------------------------------------
-	/* created by:
+	/* created by: Lavanya Kadadas
 	 * Reviewed By:
-	 * Motive:
+	 * Motive: Verify redirection to homepage on Practo logo click
 	 *
 	 * *
 	 */
@@ -209,9 +208,9 @@ public void user_should_be_redirected_to_the_practo_homepage() {
 }
 
 //-------------------------Scenario 6--------------------------------------------------------------
-	/* created by:
+	/* created by: Lavanya Kadadas
 	 * Reviewed By:
-	 * Motive:
+	 * Motive:  Validate booking Video Consultation with valid credentials using DataTable
 	 *
 	 * *
 	 */

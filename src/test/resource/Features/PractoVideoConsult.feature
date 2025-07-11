@@ -14,7 +14,7 @@ Then Consultation form should be displayed successfully
 #Scenario-II
 @NewMobile @Positive
 #This scenario verifies that entering a new mobile number
-Scenario: Verify new mobile number 
+Scenario Outline: Verify new mobile number 
 When User clicks on Video Consult link from homepage
 And User Clicks on Consult Now button on Video Consult Page
 And User enters symptom "<SYMPTOM>" in the symptom input field
